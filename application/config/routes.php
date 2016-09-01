@@ -53,4 +53,4 @@ $route['default_controller'] = 'fotografi';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['/photos'] = 'fotografi/photos';
+$route['photos'] = 'fotografi/photos';
