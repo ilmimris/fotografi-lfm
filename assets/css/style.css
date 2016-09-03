@@ -34,6 +34,15 @@
     font-family: 'Bebas';
     font-size: 2rem;
     border: none !important;
+    min-height: 70px !important;
+}
+.navbar-default {
+        background-color: rgba(255,255,255,0.7) !important;
+    }
+.container-fluid{
+    margin-top: 10px;
+    padding-right: 70px !important;
+    padding-left: 70px !important; 
 }
 
 #footer {
@@ -162,10 +171,6 @@
         margin-left: 4rem;
     }
 
-    .navbar-default {
-        background-color: rgba(255,255,255,0.5) !important;
-    }
-
     
     .menu-bawah, .menu-bawah > li > a , #info {
         font-size: 2rem;
@@ -254,6 +259,8 @@
         background-size: 25rem;
      }
 
+
+
     .navbar-brand > img {
         width: 18rem;
         margin: auto auto;
@@ -262,9 +269,7 @@
         margin-left: 4rem;
     }
 
-    .navbar-default {
-        background-color: rgba(255,255,255,0.5) !important;
-    }
+    1s
 
     
     .menu-bawah, .menu-bawah > li > a, #info {
@@ -293,6 +298,7 @@ iPad 3
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
 /* Styles */
+
 }
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
@@ -300,6 +306,9 @@ iPad 3
     
     #status{
         background-size: 25rem;
+    }
+    .navbar {
+      min-height: 70px !important;
     }
 
     .navbar-brand > img {
@@ -310,9 +319,7 @@ iPad 3
         margin-left: 4rem;
     }
 
-    .navbar-default {
-        background-color: rgba(255,255,255,0.5) !important;
-    }
+    
 
     
     .menu-bawah, .menu-bawah > li > a , #info{
@@ -347,9 +354,7 @@ iPad 3
         top: -1.3rem;
     }
 
-    .navbar-default {
-        background-color: rgba(255,255,255,0.5) !important;
-    }
+    
 
     
     .menu-bawah, .menu-bawah > li > a , #info{
