@@ -14,8 +14,8 @@
 			<div class="col-sm-6 col-md-4 col-lg-4">
 				<ul  class="menu-bawah">
 					<?php if ($islogin == 0) {?>
-					<li><a href="auth/login" class="m-b">L     o     g     -     i     n</a></li>
-					<li><a href="#" class="m-b" id="register" data-toggle="modal" data-target="#orm-reg-1">R     e     g     i     s     t     e     r</a></li>
+					<li><a href="#" class="m-b" id="masuk" data-toggle="modal" data-target="#login">L     o     g     -     i     n</a></li>
+					<li><a href="#" class="m-b" id="register" data-toggle="modal" data-target="#form-reg">R     e     g     i     s     t     e     r</a></li>
 					<?php } else {?>
 					<li><a href="auth/logout" class="m-b">L     o     g     -     o     u     t</a></li>
 					<?php } ?>
@@ -34,11 +34,9 @@
 </script>
 
 <!-- The Modal -->
-<div id="form-reg-1" class="modal">
-
+<div id="form-reg" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">x</span>
     <div id="part1" class="form col-md-3">
     	<form class = "form-horizontal" role="form">
 	      <label for = "firstname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
@@ -77,11 +75,29 @@
 
 </div>
 
+<div id="login" class="modal">
+	<div class="modal-content">
+		<div class="col-mod-12">
+			<form class = "form-horizontal" role="form">
+		      <label for = "lastname" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+			  <input type = "text" class = "form-control" id = "username" >
+		      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
+			  <input type = "password" class = "form-control" id = "password" >
+			  <input type="submit" class="btn btn-info" value="Submit">
+		    </form>	
+		</div>
+	</div>
+</div>
+
 <script type="text/javascript">
-// Get the modal
+//Get the modal
 var modal = document.getElementById('form-reg-1');
+var modal2 = document.getElementById('login-1');
+
 // Get the button that opens the modal
 var reg = document.getElementById("register");
+var masuk = document.getElementById("masuk");
+
 var part1 = document.getElementById("part1");
 var cont_ = document.getElementById("cont_");
 var part2 = document.getElementById("part2");
@@ -89,17 +105,16 @@ var done_ = document.getElementById("done_");
 var cont = document.getElementById("cont");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal 
 reg.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-	modal.style.display = "none";
+masuk.onclick = function() {
+	modal2.style.display = "block";
 }
+// When the user clicks on <span> (x), close the modal
 
 cont.onclick = function() {
 	part1.style.display = "none";
@@ -111,6 +126,7 @@ cont.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        modal2.style.display = "none";
     }
 }
 </script>

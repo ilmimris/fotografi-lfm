@@ -61,12 +61,12 @@
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: transparent !important;
-    margin: 10% auto !important; /* 15% from the top and centered */
-    padding: 5px !important;
-    border: none !important;
-    box-shadow: none !important;
-    -webkit-box-shadow: none !important;
+    background-color: transparent;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 5px ;
+    border: none ;
+    box-shadow: none ;
+    -webkit-box-shadow: none ;
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
@@ -93,8 +93,19 @@ label{
   font-weight: normal;
   font-size: normal;
 }
-
-/* sesuatu */
+div.modal-backdrop.in{
+  display: none !important;
+}
+#login {
+  font-family: 'Bebas';
+  font-size: 30px;
+  color: #FFF;
+  padding: 10% 35% 0% 35%;
+}
+input.btn.btn-info {
+  margin-top: 2em;
+  font-family: initial;
+}
 
 .form-control {
   border-radius: 0px;
