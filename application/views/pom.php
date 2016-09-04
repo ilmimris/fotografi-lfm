@@ -39,7 +39,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">x</span>
-    <div class="form col-md-3">
+    <div id="part1" class="form col-md-3">
     	<form class = "form-horizontal" role="form">
 	      <label for = "firstname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
 	      <input type = "text" class = "form-control" id = "fullname" >
@@ -48,14 +48,29 @@
 		  <label for = "email" class = "control-label">E&ensp;m&ensp;a&ensp;i&ensp;l</label>
 	      <input type = "text" class = "form-control" id = "email" >
 	      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
-		  <input type = "text" class = "form-control" id = "password" >
+		  <input type = "password" class = "form-control" id = "password" >
 	      <label for = "retype_password" class = "control-label">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
-		  <input type = "text" class = "form-control" id = "retype_password" >
+		  <input type = "password" class = "form-control" id = "retype_password" >
 	    </form>	
     </div>
-    <div id="continue" class="col-md-9">
+    <div id="cont_" class="col-md-9 continue">
     	<span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span>
-    	<a href="#"><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
+    	<a href="#" id="cont"><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
+    </div>
+    <div id="part2" class="form col-md-3" style="display: none;">
+    	<form class = "form-horizontal" role="form">
+	      <label for = "field" class = "control-label">F&ensp;i&ensp;e&ensp;l&ensp;d&ensp; &ensp;o&ensp;f&ensp; &ensp;S&ensp;t&ensp;u&ensp;d&ensp;y</label>
+	      <input type = "text" class = "form-control" id = "field" >
+	      <label for = "year" class = "control-label">Y&ensp;e&ensp;a&ensp;r</label>
+		  <input type = "text" class = "form-control" id = "year" >
+		  <label for = "lfm_batch" class = "control-label">L&ensp;F&ensp;M&ensp; &ensp;B&ensp;a&ensp;t&ensp;c&ensp;h</label>
+	      <input type = "text" class = "form-control" id = "lfm_batch" >
+	      <label for = "alternate_email" class = "control-label">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;E&ensp;m&ensp;a&ensp;i&ensp;l</label>
+		  <input type = "text" class = "form-control" id = "alternate_email" >
+	    </form>	
+    </div>
+    <div id="done_" class="col-md-9 continue" style="display: none;">
+    	<a href="#" class="done"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
     </div>
     
   </div>
@@ -67,6 +82,11 @@
 var modal = document.getElementById('form-reg-1');
 // Get the button that opens the modal
 var reg = document.getElementById("register");
+var part1 = document.getElementById("part1");
+var cont_ = document.getElementById("cont_");
+var part2 = document.getElementById("part2");
+var done_ = document.getElementById("done_");
+var cont = document.getElementById("cont");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -81,6 +101,12 @@ span.onclick = function() {
 	modal.style.display = "none";
 }
 
+cont.onclick = function() {
+	part1.style.display = "none";
+	cont_.style.display = "none";
+	part2.style.display = "block";
+	done_.style.display = "block";
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
