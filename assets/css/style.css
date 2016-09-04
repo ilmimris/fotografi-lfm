@@ -45,6 +45,76 @@
     padding-left: 70px !important; 
 }
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: transparent !important;
+    margin: 10% auto !important; /* 15% from the top and centered */
+    padding: 5px !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form {
+  font-family: 'Bebas';
+  color: #fff;
+}
+label{
+  font-weight: normal;
+  font-size: normal;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+.form-horizontal .control-label {
+    padding-top: 20px;
+}
+#continue {
+  margin: 15% auto;
+  padding-left: 15% !important;
+  font-family: 'Bebas';
+  font-size: 30px;
+  color: #FFF;
+}
+img.next {
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+  -webkit-filter: invert(100%); filter: invert(100%);
+  max-height: 2em;
+}
+
 #footer {
     position: absolute;
     bottom: 5rem;
@@ -318,9 +388,6 @@ iPad 3
         top: -1.3rem;
         margin-left: 4rem;
     }
-
-
-    
     
     .menu-bawah, .menu-bawah > li > a , #info{
         font-size: 2.5rem;

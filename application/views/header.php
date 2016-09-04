@@ -23,7 +23,7 @@
 	<meta name="msapplication-TileImage" content="<?=asset_url()?>/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<!-- End Favicon -->
-	<?=css('style.css')?>
+	
 	<?=css('bootstrap.css')?>
 	<?=css('font.css')?>
 	<?=js('jquery.js')?>
@@ -31,7 +31,7 @@
 	<?=js('jquery-ui.min.js')?>
 	<?=js('jquery.backstretch.min.js')?>
 	<?=js('isotope.pkgd.min.js')?>
-	
+	<?=css('style.css')?>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
