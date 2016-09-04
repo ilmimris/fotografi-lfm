@@ -100,12 +100,16 @@ label{
 .form-horizontal .control-label {
     padding-top: 20px;
 }
-#continue {
+.continue {
   margin: 15% auto;
   padding-left: 15% !important;
   font-family: 'Bebas';
   font-size: 30px;
   color: #FFF;
+}
+a.done, a.done:hover {
+  color: #FFF;
+  text-decoration: none;
 }
 img.next {
   -ms-transform: rotate(-90deg); /* IE 9 */
