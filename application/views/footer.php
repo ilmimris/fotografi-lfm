@@ -20,7 +20,7 @@
 	})
 </script>
 <script type="text/javascript">
-
+/*
 	$(document).mouseup(function (e)
 	{
 	    var container = $("#menu");
@@ -34,7 +34,7 @@
 	    else if ($('.menu').click()){container.fadeIn('slow');}
 	});
 
-	/* touch device */
+	
 	$(document).on('touchstart', function (e)
 	{
 	    var container = $("#menu");
@@ -47,7 +47,28 @@
 	    }
 	    else if ($('.menu').click()){container.fadeIn('slow');}
 	});
+*/
+	$('.menu_').click(function (e)
+	{
+		var id = $(this).attr("rel");
+	    if($('#menu').hasClass('menu')){
+		   $('.'+id).fadeToggle('fast')
+		}else{
+		   $('.'+id).toggle()
+		}
+	});
 
+	/* touch device 
+	*/
+	$('.menu_').on('touchstart', function (e)
+	{
+		var id = $(this).attr("rel");
+	    if($('#menu').hasClass('menu')){
+		   $('.'+id).fadeToggle('slow')
+		}else{
+		   $('.'+id).toggle()
+		}
+	});
 	$('.mb').click(function(){
 	    var id = $(this).attr("rel");
 

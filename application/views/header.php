@@ -44,26 +44,25 @@
     
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand menu" href="#menu" rel="menu"><span class="box-shadow-menu" aria-hidden="true"></span></a>
+      <a class="navbar-brand menu_" href="#"  rel="menu"><span class="box-shadow-menu" aria-hidden="true"></span></a>
+      <span class="offset4rem"></span>
       <a class="navbar-brand" href="<?= site_url()?>">
         <img alt="Brand" class="brand" src="<?= img_url()?>start.png">
       </a>
     </div>
-    <div id="menu">
+    <div id="menu" class="menu">
 	    <ul class="nav navbar-nav">
-	      <li class=""><a href="<?= site_url()?>fotografi/photos">P h o t o s</a></li>
-	      <li><a href="#">D i n d i n g&ensp;K a r y a</a></li>
-	      <li><a href="#">P r o j e c t</a></li> 
-	      <li><a href="#">C o n t r i b u t o r s</a></li>
-	      <li><a href="#">C o n t a c t&ensp;U s</a></li> 
+	      <li class="<?php if($this->uri->segment(2)=="photos"){echo "active";}?>"><a href="<?= site_url()?>fotografi/photos">P h o t o s</a></li>
+	      <li class="<?php if($this->uri->segment(2)=="dk"){echo "active";}?>"><a href="<?= site_url()?>fotografi/dk">D i n d i n g&ensp;K a r y a</a></li>
+	      <li class="<?php if($this->uri->segment(2)=="project"){echo "active";}?>"><a href="<?= site_url()?>fotografi/project">P r o j e c t</a></li> 
+	      <li class="<?php if($this->uri->segment(2)=="contributor"){echo "active";}?>"><a href="<?= site_url()?>fotografi/contributor">C o n t r i b u t o r s</a></li>
+	      <li class="<?php if($this->uri->segment(2)=="contact"){echo "active";}?>"><a href="<?= site_url()?>fotografi/contact">C o n t a c t&ensp;U s</a></li> 
 	    </ul>
     </div>
+    <?php if (!$islogin == 0) {?>
+    <div id="profpic"><img class="img-circle" src="<?= img_url()?>gambar1.jpg"></div>
+    <?php } ?>
   </div>
 </nav>
 <header>
-<?php if ($this->session->flashdata('message')): ?>
-   	<div class="alert alert-info fade in">
-       	<a href="#" class="close" data-dismiss="alert">&times;</a>
-        <?= $this->session->flashdata('message') ?>
-	</div>
-<?php endif; ?>
+

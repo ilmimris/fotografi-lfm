@@ -1,5 +1,5 @@
 <div id="preloader">
-  <div id="status">&nbsp;</div>
+  <div id="status" >&nbsp;</div>
 </div>
 </header>
 
@@ -11,7 +11,7 @@
 				<p>F     e     b     r     u     a     r     y</p>
 				<p>P     h     o     t     o&ensp;&ensp;o     f&ensp;&ensp;T     h     e&ensp;&ensp;M     o     n     t     h</p>
 			</div>
-			<div class="col-sm-6 col-md-4 col-lg-4">
+			<div class="col-sm-6 col-md-4 col-lg-4" style="float: right;">
 				<ul  class="menu-bawah">
 					<?php if ($islogin == 0) {?>
 					<li><a href="#" class="m-b" id="masuk" data-toggle="modal" data-target="#login">L     o     g     -     i     n</a></li>
@@ -78,13 +78,15 @@
 <div id="login" class="modal">
 	<div class="modal-content">
 		<div class="col-mod-12">
+		<?php echo form_open("auth/login");?>
 			<form class = "form-horizontal" role="form">
 		      <label for = "lastname" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
-			  <input type = "text" class = "form-control" id = "username" >
+			  <input name="identity" class="form-control" placeholder="Email" type="email" autofocus>
 		      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
-			  <input type = "password" class = "form-control" id = "password" >
+			  <input name="password" type="password" value="" class="form-control" placeholder="Password" >
 			  <input type="submit" class="btn btn-info" value="Submit">
 		    </form>	
+	    <?php echo form_close();?>
 		</div>
 	</div>
 </div>

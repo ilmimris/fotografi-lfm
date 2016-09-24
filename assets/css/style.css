@@ -40,7 +40,7 @@
         background-color: rgba(255,255,255,0.7) !important;
     }
 .container-fluid{
-    margin-top: 10px;
+    margin-top: 5px;
     padding-right: 70px !important;
     padding-left: 70px !important; 
 }
@@ -153,11 +153,15 @@ img.next {
 #info {
     font-family: 'Daun';
     color: #fff;
+    position: absolute;
+    float: left;
+    bottom: 10px;
 }
 .mb { /* Tombol Menu Bawah*/
     position: relative;
     padding-top: 2em;
 }
+
 .btn-right {
     float: right;
 }
@@ -219,6 +223,7 @@ img.next {
 .box-shadow-menu {
   position: relative;
   padding-left: 1.25em;
+  margin-right: 4rem;
 }
 .box-shadow-menu:before {
   content: "";
@@ -232,7 +237,12 @@ img.next {
     0 0.25em 0 0 black,
     0 0.5em 0 0 black;
 }
- /*  Responsive Design  */
+.img-circle {
+    border-radius: 50%;
+    max-width:48px;
+    height:48px;
+    float: right;
+} /*  Responsive Design  */
 
 
  /* Smartphones (portrait and landscape) ----------- */
@@ -255,7 +265,6 @@ img.next {
         margin: auto auto;
         position: relative;
         top: -1.3rem;
-        margin-left: 4rem;
     }
 
     
@@ -353,7 +362,6 @@ img.next {
         margin: auto auto;
         position: relative;
         top: -1.3rem;
-        margin-left: 4rem;
     }
 
     1s
@@ -390,12 +398,14 @@ iPad 3
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
 /* Styles */
-    
+    .navbar-nav {
+        margin-left: 50px;
+    }
     #status{
         background-size: 25rem;
     }
     .navbar {
-      min-height: 70px !important;
+      min-height: 60px !important;
     }
 
     .navbar-brand > img {
@@ -403,7 +413,6 @@ iPad 3
         margin: auto auto;
         position: relative;
         top: -1.3rem;
-        margin-left: 4rem;
     }
     
     .menu-bawah, .menu-bawah > li > a , #info{
@@ -437,8 +446,6 @@ iPad 3
         position: relative;
         top: -1.3rem;
     }
-
-    
 
     
     .menu-bawah, .menu-bawah > li > a , #info{
