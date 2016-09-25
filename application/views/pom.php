@@ -93,8 +93,8 @@
 
 <script type="text/javascript">
 //Get the modal
-var modal = document.getElementById('form-reg-1');
-var modal2 = document.getElementById('login-1');
+var modal = document.getElementById('form-reg');
+var modal2 = document.getElementById('login');
 
 // Get the button that opens the modal
 var reg = document.getElementById("register");
