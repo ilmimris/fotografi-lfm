@@ -26,12 +26,15 @@
 	
 	<?=css('bootstrap.css')?>
 	<?=css('font.css')?>
+	<?=css('slick.css')?>
+	<?=css('slick-theme.css')?>
+	<?=css('style.css')?>
 	<?=js('jquery.js')?>
 	<?=js('bootstrap.min.js')?>
 	<?=js('jquery-ui.min.js')?>
 	<?=js('jquery.backstretch.min.js')?>
-	<?=js('isotope.pkgd.min.js')?>
-	<?=css('style.css')?>
+	<?=js('slick.js')?>
+
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
