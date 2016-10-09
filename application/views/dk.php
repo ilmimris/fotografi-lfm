@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="dk">
-				<div class="inline img-dk"><img src="<?= img_url()?>dk1.jpg"><h4 class="dk-month">Juni 2016</h4><h4 class="dk-title">Solitude</h4></div>
+				<div class="inline img-dk"><a href="<?= site_url()?>fotografi/dkdesc" style="text-decoration: none;"><img src="<?= img_url()?>dk1.jpg"><h4 class="dk-month">Juni 2016</h4><h4 class="dk-title">Solitude</h4></a></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk2.jpg"><h4 class="dk-month">Juli 2016</h4><h4 class="dk-title">Kembara</h4></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk3.jpg"><h4 class="dk-month">Sept 2016</h4><h4 class="dk-title">Motions</h4></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk4.jpg"><h4 class="dk-month">Aug 2016</h4><h4 class="dk-title">Sesuatu</h4></div>
@@ -21,6 +21,9 @@
 	<div class="inline slick-arrow" style="display: block;"><img src="http://localhost/foto/assets//img/chevron.png" class="dk-next"></div>
 		-->
 </div>
+
+<!-- Modal Goes Here -->
+
 <script>
 	$(document).ready(function(){
 	 $('.dk').slick({

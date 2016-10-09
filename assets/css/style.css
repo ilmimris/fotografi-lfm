@@ -77,7 +77,23 @@
     box-shadow: none ;
     -webkit-box-shadow: none ;
     max-width: 70%; /* Could be more or less, depending on screen size */
-    z-index: 100;
+    z-index: 1;
+}
+.dk-modal {
+    margin-top: 5%;
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255,1); /* Black w/ opacity */
+}
+.dk-modal-content {
+    /*background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255,1); /* Black w/ opacity */
+    margin: -5% auto; /* 15% from the top and centered */
+    border: none ;
+    box-shadow: none ;
+    -webkit-box-shadow: none ;
+    max-width: 80%; /* Could be more or less, depending on screen size */
+    padding: 0 5% 0 5%;
+    z-index: 1;
 }
 /* The Close Button */
 .close {
@@ -198,7 +214,11 @@ img.dk-prev {
   right: 70px;
   filter: invert(100%);
 }
-
+.dk-btn {
+  display: block;
+  position: relative;
+  bottom: 6em;
+}
 #menu-photos {
     position: fixed;
     bottom: 2rem;
@@ -292,7 +312,9 @@ img.dk-prev {
   height: auto;
 
 }
-
+a:focus {
+    outline: none;
+}
 .content-desc{
   font-family: 'Daun';
   margin: 5% auto;
@@ -300,9 +322,11 @@ img.dk-prev {
   color: white;
 }
 .content-desc > h1 {
-  font-size: 6em;
+  font-size: 5em;
   line-height: 0.05;
   font-style: italic;
+  text-transform: uppercase;
+
 }
 .content-desc > h2 {
   font-size: 4em;
@@ -311,6 +335,10 @@ img.dk-prev {
 .content-desc > p {
   font-size: 1.5em;
   white-space: pre-line;
+}
+.dk-content-desc {
+  padding: 5rem 5rem 6rem 5rem;
+  color: #000000;
 }
 #addphoto {
   color: #fff;
@@ -329,7 +357,7 @@ img.dk-prev {
   vertical-align: middle;
 }
 .socmed > a > img{
-  max-width: 3%;
+  max-width: 3.5%;
   display: inline-block;
 }
 .inline {
@@ -367,6 +395,12 @@ img.dk-prev {
   top: 35%;
   z-index: 1;
 }
+u {
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  display: inline-block;
+  margin-bottom: -1px;
+}​
 
  /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
