@@ -145,7 +145,7 @@ function open_detail(){
 		console.log( data );
 
 		photo = JSON.parse(data);
-		$("#modal-photo-image").attr("src",img_root + photo.photo);
+		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
 		$('#modal-photo-title').html(photo.title);
 		$('#modal-photo-caption').html(photo.caption);
 		$('#modal-photo-gear').html(photo.gear);
