@@ -189,6 +189,8 @@ function upload_photo(){
 	       success : function(data) {
 	           console.log(data);
 	           $("#addphoto").modal('hide');
+
+	           location.reload();
 	       }
 	});
 }
