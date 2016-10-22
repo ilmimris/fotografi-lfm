@@ -103,16 +103,32 @@ class Fotografi extends CI_Controller {
 
 	public function photo_add() {
 		
-		$config['upload_path']          = FCPATH . 'assets/img/users_content/';
-		$config['allowed_types']        = 'jpg|png';
+		$this->load->library('uuid');
 
-		var_dump($this->input->post());
+		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
+		$config['allowed_types'] = 'jpg|png';
+		$config['file_name'] = $this->uuid->v4();
+
 
 		$this->load->library('upload', $config);
 
 		if (!$this->upload->do_upload('file')) {
 			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
 		} else {
+			$metadata = $this->input->post();
+			$this->load->model('model_photos');
+			
+			$photo = $this->model_photos->create();
+			$photo->title = $metadata['title'];
+			$photo->caption = $metadata['caption'];
+			$photo->gear = $metadata['gear'];
+			$photo->location = $metadata['location'];
+			$photo->other = $metadata['other'];
+
+			$photo->photo = $config['file_name'];
+
+			$photo->save();
+
 			$response = array('status'=>'ok', 'upload_data' => $this->upload->data());
 		}
 		
