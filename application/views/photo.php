@@ -77,22 +77,27 @@
 <div id="addphoto" class="modal">
 	<div class="modal-content">
 		<form class = "form-horizontal addphoto" role="form">
-		<div class="col-md-6">
-		      <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
-			  <input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
-		      <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
-			  <textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
-			  <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
-			  <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
-			  <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
-			  <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
-			  <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
-			  <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
-			  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
-			  <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+		<div id="input-photo-form">
+			<div class="col-md-6">
+			      <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
+				  <input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
+			      <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
+				  <textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
+				  <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
+				  <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
+				  <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
+				  <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
+				  <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
+				  <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
+				  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
+				  <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+			</div>
+			<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
+			  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+			</div>
 		</div>
-		<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
-		  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+		<div id="input-photo-progress" style="display:none;">
+			<img src="<?= img_url()?>ring.gif">
 		</div>
 		</form>	
 	</div>
@@ -113,6 +118,8 @@
 
 	// When the user clicks on the button, open the modal
 	add.onclick = function(){
+		$('#input-photo-progress').style.display = "none";
+		$('#input-photo-form').style.display = "block";
 		$("#addphoto").modal();
 	}
 
@@ -162,13 +169,16 @@ function open_detail(){
 
 function upload_photo(){
 	var formData = new FormData();
-	console.log($('#input-photo-image'));
+
 	formData.append('file', $('#input-photo-image')[0].files[0]);
 	formData.append('title', $('#input-photo-title').val());
 	formData.append('caption', $('#input-photo-caption').val());
 	formData.append('gear', $('#input-photo-gear').val());
 	formData.append('location', $('#input-photo-location').val());
 	formData.append('other', $('#input-photo-other').val());
+
+	$('#input-photo-progress').style.display = "block";
+	$('#input-photo-form').style.display = "none";
 
 	$.ajax({
 	       url : '/fotografi/photo_add',
