@@ -139,8 +139,8 @@
 
 }());
 
-function open_detail(me){
-	console.log(me);
+function open_detail(){
+	console.log(this);
 }
 
 </script>
