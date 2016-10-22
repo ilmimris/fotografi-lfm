@@ -162,11 +162,11 @@ function upload_photo(){
 	var formData = new FormData();
 	console.log($('#input-photo-image'));
 	formData.append('file', $('#input-photo-image')[0].files[0]);
-	formData.append('title', $('#input-photo-title')[0]);
-	formData.append('caption', $('#input-photo-caption')[0]);
-	formData.append('gear', $('#input-photo-gear')[0]);
-	formData.append('location', $('#input-photo-location')[0]);
-	formData.append('other', $('#input-photo-other')[0]);
+	formData.append('title', $('#input-photo-title').val());
+	formData.append('caption', $('#input-photo-caption').val());
+	formData.append('gear', $('#input-photo-gear').val());
+	formData.append('location', $('#input-photo-location').val());
+	formData.append('other', $('#input-photo-other').val());
 
 	$.ajax({
 	       url : '/fotografi/photo_add',
