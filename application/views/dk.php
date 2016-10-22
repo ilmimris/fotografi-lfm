@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="dk">
-				<div class="inline img-dk"><a href="#" data-toggle="modal" data-target="#dk-showdescmodal" style="text-decoration: none;"><img src="<?= img_url()?>dk1.jpg"><h4 class="dk-month">Juni 2016</h4><h4 class="dk-title">Solitude</h4></a></div>
+				<div class="inline img-dk"><a class="btn-dk-desc" href="#" data-toggle="modal" data-target="#dk-showdescmodal" style="text-decoration: none;"><img src="<?= img_url()?>dk1.jpg"><h4 class="dk-month">Juni 2016</h4><h4 class="dk-title">Solitude</h4></a></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk2.jpg"><h4 class="dk-month">Juli 2016</h4><h4 class="dk-title">Kembara</h4></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk3.jpg"><h4 class="dk-month">Sept 2016</h4><h4 class="dk-title">Motions</h4></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk4.jpg"><h4 class="dk-month">Aug 2016</h4><h4 class="dk-title">Sesuatu</h4></div>
@@ -20,7 +20,7 @@
 </div>
 
 <!-- Modal Goes Here -->
-<div id="dk-showdescmodal" class="modal">
+<div id="dk-showdescmodal" class="modal dk-showmodal">
 	<div class="col-md-offset-1 col-md-10 dk-modal">
 		<div id="showdesc" class="dk-content-desc content-desc">
 			<h1><u>Dul Juduldul</u></h1>
@@ -31,17 +31,17 @@
 			</p>			
 		</div>
 		<div class="dk-btn socmed">
-			<a id="btn-dk-elite" href="<?= site_url()?>fotografi/dkelite">
+			<a class="btn-dk-elite" href="#" data-toggle="modal" data-target="#dk-showelitemodal">
 		      <img class="img-center" src="<?= img_url()?>chevron.png">
 		    </a>
 		</div>
 	</div>
 </div>
-<div id="dk-showelitemodal" class="modal">
+<div id="dk-showelitemodal" class="modal dk-showmodal">
 	<div class="col-md-offset-1 col-md-10 dk-modal">
-		<div id="showdesc" class="dk-content-desc content-desc">
+		<div id="showdesc" class="dk-content-desc content-desc dk-content-elite">
 			<div class="socmed up">
-				<a id="btn-dk-elite" href="<?= site_url()?>fotografi/dkdesc">
+				<a class="btn-dk-desc" href="#" data-toggle="modal" data-target="#dk-showdescmodal">
 			      <img class="img-center" src="<?= img_url()?>chevron.png">
 			    </a>
 			</div>
@@ -78,15 +78,10 @@
 				</div>
 			</div>
 			<div class="socmed">
-				<a id="btn-dk-elite" href="<?= site_url()?>fotografi/dkall">
+				<a class="btn-dk-all" href="#" data-toggle="modal" data-target="#dk-showallmodal"">
 			      <img class="img-center" src="<?= img_url()?>chevron.png">
 			    </a>
 			</div>			
-		</div>
-		<div class="dk-btn socmed">
-			<a id="btn-dk-elite" href="<?= site_url()?>fotografi/dkelite">
-		      <img class="img-center" src="<?= img_url()?>chevron.png">
-		    </a>
 		</div>
 	</div>
 </div>
@@ -99,6 +94,7 @@
 		    slidesToScroll: 2,
 		    arrows: true,
 		    dots: false,
+		    infinite: false,
 		    prevArrow: '<div class="control" style="left:10%;"><img src="<?=asset_url()?>/img/chevron.png" class="dk-prev"></div>',
 		    nextArrow: '<div class="control" style="right:10%;"><img src="<?=asset_url()?>/img/chevron.png" class="dk-next"></div>'
 	  });
@@ -109,12 +105,12 @@
 	//Get the modal
 
 	var modal = document.getElementById('dk-showdescmodal');
-	var dkelite = document.getElementById('dk-showelitephoto');
+	var dkelite = document.getElementById('dk-showelitemodal');
 	//var	addphoto = document.getElementById('addphoto');
 
 	// Get the button that opens the modal
-	var desc = document.getElementById("description");
-	var elite = document.getElementById("btn-dk-elite");
+	var desc = document.getElementByClass("btn-dk-desc");
+	var elite = document.getElementByClass("btn-dk-elite");
 	//var add = document.getElementById("btn-addphoto");
 
 	// When the user clicks on the button, open the modal
@@ -141,7 +137,7 @@
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
-	    if (event.target == showdesc) {
+	    if (event.target == dkelite) {
 	        modal.style.display = "none";
 	        //showdesc.style.display = "none";
 	    }

@@ -79,13 +79,13 @@
     max-width: 70%; /* Could be more or less, depending on screen size */
     z-index: 1;
 }
-#dk-showdescmodal{
+.dk-showmodal{
   background-color: rgba(255,255,255,0) !important;
 }
 .dk-modal {
     margin-top: 5%;
     background-color: rgb(255,255,255); /* Fallback color */
-    background-color: rgba(255,255,255,1); /* Black w/ opacity */
+    background-color: rgba(255,255,255,1) !important; /* Black w/ opacity */
 }
 .dk-modal-content {
     /*background-color: rgb(255,255,255); /* Fallback color */
@@ -267,6 +267,12 @@ img.dk-prev {
    transition: transform 8s ease-out;
 }
 
+#photos .box:hover > img.photos-contributor {
+   -webkit-filter: brightness(100%);
+   filter: brightness(100%);
+   transform: scale(1);
+}
+
 #photos .box {
     float: left;
     overflow: hidden;
@@ -288,7 +294,10 @@ img.dk-prev {
         -ms-transition: all 300ms ease-out; 
         transition: all 300ms ease-out;
     left: 0;
-
+}
+span.caption.caption.photos-contributor {
+    background-color: rgba(255,255,255,0.8) !important; 
+    color: #000000 !important;
 }
 #photos .box .fade-caption  {
     opacity: 0;
@@ -297,6 +306,14 @@ img.dk-prev {
     text-align: center;
     vertical-align: middle;
     margin: 4rem auto;
+}
+span.caption.fade-caption.photos-contributor{
+    font-family: 'Bebas' !important;  
+    margin: 15rem auto 0rem auto !important;
+}
+span.caption.fade-caption.photos-contributor > h2 {
+  font-size: 14pt;
+  line-height: 1rem;
 }
 #photos .box:hover .fade-caption {
     opacity: 1;
@@ -360,9 +377,8 @@ a:focus {
   padding: 5rem 5rem 6rem 5rem;
   color: #000000;
 }
-.dk-modal {
-    margin-top: 60px;
-    background-color: white;
+.dk-content-elite {
+ padding: 0rem; 
 }
 #addphoto .title{
   color: #fff;
@@ -458,7 +474,9 @@ u {
   background-color: #000000;
   border: 2px solid #555555;
 }
-
+.slick-disabled {
+  display: none !important;
+}
 
  /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
