@@ -93,27 +93,34 @@ class Fotografi extends CI_Controller {
 	}
 
 	public function photo_detail($id = ""){
+
 		if ($id == "") return show_404();
 
 		$this->load->model('model_photos');
 		$photo = $this->model_photos->findById($id);
 
 		echo json_encode($photo);
+
 	}
 
 	public function photo_add() {
 		
+		if (!$this->ion_auth->logged_in()) return show_404();
+
 		$this->load->library('UUID');
 
 		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
 		$config['allowed_types'] = 'jpg|png';
 		$config['file_name'] = $this->uuid->v4();
 
+		$user = $this->ion_auth->user()->row();
 
 		$this->load->library('upload', $config);
 
 		if (!$this->upload->do_upload('file')) {
+
 			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
+
 		} else {
 
 			$metadata = $this->input->post();
@@ -123,6 +130,7 @@ class Fotografi extends CI_Controller {
 
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
+			$photo->user_id = $user
 			$photo->caption = $metadata['caption'];
 			$photo->gear = $metadata['gear'];
 			$photo->location = $metadata['location'];
