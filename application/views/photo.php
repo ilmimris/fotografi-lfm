@@ -160,7 +160,8 @@ function open_detail(){
 
 function upload_photo(){
 	var formData = new FormData();
-	formData.append('file', $('#input-photo-image').files[0]);
+	console.log($('#input-photo-image'));
+	formData.append('file', $('#input-photo-image')[0].files[0]);
 
 	$.ajax({
 	       url : '/fotografi/photo_add',
