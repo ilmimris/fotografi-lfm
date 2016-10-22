@@ -140,7 +140,7 @@
 }());
 
 function open_detail(me){
-	console.log($(me));
+	console.log(me);
 }
 
 </script>
