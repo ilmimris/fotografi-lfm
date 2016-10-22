@@ -122,13 +122,14 @@ masuk.onclick = function() {
 }
 // When the user clicks on <span> (x), close the modal
 
-cont.onclick = function() {
+$("#registration-cont").onclick(function() {
 	part1.style.display = "none";
 	cont_.style.display = "none";
 	part2.style.display = "block";
 	done_.style.display = "block";
     $("form-reg").modal('hide');
-}
+});
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
