@@ -150,6 +150,7 @@ function open_detail(){
 		$('#modal-photo-caption').html(photo.caption);
 		$('#modal-photo-gear').html(photo.gear);
 
+		$('#showphoto').modal('hide');
 		$('#showphoto').modal();
 	});
 }
