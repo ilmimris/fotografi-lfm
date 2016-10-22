@@ -176,7 +176,7 @@ function upload_photo(){
 	       contentType: false,  // tell jQuery not to set contentType
 	       success : function(data) {
 	           console.log(data);
-	           alert(data);
+	           $("#addphoto").modal('hide');
 	       }
 	});
 }
