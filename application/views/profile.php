@@ -119,7 +119,7 @@
 		</div>
 		<div id="prev_projects" class="col-md-1" style="display: none;">
 			<a href="#">
-		      <img class="btn-right left" src="<?= img_url()?>chevron.png">
+		      <img class="btn-right btn-profile left " src="<?= img_url()?>chevron.png">
 		    </a>
 		</div>
 		<div id="profile_projects" class="col-md-5" style="display: none;">
@@ -175,7 +175,7 @@
 		</div>
 		<div id="next_photos" class="col-md-1" >
 			<a href="#">
-		      <img class="btn-right right" src="<?= img_url()?>chevron.png">
+		      <img class="btn-right btn-profile right" src="<?= img_url()?>chevron.png">
 		    </a>
 		</div>
 	</div>
