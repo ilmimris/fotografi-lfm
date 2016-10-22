@@ -17,7 +17,7 @@
 			<img class="photos" src="<?=img_url().$photo->photo?>"/>
 			<span class="caption fade-caption">
 				<h1><?=$photo->title?></h1>
-				<h4><?=$photo->photo?></h4>
+				<h4><?=$photo->caption?></h4>
 			</span>
 		</div>
 
