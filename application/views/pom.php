@@ -52,7 +52,7 @@
 	    </form>	
     </div>
     <div id="cont_" class="col-md-9 continue">
-    	<a href="#" id="cont"><span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
+    	<a href="#" id="registration-cont"><span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
     </div>
     <div id="part2" class="form col-md-3" style="display: none;">
     	<form class = "form-horizontal" role="form">
@@ -67,7 +67,7 @@
 	    </form>	
     </div>
     <div id="done_" class="col-md-9 continue" style="display: none;">
-    	<a href="#" class="done"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
+    	<a href="#" id="registration-done"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
     </div>
     
   </div>

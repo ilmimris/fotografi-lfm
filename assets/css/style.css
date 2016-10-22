@@ -148,11 +148,11 @@ input.btn.btn-info {
   font-size: 30px;
   color: #FFF;
 }
-a.continue, a.continue:hover{
+a#registration-cont, a#registration-cont:hover{
   color: #FFF;
   text-decoration: none;
 }
-a.done, a.done:hover {
+a#registration-done, a#registration-done:hover{
   color: #FFF;
   text-decoration: none;
 }
