@@ -105,7 +105,6 @@ var showdesc = document.getElementById('showdescphoto');
 var	addphoto = document.getElementById('addphoto');
 
 // Get the button that opens the modal
-var photos = document.getElementById("photo1");
 var desc = document.getElementById("description");
 var up = document.getElementById("up-photo");
 var add = document.getElementById("btn-addphoto");
@@ -114,9 +113,6 @@ var add = document.getElementById("btn-addphoto");
 // When the user clicks on the button, open the modal
 add.onclick = function(){
 	addphoto.style.display = "block";
-} 
-photos.onclick = function() {
-    modal.style.display = "block";
 }
 
 desc.onclick = function(){
