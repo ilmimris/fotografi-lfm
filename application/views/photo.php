@@ -11,7 +11,6 @@
 	<div class="row" id="photos">
 <?php $i = 0; foreach ($photos as $photo) {
 	$i++;
-	if (($i>0) && ($i%3==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" id=\"photos\">";
 ?>
 		<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
 		<div class="box col-md-4">
@@ -23,8 +22,11 @@
 		</div>
 		</a>
 
-<?php } ?>
-	</div>
+<?php
+	if (($i>0) && ($i%3==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" id=\"photos\">";
+}
+?>
+ 	</div>
 </div>
 <!--  Menu Bawah Photos -->
 <div id="menu-photos">
