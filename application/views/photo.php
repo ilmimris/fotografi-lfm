@@ -111,7 +111,7 @@
 
 	// When the user clicks on the button, open the modal
 	add.onclick = function(){
-		addphoto.style.display = "block";
+		$("#addphoto").modal();
 	}
 
 	desc.onclick = function(){
