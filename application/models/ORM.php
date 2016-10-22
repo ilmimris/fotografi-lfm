@@ -67,7 +67,7 @@ abstract class ORM extends CI_Model {
 		return $this->find();
 	}
 
-	public function new() {
+	public function create() {
 		$data = array();
 		foreach ($this->kontrak as $field) {
 			$data[$field] = '';
