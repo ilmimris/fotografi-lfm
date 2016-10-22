@@ -103,7 +103,7 @@ class Fotografi extends CI_Controller {
 
 	public function photo_add() {
 		
-		$this->load->library('uuid');
+		$this->load->library('UUID');
 
 		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
 		$config['allowed_types'] = 'jpg|png';
