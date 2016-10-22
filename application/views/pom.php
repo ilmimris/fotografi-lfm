@@ -39,9 +39,9 @@
   <div class="modal-content">
     <div id="part1" class="form col-md-3">
     	<form class = "form-horizontal" role="form">
-	      <label for = "firstname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+	      <label for = "fullname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
 	      <input type = "text" class = "form-control" id = "fullname" >
-	      <label for = "lastname" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+	      <label for = "username" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
 		  <input type = "text" class = "form-control" id = "username" >
 		  <label for = "email" class = "control-label">E&ensp;m&ensp;a&ensp;i&ensp;l</label>
 	      <input type = "text" class = "form-control" id = "email" >
