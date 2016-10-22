@@ -110,7 +110,12 @@ var cont = document.getElementById("cont");
 
 // When the user clicks on the button, open the modal 
 reg.onclick = function() {
-    modal.style.display = "block";
+    $("form-reg").modal('hide');
+    $("form-reg").modal();
+	part1.style.display = "block";
+	cont_.style.display = "block";
+	part2.style.display = "none";
+	done_.style.display = "none";
 }
 
 masuk.onclick = function() {
@@ -123,6 +128,7 @@ cont.onclick = function() {
 	cont_.style.display = "none";
 	part2.style.display = "block";
 	done_.style.display = "block";
+    $("form-reg").modal('hide');
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
