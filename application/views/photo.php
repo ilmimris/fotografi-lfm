@@ -147,6 +147,8 @@ function open_detail(){
 		$('#modal-photo-title').html(data.title);
 		$('#modal-photo-caption').html(data.caption);
 		$('#modal-photo-gear').html(data.gear);
+
+		$('#showphoto').modal();
 	});
 }
 
