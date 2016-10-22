@@ -52,8 +52,7 @@
 	    </form>	
     </div>
     <div id="cont_" class="col-md-9 continue">
-    	<span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span>
-    	<a href="#" id="cont"><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
+    	<a href="#" id="cont"><span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
     </div>
     <div id="part2" class="form col-md-3" style="display: none;">
     	<form class = "form-horizontal" role="form">
