@@ -77,16 +77,16 @@
 		<form class = "form-horizontal addphoto" role="form">
 		<div class="col-md-6">
 		      <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
-			  <input name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
+			  <input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
 		      <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
-			  <textarea name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
+			  <textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
 			  <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
-			  <input type="text" name="gear" value="" class="form-control" placeholder="Gear">
+			  <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
 			  <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
-			  <input type="text" name="location" value="" class="form-control" placeholder="location">
+			  <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
 			  <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
-			  <input type="text" name="other" value="" class="form-control" placeholder="Additional Info">
-			  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>		  
+			  <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
+			  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
 			  <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
 		</div>
 		<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
@@ -162,6 +162,11 @@ function upload_photo(){
 	var formData = new FormData();
 	console.log($('#input-photo-image'));
 	formData.append('file', $('#input-photo-image')[0].files[0]);
+	formData.append('title', $('#input-photo-title')[0]);
+	formData.append('caption', $('#input-photo-caption')[0]);
+	formData.append('gear', $('#input-photo-gear')[0]);
+	formData.append('location', $('#input-photo-location')[0]);
+	formData.append('other', $('#input-photo-other')[0]);
 
 	$.ajax({
 	       url : '/fotografi/photo_add',

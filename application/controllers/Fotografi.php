@@ -106,14 +106,14 @@ class Fotografi extends CI_Controller {
 		$config['upload_path']          = FCPATH . 'assets/img/users_content/';
 		$config['allowed_types']        = 'jpg|png';
 
-		var_dump($config);
+		var_dump($this->input->post());
 
 		$this->load->library('upload', $config);
 
 		if (!$this->upload->do_upload('file')) {
 			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
 		} else {
-			$data = array('status'=>'ok', 'upload_data' => $this->upload->data());
+			$response = array('status'=>'ok', 'upload_data' => $this->upload->data());
 		}
 		
 		echo json_encode($response);
