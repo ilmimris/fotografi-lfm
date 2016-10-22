@@ -13,7 +13,7 @@
 	$i++;
 	if (($i>0) && ($i%3==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" id=\"photos\">";
 ?>
-		<a href="#sesuatu" data-toggle="modal" data-target="#showphoto">
+		<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
 		<div class="box col-md-4">
 			<img class="photos" src="<?=img_url().$photo->photo?>"/>
 			<span class="caption fade-caption">
@@ -99,40 +99,47 @@
 	</div>
 </div>
 <script type="text/javascript">
-//Get the modal
-var modal = document.getElementById('showphoto');
-var showdesc = document.getElementById('showdescphoto');
-var	addphoto = document.getElementById('addphoto');
 
-// Get the button that opens the modal
-var desc = document.getElementById("description");
-var up = document.getElementById("up-photo");
-var add = document.getElementById("btn-addphoto");
+(function(){
+	//Get the modal
+	var modal = document.getElementById('showphoto');
+	var showdesc = document.getElementById('showdescphoto');
+	var	addphoto = document.getElementById('addphoto');
 
+	// Get the button that opens the modal
+	var desc = document.getElementById("description");
+	var up = document.getElementById("up-photo");
+	var add = document.getElementById("btn-addphoto");
 
-// When the user clicks on the button, open the modal
-add.onclick = function(){
-	addphoto.style.display = "block";
-}
+	// When the user clicks on the button, open the modal
+	add.onclick = function(){
+		addphoto.style.display = "block";
+	}
 
-desc.onclick = function(){
-    modal.style.display = "none";
-	showdesc.style.display = "block";
-}
+	desc.onclick = function(){
+	    modal.style.display = "none";
+		showdesc.style.display = "block";
+	}
 
-up.onclick = function() {
-    modal.style.display = "block";
-	showdesc.style.display = "none";
-}
+	up.onclick = function() {
+	    modal.style.display = "block";
+		showdesc.style.display = "none";
+	}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == showdesc) {
-        modal.style.display = "none";
-        showdesc.style.display = "none";
-    }
-    else if(event.target == addphoto){
-    	addphoto.style.display = "none";
-    }
-}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == showdesc) {
+	        modal.style.display = "none";
+	        showdesc.style.display = "none";
+	    }
+	    else if(event.target == addphoto){
+	    	addphoto.style.display = "none";
+	    }
+	}
+
+	function open_detail(me){
+		console.log($(me).attr('data-id'));
+	}
+}());
+
 </script>
