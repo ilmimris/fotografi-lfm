@@ -96,7 +96,7 @@
 			  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
 			</div>
 		</div>
-		<div id="input-photo-progress" style="display:none;">
+		<div id="input-photo-progress" style="display:none; width: 100%;">
 			<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
 		</div>
 		</form>	
