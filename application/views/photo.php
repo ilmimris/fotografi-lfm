@@ -149,6 +149,7 @@ function open_detail(){
 		$('#modal-photo-title').html(photo.title);
 		$('#modal-photo-caption').html(photo.caption);
 		$('#modal-photo-gear').html(photo.gear);
+		$('#modal-photo-other').html(photo.other);
 
 		$('#showphoto').modal('hide');
 		$('#showphoto').modal();
