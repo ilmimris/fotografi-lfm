@@ -63,7 +63,6 @@ class Fotografi extends CI_Controller {
 			$data['title'] = 'Photos | Fotografi LFM';
 			$data['islogin'] = 0; // Belum Login
 
-
 			$this->load->view('header', $data);
 			$this->load->view('photo', $data);
 			$this->load->view('footer');
@@ -95,7 +94,7 @@ class Fotografi extends CI_Controller {
 
 	public function photo_detail($id = ""){
 		if ($id == "") return show_404();
-		
+
 		$this->load->model('model_photos');
 		$photo = $this->model_photos->findById($id);
 
