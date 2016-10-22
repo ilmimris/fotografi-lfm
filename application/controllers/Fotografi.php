@@ -130,7 +130,7 @@ class Fotografi extends CI_Controller {
 
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
-			$photo->user_id = $user['id'];
+			$photo->user_id = $user->id;
 			$photo->caption = $metadata['caption'];
 			$photo->gear = $metadata['gear'];
 			$photo->location = $metadata['location'];
