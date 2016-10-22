@@ -90,7 +90,7 @@
 			  <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
 		</div>
 		<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
-		  	<input type="submit" class="btn btn-info" value="Submit">
+		  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
 		</div>
 		</form>	
 	</div>
