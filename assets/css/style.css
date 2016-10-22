@@ -148,6 +148,10 @@ input.btn.btn-info {
   font-size: 30px;
   color: #FFF;
 }
+a.continue, a.continue:hover{
+  color: #FFF;
+  text-decoration: none;
+}
 a.done, a.done:hover {
   color: #FFF;
   text-decoration: none;
