@@ -79,6 +79,9 @@
     max-width: 70%; /* Could be more or less, depending on screen size */
     z-index: 1;
 }
+#dk-showdescmodal{
+  background-color: rgba(255,255,255,0) !important;
+}
 .dk-modal {
     margin-top: 5%;
     background-color: rgb(255,255,255); /* Fallback color */
@@ -207,6 +210,11 @@ img.dk-prev {
       -ms-transform: rotate(-90deg); /* IE 9 */
     -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     transform: rotate(-90deg);
+}
+.left {
+        -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
 }
 
 .btn-right {
@@ -347,6 +355,10 @@ a:focus {
   padding: 5rem 5rem 6rem 5rem;
   color: #000000;
 }
+.dk-modal {
+    margin-top: 60px;
+    background-color: white;
+}
 #addphoto .title{
   color: #fff;
   font-family: 'Bebas';
@@ -418,6 +430,28 @@ u {
 .profile_pic {
   max-width: 30%;
   text-align: center;
+}
+
+/*
+ *  STYLE 4 Scrollbar
+ */
+
+.scroll::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.scroll::-webkit-scrollbar
+{
+  width: 4px;
+  background-color: #F5F5F5;
+}
+
+.scroll::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+  border: 2px solid #555555;
 }
 
 
@@ -631,6 +665,10 @@ iPad 3
       font-family: 'Bebas';
       margin: 0% 0% 0% 0% !important;
     }
+    #prev_projects {
+      position: fixed;
+      left: 600px;
+    }
     .scroll {
       max-height:50rem; 
       overflow-x: hidden; 
@@ -641,12 +679,25 @@ iPad 3
       position: absolute;
       top: 200px;
     }
-    .img-projects {
-
+    .img-projects > img{
+      width: auto;
+      height: 150px;
+      margin: auto;
+      float: right; 
     }
     .desc-projects {
       font-family: 'Daun';
-      margin-top: -20px;
+    }
+    .desc-projects > h1 {
+      line-height: 0.1em;
+    }
+    .desc-projects > h3 {
+      color: grey;
+      line-height: 0em;
+      text-indent: 20px;
+    }
+    .scroll .row {
+      margin-bottom: 10px;
     }
 }
 
