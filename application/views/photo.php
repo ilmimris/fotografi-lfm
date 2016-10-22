@@ -1,73 +1,27 @@
 </header>
 <div class="container-fluid">
-	<div class="row" id="photos">
-		<a id="photo1" href="#sesuatu" data-toggle="modal" data-target="#showphoto"><div class="box col-md-4">
+		<!-- <a id="photo1" href="#sesuatu" data-toggle="modal" data-target="#showphoto"><div class="box col-md-4">
 			<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
 			<span class="caption fade-caption">
 				<h1>Judul 1</h1>
 				<h4>Nama Seseorang</h4>
 			</span>
-		</div></a>
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 2</h1>
-				<h4>Nama Seseorang</h4>
-			</span>
 		</div>
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar3.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 3</h1>
-				<h4>Nama Seseorang</h4>
-			</span>
-		</div>
-	</div>
-	<div class="row" id="photos">	
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 4 </h1>
-				<h4>Nama Seseorang</h4>
-			</span>
-		</div>
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 5</h1>
-				<h4>Nama Seseorang</h4>
-			</span>
-		</div>
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar6.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 6</h1>
-				<h4>Nama Seseorang</h4>
-			</span>
-		</div>
-	</div>
+		</a> -->
 	<div class="row" id="photos">
+<?php $i = 0; foreach ($photos as $photo) {
+	$i++;
+	if (($i>0) && ($i%3==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" id=\"photos\">";
+?>
 		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar7.jpg"/>
+			<img class="photos" src="<?=img_url().$photo->photo?>"/>
 			<span class="caption fade-caption">
-				<h1>Judul 7</h1>
-				<h4>Nama Seseorang</h4>
+				<h1><?=$photo->title?></h1>
+				<h4><?=$photo->photo?></h4>
 			</span>
 		</div>
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar8.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 8</h1>
-				<h4>Nama Seseorang</h4>
-			</span>
-		</div>
-		<div class="box col-md-4">
-			<img class="photos" src="<?= img_url()?>gambar9.jpg"/>
-			<span class="caption fade-caption">
-				<h1>Judul 9</h1>
-				<h4>Nama Seseorang</h4>
-			</span>
-		</div>
+
+<?php } ?>
 	</div>
 </div>
 <!--  Menu Bawah Photos -->
