@@ -140,7 +140,11 @@
 }());
 
 function open_detail(){
-	console.log(this);
+	var id = $(this).attr('data-id');
+	
+	$.get( "/fotografi/photo_detail/" + id , function( data ) {
+		console.log( data );
+	});
 }
 
 </script>
