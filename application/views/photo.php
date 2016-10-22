@@ -144,9 +144,9 @@ function open_detail(){
 	
 	$.get( "/fotografi/photo_detail/" + id , function( data ) {
 		console.log( data );
-		$('modal-photo-title').html(data.title);
-		$('modal-photo-caption').html(data.caption);
-		$('modal-photo-gear').html(data.gear);
+		$('#modal-photo-title').html(data.title);
+		$('#modal-photo-caption').html(data.caption);
+		$('#modal-photo-gear').html(data.gear);
 	});
 }
 
