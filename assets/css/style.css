@@ -323,9 +323,10 @@ img.dk-prev {
   float: right;
 } /*  Responsive Design  */
 .photosmodal {
-  width: 100%;
-  height: auto;
-
+    width: auto;
+    margin: 5% auto;
+    display: block;
+    max-width: 90%;
 }
 a:focus {
     outline: none;

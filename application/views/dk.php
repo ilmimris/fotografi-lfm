@@ -125,13 +125,13 @@
 	//}
 
 	desc.onclick = function(){
-	    modal.style.display = "none";
-		dkelite.style.display = "block";
+	    modal.style.display = "block";
+		dkelite.style.display = "none";
 	}
 
 	elite.onclick = function(){
-	    modal.style.display = "block";
-		dkelite.style.display = "none";
+	    modal.style.display = "none";
+		dkelite.style.display = "block";
 	}
 
 	//up.onclick = function() {
