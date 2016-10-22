@@ -92,6 +92,15 @@ class Fotografi extends CI_Controller {
 			$this->load->view('auth/index', $this->data);
 		}
 	}
+
+	public function photo_detail($id = ""){
+		if ($id == "") return show_404();
+
+		$photo = $this->model_photos->findById($id);
+
+		echo json_encode($photo);
+	}
+
 	public function dk()
 	{
 		if (!$this->ion_auth->logged_in())
