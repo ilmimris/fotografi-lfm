@@ -101,6 +101,25 @@ class Fotografi extends CI_Controller {
 		echo json_encode($photo);
 	}
 
+	public function photo_add() {
+		
+		$config['upload_path']          = FCPATH . '/assets/img/user_content';
+		$config['allowed_types']        = 'jpg|png';
+
+		$this->load->library('upload', $config);
+
+		var_dump($this->input->post());
+
+		if (!$this->upload->do_upload('userfile')) {
+			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
+		} else {
+			$data = array('status'=>'ok', 'upload_data' => $this->upload->data());
+		}
+		
+		echo json_encode($response);
+
+	}
+
 	public function dk()
 	{
 		if (!$this->ion_auth->logged_in())

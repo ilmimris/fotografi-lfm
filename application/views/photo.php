@@ -87,7 +87,7 @@
 			  <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
 			  <input type="text" name="other" value="" class="form-control" placeholder="Additional Info">
 			  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>		  
-			  <input type="file" name="photo" accept="image/*" required="required" >
+			  <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
 		</div>
 		<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
 		  	<input type="submit" class="btn btn-info" value="Submit">
@@ -154,6 +154,24 @@ function open_detail(){
 
 		$('#showphoto').modal('hide');
 		$('#showphoto').modal();
+	});
+}
+
+
+function upload_photo(){
+	var formData = new FormData();
+	formData.append('file', $('#input-photo-image')[0].files[0]);
+
+	$.ajax({
+	       url : '/fotografi/photo_add',
+	       type : 'POST',
+	       data : formData,
+	       processData: false,  // tell jQuery not to process the data
+	       contentType: false,  // tell jQuery not to set contentType
+	       success : function(data) {
+	           console.log(data);
+	           alert(data);
+	       }
 	});
 }
 
