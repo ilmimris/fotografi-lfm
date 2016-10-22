@@ -112,9 +112,7 @@ class Fotografi extends CI_Controller {
 		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
 		$config['allowed_types'] = 'jpg|png';
 		$config['file_name'] = $this->uuid->v4();
-
-		$user = $this->ion_auth->user()->row();
-
+		
 		$this->load->library('upload', $config);
 
 		if (!$this->upload->do_upload('file')) {
@@ -130,7 +128,7 @@ class Fotografi extends CI_Controller {
 
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
-			$photo->user_id = $user->id;
+			$photo->user_id = $this->ion_auth->get_user_id();
 			$photo->caption = $metadata['caption'];
 			$photo->gear = $metadata['gear'];
 			$photo->location = $metadata['location'];

@@ -27,9 +27,9 @@
 </div>
 <script type="text/javascript">
 	  $.backstretch([
-	      "<?= img_url()?>gambar1.jpg"
-	    , "<?= img_url()?>gambar2.jpg"
-	    , "<?= img_url()?>gambar3.jpg"
+	      "<?= img_url()?>users_content/gambar1.jpg"
+	    , "<?= img_url()?>users_content/gambar2.jpg"
+	    , "<?= img_url()?>users_content/gambar3.jpg"
 	  ], {duration: 10000, fade: 750});
 </script>
 
@@ -39,9 +39,9 @@
   <div class="modal-content">
     <div id="part1" class="form col-md-3">
     	<form class = "form-horizontal" role="form">
-	      <label for = "firstname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+	      <label for = "fullname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
 	      <input type = "text" class = "form-control" id = "fullname" >
-	      <label for = "lastname" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+	      <label for = "username" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
 		  <input type = "text" class = "form-control" id = "username" >
 		  <label for = "email" class = "control-label">E&ensp;m&ensp;a&ensp;i&ensp;l</label>
 	      <input type = "text" class = "form-control" id = "email" >
@@ -52,8 +52,7 @@
 	    </form>	
     </div>
     <div id="cont_" class="col-md-9 continue">
-    	<span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span>
-    	<a href="#" id="cont"><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
+    	<a href="#" id="registration-cont"><span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
     </div>
     <div id="part2" class="form col-md-3" style="display: none;">
     	<form class = "form-horizontal" role="form">
@@ -68,7 +67,7 @@
 	    </form>	
     </div>
     <div id="done_" class="col-md-9 continue" style="display: none;">
-    	<a href="#" class="done"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
+    	<a href="#" id="registration-done"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
     </div>
     
   </div>
@@ -97,7 +96,6 @@ var modal = document.getElementById('form-reg');
 var modal2 = document.getElementById('login');
 
 // Get the button that opens the modal
-var reg = document.getElementById("register");
 var masuk = document.getElementById("masuk");
 
 var part1 = document.getElementById("part1");
@@ -109,21 +107,28 @@ var cont = document.getElementById("cont");
 // Get the <span> element that closes the modal
 
 // When the user clicks on the button, open the modal 
-reg.onclick = function() {
-    modal.style.display = "block";
-}
+$("#register").click(function() {
+    $("form-reg").modal('hide');
+    $("form-reg").modal();
+	part1.style.display = "block";
+	cont_.style.display = "block";
+	part2.style.display = "none";
+	done_.style.display = "none";
+});
 
 masuk.onclick = function() {
 	modal2.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
 
-cont.onclick = function() {
+$("#registration-cont").click(function() {
 	part1.style.display = "none";
 	cont_.style.display = "none";
 	part2.style.display = "block";
 	done_.style.display = "block";
-}
+    $("form-reg").modal('hide');
+});
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
