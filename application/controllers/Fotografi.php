@@ -108,7 +108,7 @@ class Fotografi extends CI_Controller {
 
 		$this->load->library('upload', $config);
 
-		if (!$this->upload->do_upload('userfile')) {
+		if (!$this->upload->do_upload('file')) {
 			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
 		} else {
 			$data = array('status'=>'ok', 'upload_data' => $this->upload->data());
