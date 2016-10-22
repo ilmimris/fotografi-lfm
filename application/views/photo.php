@@ -97,7 +97,7 @@
 			</div>
 		</div>
 		<div id="input-photo-progress" style="display:none;">
-			<img src="<?= img_url()?>ring.gif">
+			<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
 		</div>
 		</form>	
 	</div>
