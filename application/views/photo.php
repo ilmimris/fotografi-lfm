@@ -137,9 +137,10 @@
 	    }
 	}
 
-	function open_detail(me){
-		console.log($(me).attr('data-id'));
-	}
 }());
+
+function open_detail(me){
+	console.log($(me).attr('data-id'));
+}
 
 </script>
