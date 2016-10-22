@@ -13,7 +13,7 @@
 	$i++;
 	if (($i>0) && ($i%3==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" id=\"photos\">";
 ?>
-		<a href="#sesuatu" data-toggle="modal" data-target="#showphoto"><div class="box col-md-4">
+		<a href="#sesuatu" data-toggle="modal" data-target="#showphoto">
 		<div class="box col-md-4">
 			<img class="photos" src="<?=img_url().$photo->photo?>"/>
 			<span class="caption fade-caption">
