@@ -96,7 +96,6 @@ var modal = document.getElementById('form-reg');
 var modal2 = document.getElementById('login');
 
 // Get the button that opens the modal
-var reg = document.getElementById("register");
 var masuk = document.getElementById("masuk");
 
 var part1 = document.getElementById("part1");
@@ -108,21 +107,21 @@ var cont = document.getElementById("cont");
 // Get the <span> element that closes the modal
 
 // When the user clicks on the button, open the modal 
-reg.onclick = function() {
+$("#register").click(function() {
     $("form-reg").modal('hide');
     $("form-reg").modal();
 	part1.style.display = "block";
 	cont_.style.display = "block";
 	part2.style.display = "none";
 	done_.style.display = "none";
-}
+});
 
 masuk.onclick = function() {
 	modal2.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
 
-$("#registration-cont").onclick(function() {
+$("#registration-cont").click(function() {
 	part1.style.display = "none";
 	cont_.style.display = "none";
 	part2.style.display = "block";
