@@ -118,8 +118,8 @@
 
 	// When the user clicks on the button, open the modal
 	add.onclick = function(){
-		$('#input-photo-progress').style.display = "none";
-		$('#input-photo-form').style.display = "block";
+		$('#input-photo-progress').css("display","none");
+		$('#input-photo-form').css("display", "block");
 		$("#addphoto").modal();
 	}
 
@@ -177,8 +177,8 @@ function upload_photo(){
 	formData.append('location', $('#input-photo-location').val());
 	formData.append('other', $('#input-photo-other').val());
 
-	$('#input-photo-progress').style.display = "block";
-	$('#input-photo-form').style.display = "none";
+	$('#input-photo-progress').css("display","block");
+	$('#input-photo-form').css("display", "none");
 
 	$.ajax({
 	       url : '/fotografi/photo_add',
