@@ -103,7 +103,7 @@ class Fotografi extends CI_Controller {
 
 	public function photo_add() {
 		
-		$config['upload_path']          = FCPATH . 'assets/img/user_content';
+		$config['upload_path']          = FCPATH . 'assets/img/users_content/';
 		$config['allowed_types']        = 'jpg|png';
 
 		var_dump($config);
