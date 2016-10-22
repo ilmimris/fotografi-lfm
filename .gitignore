@@ -14,15 +14,9 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 
-<<<<<<< HEAD
-/aplication/config/
-=======
-/application/config/
 application/config/config.php 
 application/config/database.php
 
-/prototipe #2/
->>>>>>> 3439682566982453ae1f8384d0a543d89bf1b20f
 
 # IDE Files
 #-------------------------
