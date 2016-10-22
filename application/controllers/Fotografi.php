@@ -52,11 +52,18 @@ class Fotografi extends CI_Controller {
 	}
 	public function photos()
 	{
+		$this->load->model('model_photos');
+		$photos = $this->model_photos->all();
+
+		$data['photos'] = $photos;
+
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
 			$data['title'] = 'Photos | Fotografi LFM';
 			$data['islogin'] = 0; // Belum Login
+
+
 			$this->load->view('header', $data);
 			$this->load->view('photo', $data);
 			$this->load->view('footer');
