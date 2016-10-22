@@ -79,8 +79,8 @@
 		<div class="col-mod-12">
 		<?php echo form_open("auth/login");?>
 			<form class = "form-horizontal" role="form">
-		      <label for = "username" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
-			  <input id="username" name="username" class="form-control" placeholder="Username" type="text" autofocus>
+		      <label for = "identity" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+			  <input id="identity" name="identity" class="form-control" placeholder="Username" type="text" autofocus>
 		      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
 			  <input name="password" type="password" value="" class="form-control" placeholder="Password" >
 			  <input type="submit" class="btn btn-info" value="Submit">
@@ -88,7 +88,7 @@
 	    <?php echo form_close();?>
 		</div>
 	</div>
-</div>
+</div>	
 
 <script type="text/javascript">
 //Get the modal
