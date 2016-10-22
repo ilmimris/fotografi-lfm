@@ -340,8 +340,14 @@ a:focus {
   padding: 5rem 5rem 6rem 5rem;
   color: #000000;
 }
-#addphoto {
+#addphoto .title{
   color: #fff;
+  font-family: 'Bebas';
+  font-size: 2rem;
+  line-height: 1.5em;
+}
+#addphoto .modal-content{
+  margin: 2% auto;
 }
 .contactus {
   white-space: pre-line;

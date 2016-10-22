@@ -121,21 +121,25 @@
 </div>
 <div id="addphoto" class="modal">
 	<div class="modal-content">
-		<div class="col-mod-12">
-			<form class = "form-horizontal" role="form">
-			  <label for = "photo" class = "control-label">P&ensp;i&ensp;l&ensp;i&ensp;h&ensp;&ensp;F&ensp;o&ensp;t&ensp;o</label>
-			  <input type="file" name="photo" accept="image/*" required="required">
-		      <label for = "judul" class = "control-label">J&ensp;u&ensp;d&ensp;u&ensp;l</label>
-			  <input name="judul" class="form-control" placeholder="Judul Photo ini" type="text" required="required" autofocus>
-		      <label for = "description" class = "control-label">D&ensp;e&ensp;s&ensp;k&ensp;r&ensp;i&ensp;p&ensp;s&ensp;i</label>
-			  <textarea name="description" required="required" value="" class="form-control" placeholder="Deskripsi" ></textarea>
-			  <label for = "lokasi" class = "control-label">L&ensp;o&ensp;k&ensp;a&ensp;s&ensp;i</label>
-			  <input type="text" name="lokasi" value="" class="form-control" placeholder="Tipe Camera">
-			  <label for = "kamera" class = "control-label">K&ensp;a&ensp;m&ensp;e&ensp;r&ensp;a</label>
-			  <input type="text" name="kamera" value="" class="form-control" placeholder="Tipe Camera">
-			  <input type="submit" class="btn btn-info" value="Submit">
-		    </form>	
+		<form class = "form-horizontal addphoto" role="form">
+		<div class="col-md-6">
+		      <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
+			  <input name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
+		      <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
+			  <textarea name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
+			  <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
+			  <input type="text" name="gear" value="" class="form-control" placeholder="Gear">
+			  <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
+			  <input type="text" name="location" value="" class="form-control" placeholder="location">
+			  <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
+			  <input type="text" name="other" value="" class="form-control" placeholder="Additional Info">
+			  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>		  
+			  <input type="file" name="photo" accept="image/*" required="required" >
 		</div>
+		<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
+		  	<input type="submit" class="btn btn-info" value="Submit">
+		</div>
+		</form>	
 	</div>
 </div>
 <script type="text/javascript">

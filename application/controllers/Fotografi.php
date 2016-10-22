@@ -210,4 +210,54 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 		}
 	}
+	public function project()
+	{
+		if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			$data['title'] = 'Project | Fotografi LFM';
+			$data['islogin'] = 0; // Belum Login
+			$this->load->view('header', $data);
+			$this->load->view('project', $data);
+			$this->load->view('footer');
+		}
+		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+		{
+			// redirect them to the home page because they must be an administrator to view this
+			$data['title'] = 'Project | Fotografi LFM';
+			$data['islogin'] = 1; // Login Sebagai user biasa
+			$this->load->view('header', $data);
+			$this->load->view('project', $data);
+			$this->load->view('footer');
+		}
+		else
+		{
+			// Super Admin
+		}
+	}
+	public function contributor()
+	{
+		if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			$data['title'] = 'Contributor | Fotografi LFM';
+			$data['islogin'] = 0; // Belum Login
+			$this->load->view('header', $data);
+			$this->load->view('contributor', $data);
+			$this->load->view('footer');
+		}
+		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+		{
+			// redirect them to the home page because they must be an administrator to view this
+			$data['title'] = 'Contributor | Fotografi LFM';
+			$data['islogin'] = 1; // Login Sebagai user biasa
+			$this->load->view('header', $data);
+			$this->load->view('contributor', $data);
+			$this->load->view('footer');
+		}
+		else
+		{
+			// Super Admin
+		}
+	}
 }
