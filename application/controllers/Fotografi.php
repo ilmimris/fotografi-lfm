@@ -115,21 +115,23 @@ class Fotografi extends CI_Controller {
 		if (!$this->upload->do_upload('file')) {
 			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
 		} else {
+
 			$metadata = $this->input->post();
 			$this->load->model('model_photos');
 			
+			$uploaded = $this->upload->data();
+
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
 			$photo->caption = $metadata['caption'];
 			$photo->gear = $metadata['gear'];
 			$photo->location = $metadata['location'];
 			$photo->other = $metadata['other'];
-
-			$photo->photo = $config['file_name'];
+			$photo->photo = $uploaded['file_name'];
 
 			$photo->save();
 
-			$response = array('status'=>'ok', 'upload_data' => $this->upload->data());
+			$response = array('status'=>'ok', 'photo' => $photo);
 		}
 		
 		echo json_encode($response);
