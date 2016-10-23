@@ -6,7 +6,7 @@
 <?php $i = 0; foreach ($dks as $dk) {
 	$i++;
 ?>
-				<div class="inline img-dk"><a href="#" class="btn-dk-desc" style="text-decoration: none;"><img src="<?= img_url().'users_content/'.$dk->cover?>"><h4 class="dk-month"><?= $dk->month ?></h4><h4 class="dk-title"><?= $dk->title ?></h4></a></div>
+				<div class="inline img-dk"><a href="#" class="btn-dk-desc" style="text-decoration: none;"><img style="height: 410px;width: 230px;" src="<?= img_url().'users_content/'.$dk->cover?>"><h4 class="dk-month"><?= $dk->month ?></h4><h4 class="dk-title"><?= $dk->title ?></h4></a></div>
 <?php }?>
 			</div>
 		</div>
