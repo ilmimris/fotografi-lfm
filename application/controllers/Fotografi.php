@@ -168,7 +168,7 @@ class Fotografi extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	public function dk_add(){
+	public function dk_upload(){
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) return show_404();
 
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
