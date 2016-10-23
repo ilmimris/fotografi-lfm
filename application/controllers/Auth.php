@@ -539,7 +539,9 @@ class Auth extends CI_Controller {
             $response = ['status'=>'ok','message'=> $this->ion_auth->messages()];
 
         } else {
+
             $response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
+            
         }
 
         echo json_encode($response);
