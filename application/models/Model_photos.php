@@ -15,4 +15,12 @@ class Model_photos extends ORM {
 
   protected $kontrak = ["id", "title", "caption", "gear", "location", "other", "photo"];
 
+  protected function _find_query($filter){
+    $this->db->select(["photos.*","users.first_name","users.last_name"]);
+    $this->db->join("users", "photos.user_id=users.id", "left");
+    $this->db->order_by("photos.created", "desc"); 
+
+    $this->db->where($filter);
+    return $this->db->get('schedule');
+  }
 }

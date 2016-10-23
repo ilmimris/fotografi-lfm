@@ -13,31 +13,44 @@ abstract class ORM extends CI_Model {
 		$this->load->database(); 
 		$this->load->library('UUID');
 	}
-	
-	public function find($filter = array(), $special_filter = array()){
+
+	protected function _find_query($filter) {
 		$this->db->where($filter);
-		if (count($special_filter) > 0) {
-			foreach ($special_filter as $special_filter_item) {
-				$this->db->where($special_filter_item, NULL, false);
-			}
+		return $this->db->get($this->table);
+	} 
+
+	protected function _filter_property($obj) {
+		$data = new stdClass;
+
+		foreach ($obj as $key => $value) if (($key=='id') || in_array($key, $this->contract)) {
+			$data->{$key} = $value;
 		}
 
-		$query = $this->db->get($this->tabel);
-
-		return $query->result();
+		return $data;
+	}
+	
+	public function find($filter = array()){
+		return $this->_find_query($filter)->result();
 	}
 
-	public function save($data) {
+
+	public function save($obj) {
 		$db_debug = $this->db->db_debug;
 		$this->db->db_debug = FALSE;
 
-		if (isset($data->__new__)){
-			unset($data->__new__);
+
+		if (isset($obj->__new__)){
+			unset($obj->__new__);
 
 			if ($data->id == "") $data->id = $this->uuid();
+			$data = $this->_filter_property($obj);
 			$status = $this->db->insert($this->tabel, $data);
+
 		} else {
+
+			$data = $this->_filter_property($obj);
 			$status = $this->db->update($this->tabel, $data, ["id"=>$data->id]);
+			
 		}
 
 		$this->db->db_debug = $db_debug;
