@@ -17,7 +17,7 @@
 			<img class="photos" src="<?=img_url()."users_content/".$photo->photo?>"/>
 			<span class="caption fade-caption">
 				<h1><?=$photo->title?></h1>
-				<h4><?=$photo->caption?></h4>
+				<h4><?=$photo->first_name." ".$photo->last_name?></h4>
 			</span>
 		</div>
 		</a>
