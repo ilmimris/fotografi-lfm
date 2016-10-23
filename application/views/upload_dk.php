@@ -228,6 +228,8 @@
 	}
 
 	function refresh_page(data) {
+		console.log("refresh_page");
+
 		id = $('#input-upload-for').val();
 		if (data.status == "ok") {
 			$('#input-'.id).val(data.photo.id);
