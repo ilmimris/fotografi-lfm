@@ -27,8 +27,8 @@
       ?>
 
       <p>
-            <?php echo lang('create_user_company_label', 'company');?> <br />
-            <?php echo form_input($company);?>
+            <?php echo lang('create_user_field_of_study_label', 'field_of_study');?> <br />
+            <?php echo form_input($field_of_study);?>
       </p>
 
       <p>

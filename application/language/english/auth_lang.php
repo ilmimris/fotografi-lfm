@@ -57,7 +57,7 @@ $lang['create_user_heading']                           = 'Create User';
 $lang['create_user_subheading']                        = 'Please enter the user\'s information below.';
 $lang['create_user_fname_label']                       = 'First Name:';
 $lang['create_user_lname_label']                       = 'Last Name:';
-$lang['create_user_company_label']                     = 'Company Name:';
+$lang['create_user_field_of_study_label']              = 'Field of Study:';
 $lang['create_user_identity_label']                    = 'Identity:';
 $lang['create_user_email_label']                       = 'Email:';
 $lang['create_user_phone_label']                       = 'Phone:';
@@ -69,7 +69,7 @@ $lang['create_user_validation_lname_label']            = 'Last Name';
 $lang['create_user_validation_identity_label']         = 'Identity';
 $lang['create_user_validation_email_label']            = 'Email Address';
 $lang['create_user_validation_phone_label']            = 'Phone';
-$lang['create_user_validation_company_label']          = 'Company Name';
+$lang['create_user_validation_field_of_study_label']   = 'Field of Study:';
 $lang['create_user_validation_password_label']         = 'Password';
 $lang['create_user_validation_password_confirm_label'] = 'Password Confirmation';
 
