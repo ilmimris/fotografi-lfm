@@ -3,9 +3,9 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="profile_pic">
-				<img class="photos" src="<?= img_url()?>pp-1.jpg"/>
+				<img class="photos" src="<?= img_url()?><?=$profile->foto?>"/>
 				<br>
-				<h3>Firstname + Lastname</h3>
+				<h3><?=$profile->first_name?> <?=$profile->last_name?></h3>
 				<h3 style="color:grey;">Jurusan</h3>
 				<div class="socmed">
 					<a href="http://instagram.com/instalfm"  target="_blank"><img class="img-center" alt="instagram LFM" src="<?= img_url()?>logo_ig.png"/></a>
