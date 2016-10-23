@@ -373,6 +373,7 @@ class Fotografi extends CI_Controller {
 			$profile->username = $this->input->post('username');
 			$profile->save();
 
+			$this->load->model("model_users");
 			$user = $this->model_users->findById($this->ion_auth->get_user_id());
 			$user->first_name = $this->input->post('fullname');
 			$user->email = $this->input->post('email');
