@@ -147,9 +147,9 @@ class Fotografi extends CI_Controller {
 	public function dk()
 	{
 		$this->load->model('model_dk');
-		$photos = $this->model_dk->all();
+		$dks = $this->model_dk->all();
 
-		$data['dk'] = $dk;
+		$data['dks'] = $dks;
 
 		if (!$this->ion_auth->logged_in())
 		{
@@ -178,7 +178,6 @@ class Fotografi extends CI_Controller {
 			$this->load->view('upload_dk', $data);
 			$this->load->view('footer');
 		}
-		echo json_encode($response);
 	}
 	public function contact()
 	{
