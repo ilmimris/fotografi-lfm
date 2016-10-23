@@ -296,8 +296,8 @@ class Fotografi extends CI_Controller {
 	}
 	public function contributor()
 	{
-		$this->load->model("model_profil");
-		$contributors = $this->model_profil->all();
+		$this->load->model("model_profile");
+		$contributors = $this->model_profile->all();
 
 		var_dump($contributors);
 
