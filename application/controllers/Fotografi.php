@@ -267,6 +267,11 @@ class Fotografi extends CI_Controller {
 
 	public function project()
 	{
+		$this->load->model('model_project');
+		$projects = $this->model_project->all();
+
+		$data['projects'] = $projects;
+
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
@@ -290,6 +295,19 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 		}
 	}
+	public function project_detail($id = ""){
+
+		if ($id == "") return show_404();
+
+		$this->load->model('model_project');
+		$project = $this->model_project->findById($id);
+
+		$project->contributors = $project->findContributors();
+
+		echo json_encode($project);
+
+	}
+
 	public function contributor()
 	{
 		$this->load->model("model_profile");

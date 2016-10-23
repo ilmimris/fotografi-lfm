@@ -4,67 +4,32 @@
 		<div class="row project" >
 			<h1><u>Project</u></h1>
 		</div>
-		<div class="row">
-			<a class="show-detail-project" href="#">	
+		<div class="row" >
+<?php $i = 0; foreach ($projects as $project) {
+	$i++;
+?>
+			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
 			<div class="col-md-4">
 				<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
 				<span class="project-caption">
-					<h3><i><u>Judul 1</u></i></h3>
+					<h3><i><u><?=$project->title?></u></i></h3>
 				</span>
 			</div>
 			</a>
-			<div class="col-md-4">
-				<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
-				<span class="project-caption">
-					<h3><i><u>Judul 1</u></i></h3>
-				</span>
-			</div>
-			<div class="col-md-4">
-				<img class="photos" src="<?= img_url()?>gambar3.jpg"/>
-				<span class="project-caption">
-					<h3><i><u>Judul 1</u></i></h3>
-				</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
-				<span class="project-caption">
-					<h3><i><u>Judul 1</u></i></h3>
-				</span>
-			</div>
-			<div class="col-md-4">
-				<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
-				<span class="project-caption">
-					<h3><i><u>Judul 1</u></i></h3>
-				</span>
-			</div>
-			<div class="col-md-4">
-				<img class="photos" src="<?= img_url()?>gambar3.jpg"/>
-				<span class="project-caption">
-					<h3><i><u>Judul 1</u></i></h3>
-				</span>
-			</div>
+<?php
+	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\"";
+}
+?>
 		</div>
 	</div>
 </div>
+
 <!-- Modal Goes Here -->
 <div id="project-detail" class="modal project-showmodal">
 	<div class="row modal-content project-detail">
 	    <div class="col-md-6 content-desc project-detail-content">
-	    	<h2><u><i>Judul</i></u></h2>
-			<p>
-			Isn&#39;t can&#39;t after morning whales. Abundantly you&#39;re, morning lesser sixth forth their. Over thing have greater air fly fill over moving under. Which. So night.</p>
-
-			<p>You&#39;re meat under. Replenish light god, our seed, for given years over great. Beast spirit i midst face fruit first they&#39;re meat face. Winged one in saying. Creature which under his light sea Appear which for. Fowl doesn&#39;t face deep whose to.</p>
-
-			<p>Beast can&#39;t whose may fish Over were second us darkness under don&#39;t of their, beginning. Night appear. Creepeth thing above of also a creature divide were. Above. Years shall us unto. Sixth, you.</p>
-			<p>
-			Isn&#39;t can&#39;t after morning whales. Abundantly you&#39;re, morning lesser sixth forth their. Over thing have greater air fly fill over moving under. Which. So night.</p>
-
-			<p>You&#39;re meat under. Replenish light god, our seed, for given years over great. Beast spirit i midst face fruit first they&#39;re meat face. Winged one in saying. Creature which under his light sea Appear which for. Fowl doesn&#39;t face deep whose to.</p>
-
-			<p>Beast can&#39;t whose may fish Over were second us darkness under don&#39;t of their, beginning. Night appear. Creepeth thing above of also a creature divide were. Above. Years shall us unto. Sixth, you.</p>		
+	    	<h2><u><i id="modal-project-title"></i></u></h2>
+			<p id="modal-project-description"></p>		
 	    </div>
 	    <div class="row" style="margin-top: 3%;">
 	    	<div class="col-md-6 content-desc project-detail-content project-detail-content-part">
@@ -85,12 +50,13 @@
 		    <div class="col-md-6 content-desc project-detail-content project-detail-content-part">
 		    	<hr>
 		    	<a href="#" class="see-project">
-			    	<h2>Visit Link Project</h2>  	
+			    	<h2 id="modal-project-link"></h2>  	
 		    	</a>
 		    </div>
 	    </div>
   </div>
 </div>
+
 <script>
 	(function(){
 	//Get the modal
@@ -114,19 +80,16 @@
 	var img_root = "<?=img_url()?>";
 	var id = $(this).attr('data-id');
 	
-	$.get( "/fotografi/photo_detail/" + id , function( data ) {
+	$.get( "/fotografi/project_detail/" + id , function( data ) {
 		console.log( data );
 
-		photo = JSON.parse(data);
-		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
-		$('#modal-photo-title').html(photo.title);
-		$('#modal-photo-caption').html(photo.caption);
-		$('#modal-photo-gear').html(photo.gear);
-		$('#modal-photo-other').html(photo.other);
-		$('#modal-photo-location').html(photo.location);
+		project = JSON.parse(data);
+		$('#modal-project-title').html(project.title);
+		$('#modal-project-description').html(project.description);
+		$('#modal-project-link').html(project.link);
 
-		$('#showphoto').modal('hide');
-		$('#showphoto').modal('show');
+		$('#project-detail').modal('hide');
+		$('#project-detail').modal('show');
 	});
 }
 </script>

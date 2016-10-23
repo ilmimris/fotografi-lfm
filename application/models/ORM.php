@@ -28,6 +28,10 @@ abstract class ORM extends CI_Model {
 
 		return $data;
 	}
+
+	protected function _create_object($_ORM, $_data) {
+		return new ORM_Object($_ORM, $_data);
+	}
 	
 	public function find($filter = array()){
 		return $this->_find_query($filter)->result();
@@ -70,7 +74,7 @@ abstract class ORM extends CI_Model {
 		if (empty($result))
 			return false;
 		else
-			return new ORM_Object($this, $result[0]);
+			return $this->_create_object($this, $result[0]);
 	}
 
 	public function findById($id) {
@@ -87,7 +91,7 @@ abstract class ORM extends CI_Model {
 			$data[$field] = '';
 		}
 
-		$object = new ORM_Object($this, $data);
+		$object = $this->_create_object($this, $data);
 		$object->__new__ = true;
 
 		return $object;
@@ -101,7 +105,7 @@ abstract class ORM extends CI_Model {
 
 class ORM_Object {
 	
-	private $Model;
+	protected $Model;
 
 	public function __construct($_ORM, $_data) {
 		$this->Model = $_ORM;
