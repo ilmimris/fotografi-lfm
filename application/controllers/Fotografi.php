@@ -126,6 +126,15 @@ class Fotografi extends CI_Controller {
 			
 			$uploaded = $this->upload->data();
 
+			if(exif_imagetype($config['upload_path'].$uploaded['file_name']) == IMAGETYPE_JPEG) {
+
+			    $fullpath = $config['upload_path'].$uploaded['file_name'];
+			    $this->_jpeg_progressive($fullpath);
+
+			}
+
+			$this->_create_thumbnail($config['upload_path'], $uploaded['file_name']);
+
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
 			$photo->user_id = $this->ion_auth->get_user_id();
@@ -135,6 +144,8 @@ class Fotografi extends CI_Controller {
 			$photo->other = $metadata['other'];
 			$photo->photo = $uploaded['file_name'];
 
+			if (isset($metadata['type'])) $photo->type = $metadata['type'];
+
 			$photo->id = $photo->save();
 
 			$response = array('status'=>'ok', 'photo' => $photo);
@@ -142,6 +153,32 @@ class Fotografi extends CI_Controller {
 		
 		echo json_encode($response);
 
+	}
+
+	public function _jpeg_progressive($fullpath){
+		$this->load->library('jpegtranlib');
+
+		$options = array (
+			'optimize'    => TRUE,
+			'progressive' => TRUE,
+		);
+
+		$this->jpegtranlib->modify($fullpath, $options);
+	}
+
+	public function _create_thumbnail($path, $filename) {
+	    $source_path = $path . $filename;
+	    $target_path = $path . '_thumb/' . $filename;
+	    $config = array(
+	        'image_library' => 'gd2',
+	        'source_image' => $source_path,
+	        'new_image' => $target_path,
+	        'maintain_ratio' => TRUE,
+	        'create_thumb' => TRUE,
+	        'height' => 300
+	    );
+	    $this->load->library('image_lib', $config);
+	    $this->image_lib->clear();
 	}
 
 	public function dk()
