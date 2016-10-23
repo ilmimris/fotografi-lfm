@@ -124,13 +124,13 @@ $('#registration-post').click(function(){
 	console.log(data);
 	var jqxhr = $.post( "/auth/create_user_ajax", data)
 	.done(function(data) {
-		console.log("done: " + data);
+		console.log("done: "); console.log(data);
 	})
 	.fail(function(data) {
-		console.log("fail: " + data);
+		console.log("fail: "); console.log(data);
 	})
 	.always(function() {
-		console.log("finished: " + data);
+		console.log("finished: "); console.log(data);
 	});
 });
 
