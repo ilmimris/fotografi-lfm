@@ -4,7 +4,7 @@
 <?php $i = 0; foreach ($contributors as $contributor) {
 	$i++;
 ?>
-		<a id="photo1" href="<?= site_url()?>fotografi/profile/">
+		<a id="photo1" href="<?= site_url()?>fotografi/profile/<?=$contributor->id?>">
 		<div class="box col-md-3">
 			<img class="photos photos-contributor" src="<?= img_url().$contributor->foto?>"/>
 			<span class="caption fade-caption photos-contributor">
