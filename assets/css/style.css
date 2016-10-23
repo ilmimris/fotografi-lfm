@@ -508,8 +508,100 @@ u {
 .pagenation > a > h2 {
   color: grey !important;
 }
- /* Smartphones (portrait and landscape) ----------- */
+
+.show-project {
+  margin: auto 5rem;
 }
+.project-caption, .project-caption > h1,h2,h3 {
+  text-align: center;
+  margin: 10px auto;
+  color: black;
+}
+
+.project {
+  font-family: 'Daun';
+  text-transform: uppercase;
+}
+.project > h1>u {
+  border-bottom-color: grey !important;
+  line-height: 0.5em; 
+}
+.project-detail{
+  background-color: rgba(255,255,255,1); 
+  box-shadow: none ;
+  -webkit-box-shadow: none ;
+  max-width: 80%;
+  margin-top: 0px !important;
+  height: 400px !important;
+}
+
+.project-detail-content{
+  background-color: rgba(255,255,255,1); 
+  margin: 3% auto; /* 15% from the top and centered */
+  border: none ;
+  color: black;
+  box-shadow: none ;
+  -webkit-box-shadow: none ;
+  height: 500px;
+  overflow-x: hidden;
+  max-width: 80%;
+  padding: 3%;
+  z-index: 1;
+}
+.project-detail-content-part {
+  height: 250px !important;
+  margin: 0px auto !important;
+}
+.project-detail-content > h3 {
+  text-align: left;
+  text-transform: uppercase;
+}
+.project-detail-content > h2 {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 3em;
+  line-height: 0.5em;
+}
+.project-showmodal {
+  margin-top: 60px !important;
+  background-color: rgba(255,255,255,1) !important;
+}
+.contributor {
+    margin-bottom: 2%;
+}
+.img-project {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  display: inline-block;
+  vertical-align: bottom;
+}
+.nama-contributor {
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: 2em;
+  font-family: 'Daun';
+  text-transform: uppercase;
+
+}
+.see-project {
+  font-family: 'Daun';
+  text-transform: uppercase;
+}
+.see-project > h2 {
+    color: #88cee5 !important;
+    vertical-align: middle;
+    margin: 10% auto;
+}
+.thumbimage {
+  max-width: 33.33%;
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+ /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
     

@@ -370,4 +370,26 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 		}
 	}
+	public function upload_pom()
+	{
+		if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			return show_error('You must be an administrator to view this page.');
+		}
+		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+		{
+			// redirect them to the home page because they must be an administrator to view this
+			return show_error('You must be an administrator to view this page.');
+		}
+		else
+		{
+			// Super Admin
+			$data['title'] = 'Edit POM | Fotografi LFM';
+			$data['islogin'] = 2; // Login Sebagai user biasa
+			$this->load->view('header', $data);
+			$this->load->view('upload_pom', $data);
+			$this->load->view('footer');
+		}
+	}
 }
