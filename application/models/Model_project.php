@@ -22,7 +22,7 @@ class Model_project extends ORM {
     return $this->db->get($this->table);
   }
 
-  protected function findByUserId($id) {
+  public function findByUserId($id) {
     $query = "SELECT * FROM `projects` WHERE `projects`.`id` IN (SELECT `project_id` FROM `projects_contributors` WHERE user_id = ?)";
     $ci_query = $this->db->query($query, [$id]);
 
