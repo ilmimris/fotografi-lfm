@@ -178,7 +178,10 @@ class Fotografi extends CI_Controller {
 	        'height' => 300
 	    );
 	    $this->load->library('image_lib', $config);
-	    $this->image_lib->clear();
+	    if (!$this->image_lib->resize()) {
+        	echo $this->image_lib->display_errors();
+    	}
+    	$this->image_lib->clear();
 	}
 
 	public function dk()
