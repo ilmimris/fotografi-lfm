@@ -156,11 +156,20 @@ input.btn.btn-info {
   text-decoration: none !important;
   font-size: 2em;
   margin: 12% auto;
-
 }
 .save > a, .save > a:hover {
   text-decoration: none !important;
 }
+
+button.save {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
 a#registration-cont, a#registration-cont:hover{
   color: #FFF;
   text-decoration: none;
