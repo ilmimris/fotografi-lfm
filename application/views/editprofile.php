@@ -20,7 +20,7 @@
 					  <span class="red title">*&ensp;&ensp;M&ensp;U&ensp;S&ensp;T&ensp;&ensp;B&ensp;E&ensp;&ensp;F&ensp;I&ensp;L&ensp;L&ensp;E&ensp;D</span>
 				</div>
 				<div class="col-md-6" style="margin: 3% auto;text-align: center;vertical-align: middle;">
-					  <img id="profile-pic" src="#" style="max-width: 60%;-webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;" />
+					  <img id="profile-pic" src="#" style="max-width: 60%;" />
 				</div>
 			</div>
 			<div class="row">
