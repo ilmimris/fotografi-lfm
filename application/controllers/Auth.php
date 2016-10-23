@@ -529,7 +529,7 @@ class Auth extends CI_Controller {
 
 			$response = ['status'=>'failed','message'=> '<p>Email is not valid.</p>'];
 
-		} else if (!filter_var($this->input->post('alternative_email'), FILTER_VALIDATE_EMAIL)) {
+		} else if ($this->input->post('alternative_email') != "" && !filter_var($this->input->post('alternative_email'), FILTER_VALIDATE_EMAIL)) {
 
 			$response = ['status'=>'failed','message'=> '<p>Alternative email is not valid.</p>'];
 
