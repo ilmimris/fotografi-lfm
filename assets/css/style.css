@@ -666,6 +666,9 @@ iPad 3
     #photos {
         margin: 0 15% 0 15%;
     }
+    div#photos.row.dk-all {
+        margin: 0;
+    }
     .photos {
         height: auto;
         width: 100%;
