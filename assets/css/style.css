@@ -603,6 +603,14 @@ u {
 .upload_dk > input {
   display: none;
 }
+.upload_dk > label > img {
+  max-width: 96%;
+  padding: 1%;
+}
+.upload_dk_left > label > img {
+  float: right;
+}
+
 
  /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
