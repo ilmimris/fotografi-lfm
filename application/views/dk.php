@@ -40,13 +40,16 @@
 			    </a>
 			</div>
 			<div class="row" id="photos">
-				<a id="photo1" href="#sesuatu" data-toggle="modal" data-target="#showphoto"><div class="box col-md-offset-1 col-md-5">
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite1">
+				<div class="box col-md-offset-1 col-md-5">
 					<img class="photos" id="dk-modal-image-elite1" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-elite1"></h1>
 						<h4 id="dk-modal-caption-photo-elite1"></h4>
 					</span>
-				</div></a>
+				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite2">
 				<div class="box col-md-5">
 					<img class="photos" id="dk-modal-image-elite2" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -54,8 +57,10 @@
 						<h4 id="dk-modal-caption-photo-elite2"></h4>
 					</span>
 				</div>
+				</a>
 			</div>
 			<div class="row" id="photos">	
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite3">
 				<div class="col-md-offset-1 box col-md-5">
 					<img class="photos" id="dk-modal-image-elite3" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -63,6 +68,8 @@
 						<h4 id="dk-modal-caption-photo-elite3"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite4">
 				<div class="box col-md-5">
 					<img class="photos" id="dk-modal-image-elite4" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -70,6 +77,7 @@
 						<h4 id="dk-modal-caption-photo-elite4"></h4>
 					</span>
 				</div>
+				</a>
 			</div>
 			<div class="socmed">
 				<a class="btn-dk-all" href="#">
@@ -88,14 +96,16 @@
 			    </a>
 			</div>
 			<div class="row dk-all" id="photos">
-				<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all1">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all1" src="<?= img_url()?>chevron.png"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all1"></h1>
 						<h4 id="dk-modal-caption-photo-all1"></h4>
 					</span>
-				</div></a>
+				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all2">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all2" src="<?= img_url()?>chevron.png"/>
 					<span class="caption fade-caption">
@@ -103,6 +113,8 @@
 						<h4 id="dk-modal-caption-photo-all2"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all3">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all3" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
@@ -110,6 +122,8 @@
 						<h4 id="dk-modal-caption-photo-all3"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all4">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all4" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -117,8 +131,10 @@
 						<h4 id="dk-modal-caption-photo-all4"></h4>
 					</span>
 				</div>
+				</a>
 			</div>
 			<div class="row dk-all" id="photos">	
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all5">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all5" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -126,6 +142,8 @@
 						<h4 id="dk-modal-caption-photo-all5"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all6">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all6" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -133,13 +151,17 @@
 						<h4 id="dk-modal-caption-photo-all6"></h4>
 					</span>
 				</div>
-				<a href="#sesuatu"><div class="box col-md-3">
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all7">
+				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all7" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all7"></h1>
 						<h4 id="dk-modal-caption-photo-all7"></h4>
 					</span>
-				</div></a>
+				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all8">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all8" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -147,15 +169,19 @@
 						<h4 id="dk-modal-caption-photo-all8"></h4>
 					</span>
 				</div>
+				</a>
 			</div>
 			<div class="row dk-all" id="photos">
-				<a href="#sesuatu" ><div class="box col-md-3">
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all9">
+				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all9" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all9"></h1>
 						<h4 id="dk-modal-caption-photo-all9"></h4>
 					</span>
-				</div></a>
+				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all10">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all10" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -163,6 +189,8 @@
 						<h4 id="dk-modal-caption-photo-all10"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all11">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all11" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
@@ -170,6 +198,8 @@
 						<h4 id="dk-modal-caption-photo-all11"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all12">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all12" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -177,8 +207,10 @@
 						<h4 id="dk-modal-caption-photo-all12"></h4>
 					</span>
 				</div>
+				</a>
 			</div>
 			<div class="row dk-all" id="photos">	
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all13">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all13" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -186,6 +218,8 @@
 						<h4 id="dk-modal-caption-photo-all13"></h4>
 					</span>
 				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all14">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all14" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -193,13 +227,17 @@
 						<h4 id="dk-modal-caption-photo-all14"></h4>
 					</span>
 				</div>
-				<a href="#sesuatu" ><div class="box col-md-3">
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all15">
+				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all15" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all15"></h1>
 						<h4 id="dk-modal-caption-photo-all15"></h4>
 					</span>
-				</div></a>
+				</div>
+				</a>
+				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all16">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all16" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -207,6 +245,7 @@
 						<h4 id="dk-modal-caption-photo-all16"></h4>
 					</span>
 				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -325,6 +364,7 @@ function open_detail_dk(){
 			var photo = dk.photos[photos_key[i]];
 			$('#dk-modal-title-photo-'+photos_key[i]).html(photo.title);
 			$('#dk-modal-caption-photo-'+photos_key[i]).html(photo.caption);
+			$('#dk-modal-caption-link-'+photos_key[i]).attr("data-id", photo.id);
 			$('#dk-modal-image-'+photos_key[i]).attr("src", img_root + "users_content/" + photo.photo);
 		}
 		
