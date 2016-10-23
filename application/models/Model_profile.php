@@ -16,7 +16,7 @@ class Model_profile extends ORM {
   protected $contract = ["id", "jurusan", "angkatan", "angkatan_lfm", "email_alternatif", "foto"];
 
   protected function _find_query($filter){
-    $this->db->select(["users_profile.*","users.first_name","users.last_name"]);
+    $this->db->select(["users_profile.*","users.first_name","users.last_name","users.email"]);
     $this->db->join("users", "users_profile.id=users.id", "left");
 
     $this->db->where($filter);
