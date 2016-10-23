@@ -365,13 +365,17 @@ class Fotografi extends CI_Controller {
 		}
 		else
 		{
-			$user = $this->model_profile->findById($this->ion_auth->get_user_id());
+			$profile = $this->model_profile->findById($this->ion_auth->get_user_id());
 
-			$user->jurusan = $this->input->post('jurusan');
-			$user->angkatan_lfm = $this->input->post('angkatan_lfm');
-			$user->email_alternatif = $this->input->post('email_alternatif');
-			$user->username = $this->input->post('username');
+			$profile->jurusan = $this->input->post('jurusan');
+			$profile->angkatan_lfm = $this->input->post('angkatan_lfm');
+			$profile->email_alternatif = $this->input->post('email_alternatif');
+			$profile->username = $this->input->post('username');
+			$profile->save();
 
+			$user = $this->model_users->findById($this->ion_auth->get_user_id());
+			$user->first_name = $this->input->post('fullname');
+			$user->email = $this->input->post('email');
 			$user->save();
 
 		    redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
