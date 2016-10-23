@@ -42,8 +42,8 @@ abstract class ORM extends CI_Model {
 		if (isset($obj->__new__)){
 			unset($obj->__new__);
 
-			if ($data->id == "") $data->id = $this->uuid();
 			$data = $this->_filter_property($obj);
+			if ($data->id == "") $data->id = $this->uuid();
 			$status = $this->db->insert($this->table, $data);
 
 		} else {
