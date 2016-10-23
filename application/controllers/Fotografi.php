@@ -27,7 +27,7 @@ class Fotografi extends CI_Controller {
 				$user_id = $this->ion_auth->get_user_id();
 				$data['user'] = $this->model_profile->findById($user_id);
 			}
-			
+
 			$this->load->view('header', $data);
 			$this->load->view('pom', $data);
 			$this->load->view('footer');
@@ -42,7 +42,7 @@ class Fotografi extends CI_Controller {
 				$user_id = $this->ion_auth->get_user_id();
 				$data['user'] = $this->model_profile->findById($user_id);
 			}
-			
+
 			$this->load->view('header', $data);
 			$this->load->view('pom', $data);
 			$this->load->view('footer');
@@ -75,7 +75,7 @@ class Fotografi extends CI_Controller {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('photo', $data);
 		$this->load->view('footer');
@@ -186,7 +186,7 @@ class Fotografi extends CI_Controller {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('dk', $data);
 		$this->load->view('footer');
@@ -202,7 +202,7 @@ class Fotografi extends CI_Controller {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('upload_dk', $data);
 		$this->load->view('footer');
@@ -237,7 +237,7 @@ class Fotografi extends CI_Controller {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('contact', $data);
 		$this->load->view('footer');		
@@ -295,11 +295,10 @@ class Fotografi extends CI_Controller {
 		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai use
 
 		if ($data['islogin']) {
-		r biasa
-		$user_id = $this->ion_auth->get_user_id();
+			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('project', $data);
 		$this->load->view('footer');
@@ -338,7 +337,7 @@ class Fotografi extends CI_Controller {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('contributor', $data);
 		$this->load->view('footer');
@@ -368,7 +367,7 @@ class Fotografi extends CI_Controller {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		
+
 		$this->load->view('header', $data);
 		$this->load->view('profile', $data);
 		$this->load->view('footer');
@@ -387,7 +386,7 @@ class Fotografi extends CI_Controller {
 				$user_id = $this->ion_auth->get_user_id();
 				$data['user'] = $this->model_profile->findById($user_id);
 			}
-			
+
 			$this->load->view('header', $data);
 			$this->load->view('editprofile', $data);
 			$this->load->view('footer');
@@ -402,7 +401,7 @@ class Fotografi extends CI_Controller {
 				$user_id = $this->ion_auth->get_user_id();
 				$data['user'] = $this->model_profile->findById($user_id);
 			}
-			
+
 			$this->load->view('header', $data);
 			$this->load->view('editprofile', $data);
 			$this->load->view('footer');
@@ -434,7 +433,7 @@ class Fotografi extends CI_Controller {
 				$user_id = $this->ion_auth->get_user_id();
 				$data['user'] = $this->model_profile->findById($user_id);
 			}
-			
+
 			$this->load->view('header', $data);
 			$this->load->view('upload_pom', $data);
 			$this->load->view('footer');
@@ -462,7 +461,7 @@ class Fotografi extends CI_Controller {
 				$user_id = $this->ion_auth->get_user_id();
 				$data['user'] = $this->model_profile->findById($user_id);
 			}
-			
+
 			$this->load->view('header', $data);
 			$this->load->view('upload_project', $data);
 			$this->load->view('footer');
