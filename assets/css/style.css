@@ -477,6 +477,9 @@ u {
 .slick-disabled {
   display: none !important;
 }
+.editprofile .title{
+  font-family: 'Bebas';
+}
 
  /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -665,6 +668,9 @@ iPad 3
     }
     #photos {
         margin: 0 15% 0 15%;
+    }
+    div#photos.row.dk-all {
+        margin: 0;
     }
     .photos {
         height: auto;

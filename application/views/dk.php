@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="dk">
-				<div class="inline img-dk"><a class="btn-dk-desc" href="#" data-toggle="modal" data-target="#dk-showdescmodal" style="text-decoration: none;"><img src="<?= img_url()?>dk1.jpg"><h4 class="dk-month">Juni 2016</h4><h4 class="dk-title">Solitude</h4></a></div>
+				<div class="inline img-dk"><a href="#" class="btn-dk-desc" style="text-decoration: none;"><img src="<?= img_url()?>dk1.jpg"><h4 class="dk-month">Juni 2016</h4><h4 class="dk-title">Solitude</h4></a></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk2.jpg"><h4 class="dk-month">Juli 2016</h4><h4 class="dk-title">Kembara</h4></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk3.jpg"><h4 class="dk-month">Sept 2016</h4><h4 class="dk-title">Motions</h4></div>
 				<div class="inline img-dk"><img src="<?= img_url()?>dk4.jpg"><h4 class="dk-month">Aug 2016</h4><h4 class="dk-title">Sesuatu</h4></div>
@@ -31,7 +31,7 @@
 			</p>			
 		</div>
 		<div class="dk-btn socmed">
-			<a class="btn-dk-elite" href="#" data-toggle="modal" data-target="#dk-showelitemodal">
+			<a class="btn-dk-elite" href="#">
 		      <img class="img-center" src="<?= img_url()?>chevron.png">
 		    </a>
 		</div>
@@ -41,7 +41,7 @@
 	<div class="col-md-offset-1 col-md-10 dk-modal">
 		<div id="showdesc" class="dk-content-desc content-desc dk-content-elite">
 			<div class="socmed up">
-				<a class="btn-dk-desc" href="#" data-toggle="modal" data-target="#dk-showdescmodal">
+				<a class="btn-dk-desc" href="#">
 			      <img class="img-center" src="<?= img_url()?>chevron.png">
 			    </a>
 			</div>
@@ -78,15 +78,174 @@
 				</div>
 			</div>
 			<div class="socmed">
-				<a class="btn-dk-all" href="#" data-toggle="modal" data-target="#dk-showallmodal"">
+				<a class="btn-dk-all" href="#">
 			      <img class="img-center" src="<?= img_url()?>chevron.png">
 			    </a>
 			</div>			
 		</div>
 	</div>
 </div>
-
-
+<div id="dk-showallmodal" class="modal dk-showmodal">
+	<div class="col-md-offset-1 col-md-10 dk-modal">
+		<div id="showdesc" class="dk-content-desc content-desc dk-content-elite">
+			<div class="socmed up" style="margin-top: -3%;">
+				<a class="btn-dk-elite" href="#">
+			      <img class="img-center" src="<?= img_url()?>chevron.png">
+			    </a>
+			</div>
+			<div class="row dk-all" id="photos">
+				<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 1</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div></a>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 2</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 4 </h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 5</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+			</div>
+			<div class="row dk-all" id="photos">	
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 4 </h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 5</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<a href="#sesuatu"><div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 1</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div></a>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 2</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+			</div>
+			<div class="row dk-all" id="photos">
+				<a href="#sesuatu" ><div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 1</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div></a>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 2</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 4 </h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 5</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+			</div>
+			<div class="row dk-all" id="photos">	
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 4 </h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 5</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+				<a href="#sesuatu" ><div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 1</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div></a>
+				<div class="box col-md-3">
+					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<span class="caption fade-caption">
+						<h1>Judul 2</h1>
+						<h4>Nama Seseorang</h4>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="showphoto" class="modal">
+	<div class="photo-modal-content">
+		<div class="col-mod-12">
+			<img class="photosmodal" id="modal-photo-image"/>
+		</div>
+	</div>
+	<a id="description" href="#" class="btn-modal">
+      <img class="btn-right " src="<?= img_url()?>chevron.png">
+    </a>
+</div>
+<div id="showdescphoto" class="modal">
+	<div class="photo-modal-content">
+		<div class="col-mod-12">
+			<div class="content-desc">
+				<h1 id="modal-photo-title"></h1>
+				<h2 id="modal-photo-author"></h2>
+				<p  id="modal-photo-caption"></p>
+				<br>
+				<p><span id="modal-photo-other"></span>
+				<span id="modal-photo-location"></span>
+				<span id="modal-photo-gear"></span>
+				</p>				
+			</div>
+			<a id="up-photo" href="#" class="btn-modal">
+		      <img class="btn-right up" src="<?= img_url()?>chevron.png">
+		    </a>
+		</div>
+	</div>
+</div>
 <script>
 	$(document).ready(function(){
 	 $('.dk').slick({
@@ -109,8 +268,6 @@
 	//var	addphoto = document.getElementById('addphoto');
 
 	// Get the button that opens the modal
-	var desc = document.getElementByClass("btn-dk-desc");
-	var elite = document.getElementByClass("btn-dk-elite");
 	//var add = document.getElementById("btn-addphoto");
 
 	// When the user clicks on the button, open the modal
@@ -120,15 +277,33 @@
 	//	$("#addphoto").modal();
 	//}
 
-	desc.onclick = function(){
-	    modal.style.display = "block";
-		dkelite.style.display = "none";
-	}
+	$('.btn-dk-desc').click(function(){
 
-	elite.onclick = function(){
-	    modal.style.display = "none";
-		dkelite.style.display = "block";
-	}
+		//cleanup
+		$("#dk-showdescmodal").modal('hide');
+		$("#dk-showelitemodal").modal('hide');
+		$("#dk-showallmodal").modal('hide');
+
+		$("#dk-showdescmodal").modal('show');
+	});
+
+	$('.btn-dk-elite').click(function(){
+		//cleanup
+		$("#dk-showdescmodal").modal('hide');
+		$("#dk-showelitemodal").modal('hide');
+		$("#dk-showallmodal").modal('hide');
+
+		$("#dk-showelitemodal").modal('show');
+	});
+
+	$('.btn-dk-all').click(function(){
+		//cleanup
+		$("#dk-showdescmodal").modal('hide');
+		$("#dk-showelitemodal").modal('hide');
+		$("#dk-showallmodal").modal('hide');
+
+		$("#dk-showallmodal").modal('show');
+	});
 
 	//up.onclick = function() {
 	//    modal.style.display = "block";
@@ -136,17 +311,30 @@
 	//}
 
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == dkelite) {
-	        modal.style.display = "none";
-	        //showdesc.style.display = "none";
-	    }
-	    //else if(event.target == addphoto){
-	    //	addphoto.style.display = "none";
-	    //}
-	}
+
 
 }());
+
+function open_detail(){
+	var img_root = "<?=img_url()?>";
+	var id = $(this).attr('data-id');
+	
+	$.get( "/fotografi/photo_detail/" + id , function( data ) {
+		console.log( data );
+
+		photo = JSON.parse(data);
+		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
+		$('#modal-photo-title').html(photo.title);
+		$('#modal-photo-caption').html(photo.caption);
+		$('#modal-photo-gear').html(photo.gear);
+		$('#modal-photo-other').html(photo.other);
+		$('#modal-photo-location').html(photo.location);
+
+		$('#showphoto').modal('hide');
+		$('#showphoto').modal();
+	});
+}
+
 </script>
 <!--
 -->
