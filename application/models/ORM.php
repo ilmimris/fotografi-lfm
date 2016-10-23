@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 abstract class ORM extends CI_Model {
 	
-	protected $tabel;
+	protected $table;
 
-	protected $kontrak;
+	protected $contract;
 
 	public function __construct(){
 		parent::__construct();
@@ -44,12 +44,12 @@ abstract class ORM extends CI_Model {
 
 			if ($data->id == "") $data->id = $this->uuid();
 			$data = $this->_filter_property($obj);
-			$status = $this->db->insert($this->tabel, $data);
+			$status = $this->db->insert($this->table, $data);
 
 		} else {
 
 			$data = $this->_filter_property($obj);
-			$status = $this->db->update($this->tabel, $data, ["id"=>$data->id]);
+			$status = $this->db->update($this->table, $data, ["id"=>$data->id]);
 			
 		}
 
@@ -59,7 +59,7 @@ abstract class ORM extends CI_Model {
 	}
 
 	public function delete($data) {
-		$this->db->delete($this->tabel, ["id"=>$data->id]);
+		$this->db->delete($this->table, ["id"=>$data->id]);
 		return $this->db->affected_rows();
 	}
 
@@ -73,7 +73,7 @@ abstract class ORM extends CI_Model {
 	}
 
 	public function findById($id) {
-		return $this->findOne(["id" => $id]);
+		return $this->findOne([$this->table . ".id" => $id]);
 	}
 
 	public function all() {
@@ -82,7 +82,7 @@ abstract class ORM extends CI_Model {
 
 	public function create() {
 		$data = array();
-		foreach ($this->kontrak as $field) {
+		foreach ($this->contract as $field) {
 			$data[$field] = '';
 		}
 
