@@ -50,7 +50,7 @@
 	$i++;
 ?>
 						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
+							<img class="photos" src="<?=img_url()?>pp-3.jpg" />
 						</div>
 						<div class="col-md-6 desc-projects">
 							<h1><?=$projects->title?></h1>
@@ -62,50 +62,6 @@
 	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";
 }
 ?>
-					</div>
-					<div class="row	">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
 					</div>
 				</div>
 			</div>
