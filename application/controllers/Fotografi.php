@@ -382,7 +382,7 @@ class Fotografi extends CI_Controller {
 		$data['islogin'] = 0; // Belum Login
 
 		$data['user_id'] = $this->ion_auth->get_user_id();
-		$data['user'] = $this->model_profile->findById($user_id);
+		$data['user'] = $this->model_profile->findById($data['user_id']);
 
 		var_dump($data['user_id']);
 
