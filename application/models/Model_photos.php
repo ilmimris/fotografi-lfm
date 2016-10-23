@@ -11,8 +11,16 @@ class Model_photos extends ORM {
     parent::__construct();
   }
 
-  protected $tabel = 'photos';
+  protected $table = 'photos';
 
-  protected $kontrak = ["id", "title", "caption", "gear", "location", "other", "photo"];
+  protected $contract = ["id", "user_id", "title", "caption", "gear", "location", "other", "photo"];
 
+  protected function _find_query($filter){
+    $this->db->select(["photos.*","users.first_name","users.last_name"]);
+    $this->db->join("users", "photos.user_id=users.id", "left");
+    $this->db->order_by("photos.created", "desc"); 
+
+    $this->db->where($filter);
+    return $this->db->get($this->table);
+  }
 }

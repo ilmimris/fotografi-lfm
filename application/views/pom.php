@@ -91,22 +91,6 @@
 </div>	
 
 <script type="text/javascript">
-//Get the modal
-var modal = document.getElementById('form-reg');
-var modal2 = document.getElementById('login');
-
-// Get the button that opens the modal
-var masuk = document.getElementById("masuk");
-
-var part1 = document.getElementById("part1");
-var cont_ = document.getElementById("cont_");
-var part2 = document.getElementById("part2");
-var done_ = document.getElementById("done_");
-var cont = document.getElementById("cont");
-
-// Get the <span> element that closes the modal
-
-// When the user clicks on the button, open the modal 
 $("#register").click(function() {
     $("form-reg").modal('hide');
 	$("#part2").hide();
@@ -116,11 +100,6 @@ $("#register").click(function() {
     $("form-reg").modal('show');
 });
 
-masuk.onclick = function() {
-	modal2.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-
 $("#registration-cont").click(function() {
 	$("#part1").hide();
 	$("#cont_").hide();
@@ -128,7 +107,6 @@ $("#registration-cont").click(function() {
 	$("#done_").show();
 });
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         $("#form-reg").modal('hide');
