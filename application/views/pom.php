@@ -108,12 +108,12 @@ var cont = document.getElementById("cont");
 
 // When the user clicks on the button, open the modal 
 $("#register").click(function() {
-	$("#part1").show();
-	$("#cont_").show();
+    $("form-reg").modal('hide');
 	$("#part2").hide();
 	$("#done_").hide();
-    $("form-reg").modal('hide');
-    $("form-reg").modal();
+	$("#part1").show();
+	$("#cont_").show();
+    $("form-reg").modal('show');
 });
 
 masuk.onclick = function() {
@@ -131,8 +131,8 @@ $("#registration-cont").click(function() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
-        modal2.style.display = "none";
+        $("#form-reg").modal('show');
+        $("#login").modal('hide');
     }
 }
 </script>
