@@ -7,7 +7,8 @@
 				<div class="col-md-6">
 					<label for = "project-title" class = "control-label title">Title of Project</label>
 					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" autofocus>
-					<input id="dk-cover" type="file" name="dk-cover" accept="image/*" required="required" >
+					<label for = "project-cover" class = "control-label title">Project Cover</label>
+					<input id="project-cover" type="file" name="dk-cover" accept="image/*" required="required" >
 					<label for = "project-desc" class = "control-label title">Deskripsi</label>
 					<textarea id="project-desc" name="project-desc" class="form-control" type="text" required="required"></textarea>
 					<label for = "project-link" class = "control-label title">Link</label>
