@@ -195,7 +195,9 @@
 		$('#input-photo-progress').css("display","none");
 		$('#input-photo-form').css("display", "block");
 		$("#addphoto").modal('show');
-		console.log(this);
+
+		id = $(this).attr('data-id');
+		$('#input-upload-for').val(id);
 	});
 
 	function upload_photo(){
@@ -207,6 +209,7 @@
 	formData.append('gear', $('#input-photo-gear').val());
 	formData.append('location', $('#input-photo-location').val());
 	formData.append('other', $('#input-photo-other').val());
+	formData.append('type', 1);
 
 	$('#input-photo-progress').css("display","block");
 	$('#input-photo-form').css("display", "none");
@@ -219,10 +222,16 @@
 	       contentType: false,  // tell jQuery not to set contentType
 	       success : function(data) {
 	           console.log(data);
+	           refresh_page(data);
 	           $("#addphoto").modal('hide');
-
-	           location.reload();
 	       }
 	});
+	}
+
+	function refresh_page(data) {
+		id = $('#input-upload-for').val();
+		$('input-'.id).val(data.id);
+
+
 	}
 </script>

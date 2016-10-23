@@ -53,7 +53,7 @@ class Fotografi extends CI_Controller {
 	public function photos()
 	{
 		$this->load->model('model_photos');
-		$photos = $this->model_photos->all();
+		$photos = $this->model_photos->find(['type'=>0]);
 
 		$data['photos'] = $photos;
 
