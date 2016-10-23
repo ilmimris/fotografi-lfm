@@ -34,26 +34,7 @@
 	    <div class="row" style="margin-top: 3%;">
 	    	<div class="col-md-6 content-desc project-detail-content project-detail-content-part">
 		    	<h3>contributor</h3>
-		    	<div class="contributor">
-			    	<div class="img-project" style="background-image: url('<?= img_url()?>pp-2.jpg');"></div>
-			    	<h4 class="nama-contributor">Nama seseorang</h4>
-		    	</div>
-		    	<div class="contributor">
-			    	<div class="img-project" style="background-image: url('<?= img_url()?>pp-9.jpg');"></div>
-			    	<h4 class="nama-contributor">Nama seseorang</h4>
-		    	</div>
-				<div class="contributor">
-					<div class="img-project" style="background-image: url('<?= img_url()?>pp-4.jpg');"></div>
-					<h4 class="nama-contributor">Nama seseorang</h4>
-				</div>
-<?php foreach ($contributors as $contributor) { ?>
-			<a href="<?=site_url('/fotografi/profile/' . $contributor->id)?>" class="show-detail-contributor">
-				<div class="contributor">
-					<div class="img-project" style="background-image: url('<?= img_url().$contributor->foto?>');"></div>
-					<h4 class="nama-contributor"><?=$contributor->first_name?> <?=$contributor->last_name?></h4>
-				</div>
-			</a>
-<?php } ?>
+		    	<div id="modal-project-contributor-list"></div>
 		    </div>	
 		    <div class="col-md-6 content-desc project-detail-content project-detail-content-part">
 		    	<hr>
@@ -64,6 +45,8 @@
 	    </div>
   </div>
 </div>
+
+
 
 <script>
 	(function(){
@@ -85,6 +68,7 @@
 	}());
 
 	function open_detail(){
+	var site_root = "<?=site_url()?>";
 	var img_root = "<?=img_url()?>";
 	var id = $(this).attr('data-id');
 	
@@ -95,6 +79,19 @@
 		$('#modal-project-title').html(project.title);
 		$('#modal-project-description').html(project.description);
 		$('#modal-project-link').html(project.link);
+
+		for (var i = data.contributors.length - 1; i >= 0; i--) {
+			
+			id = data.contributors[i].foto
+			foto = data.contributors[i].foto
+			name = data.contributors[i].first_name
+			
+			element = "<a href=\"/fotografi/profile/"+id+"\" class=\"show-detail-contributor\"><div class=\"contributor\"><div class=\"img-project\" style=\"background-image: url('"+img_root+"users_content/"+foto+"');\"></div><h4 class=\"nama-contributor\">"+name+"</h4></div></a>";
+
+
+			$("#modal-project-contributor-list").html("");
+			$("#modal-project-contributor-list").append(element);
+		}
 
 		$('#project-detail').modal('hide');
 		$('#project-detail').modal('show');
