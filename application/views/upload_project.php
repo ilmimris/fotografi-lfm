@@ -5,8 +5,17 @@
 			<div class="row"><h3>Add Project</h3></div>
 			<div class="row">
 				<div class="col-md-6">
-					<label for = "project-title" class = "control-label title">P</label>
-					<input id="project-title" name="project-title" class="form-control" type="text" required="required" autofocus>
+					<label for = "project-title" class = "control-label title">Title of Project</label>
+					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" autofocus>
+					<input id="dk-cover" type="file" name="dk-cover" accept="image/*" required="required" >
+					<label for = "project-desc" class = "control-label title">Deskripsi</label>
+					<textarea id="project-desc" name="project-desc" class="form-control" type="text" required="required"></textarea>
+					<label for = "project-link" class = "control-label title">Link</label>
+					<input id="project-link" name="project-link" class="form-control"s type="text" required="required">
+					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
+					<input id="project-contributor" name="project-contributor" class="form-control"s type="text" required="required">
+
+					
 				</div>
 				<div class="col-md-6">
 					
