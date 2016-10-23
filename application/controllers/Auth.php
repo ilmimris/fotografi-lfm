@@ -436,7 +436,7 @@ class Auth extends CI_Controller {
             $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique[' . $tables['users'] . '.email]');
         }
         $this->form_validation->set_rules('phone', $this->lang->line('create_user_validation_phone_label'), 'trim');
-        $this->form_validation->set_rules('company', $this->lang->line('create_user_validation_company_label'), 'trim');
+        $this->form_validation->set_rules('field_of_study', $this->lang->line('create_user_validation_company_label'), 'trim');
         $this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
         $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
@@ -449,7 +449,7 @@ class Auth extends CI_Controller {
             $additional_data = array(
                 'first_name' => $this->input->post('first_name'),
                 'last_name'  => $this->input->post('last_name'),
-                'company'    => $this->input->post('company'),
+                'field_of_study' => $this->input->post('field_of_study'),
                 'phone'      => $this->input->post('phone'),
             );
         }
@@ -521,25 +521,42 @@ class Auth extends CI_Controller {
 
     function create_user_ajax(){
 
-		if ($id = $this->ion_auth->register(
-				$this->input->post('identity'), 
+		if ($this->ion_auth->username_check($this->input->post('username'))) {
+
+			$response = ['status'=>'failed','message'=> '<p>Username is already in use.</p>'];
+
+		} else if (!filter_var($this->input->post('email'), FILTER_VALIDATE_EMAIL)) {
+
+			$response = ['status'=>'failed','message'=> '<p>Email is not valid.</p>'];
+
+		} else if ($this->input->post('alternative_email') != "" && !filter_var($this->input->post('alternative_email'), FILTER_VALIDATE_EMAIL)) {
+
+			$response = ['status'=>'failed','message'=> '<p>Alternative email is not valid.</p>'];
+
+		} else if ($id = $this->ion_auth->register(
+				strtolower($this->input->post('username')), 
 				$this->input->post('password'), 
 				$this->input->post('email'), 
-				$this->input->post('additional_data'))) {
+				['first_name' =>$this->input->post('fullname'),'last_name' => ''])) {
 
-        	$this->load->model('Model_profile');
+        	$this->load->model('model_profile');
+
         	$profile = $this->model_profile->create();
         	$profile->id = $id;
-        	$profile->jurusan = $this->input->post('filed_of_study');
+        	$profile->jurusan = $this->input->post('field_of_study');
         	$profile->angkatan = $this->input->post('batch');
-        	$profile->angkatan_lfm = $this->input->post('batch_lfm');
+        	$profile->angkatan_lfm = $this->input->post('lfm_batch');
         	$profile->email_alternatif = $this->input->post('alternative_email');
         	$profile->save();
 
             $response = ['status'=>'ok','message'=> $this->ion_auth->messages()];
 
         } else {
-            $response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
+
+        	if ($this->ion_auth->username_check($this->input->post('username'))) {
+            	$response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
+        	}
+
         }
 
         echo json_encode($response);
