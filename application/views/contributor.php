@@ -15,7 +15,7 @@
 		</a>
 
 <?php
-	if (($i>0) && ($i%3==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" id=\"photos\">";
+	if (($i>0) && ($i%4==0) && (($i+1)<count($contributors))) echo "</div><div class=\"row\" id=\"photos\">";
 }
 ?>
  	</div>
