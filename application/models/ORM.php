@@ -36,6 +36,9 @@ abstract class ORM extends CI_Model {
 
 	public function save($obj) {
 
+		$db_debug = $this->db->db_debug;
+		$this->db->db_debug = FALSE;
+
 		if (isset($obj->__new__)){
 			unset($obj->__new__);
 
