@@ -41,14 +41,14 @@
 			</div>
 			<div class="row" id="photos">
 				<a id="photo1" href="#sesuatu" data-toggle="modal" data-target="#showphoto"><div class="box col-md-offset-1 col-md-5">
-					<img class="photos" id="dk-modal-image-elite1" src=""/>
+					<img class="photos" id="dk-modal-image-elite1" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-elite1"></h1>
 						<h4 id="dk-modal-caption-photo-elite1"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-5">
-					<img class="photos" id="dk-modal-image-elite2" src=""/>
+					<img class="photos" id="dk-modal-image-elite2" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-elite2"></h1>
 						<h4 id="dk-modal-caption-photo-elite2"></h4>
@@ -57,14 +57,14 @@
 			</div>
 			<div class="row" id="photos">	
 				<div class="col-md-offset-1 box col-md-5">
-					<img class="photos" id="dk-modal-image-elite3" src=""/>
+					<img class="photos" id="dk-modal-image-elite3" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-elite3"></h1>
 						<h4 id="dk-modal-caption-photo-elite3"></h4>
 					</span>
 				</div>
 				<div class="box col-md-5">
-					<img class="photos" id="dk-modal-image-elite4" src=""/>
+					<img class="photos" id="dk-modal-image-elite4" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-elite4"></h1>
 						<h4 id="dk-modal-caption-photo-elite4"></h4>
@@ -90,28 +90,28 @@
 			<div class="row dk-all" id="photos">
 				<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all1" src=""/>
+					<img class="photos" id="dk-modal-image-all1" src="<?= img_url()?>chevron.png"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all1"></h1>
 						<h4 id="dk-modal-caption-photo-all1"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all2" src=""/>
+					<img class="photos" id="dk-modal-image-all2" src="<?= img_url()?>chevron.png"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all2"></h1>
 						<h4 id="dk-modal-caption-photo-all2"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all3" src=""/>
+					<img class="photos" id="dk-modal-image-all3" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all3"></h1>
 						<h4 id="dk-modal-caption-photo-all3"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all4" src=""/>
+					<img class="photos" id="dk-modal-image-all4" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all4"></h1>
 						<h4 id="dk-modal-caption-photo-all4"></h4>
@@ -120,28 +120,28 @@
 			</div>
 			<div class="row dk-all" id="photos">	
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all5" src=""/>
+					<img class="photos" id="dk-modal-image-all5" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all5"></h1>
 						<h4 id="dk-modal-caption-photo-all5"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all6" src=""/>
+					<img class="photos" id="dk-modal-image-all6" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all6"></h1>
 						<h4 id="dk-modal-caption-photo-all6"></h4>
 					</span>
 				</div>
 				<a href="#sesuatu"><div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all7" src=""/>
+					<img class="photos" id="dk-modal-image-all7" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all7"></h1>
 						<h4 id="dk-modal-caption-photo-all7"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all8" src=""/>
+					<img class="photos" id="dk-modal-image-all8" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all8"></h1>
 						<h4 id="dk-modal-caption-photo-all8"></h4>
@@ -150,28 +150,28 @@
 			</div>
 			<div class="row dk-all" id="photos">
 				<a href="#sesuatu" ><div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all9" src=""/>
+					<img class="photos" id="dk-modal-image-all9" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all9"></h1>
 						<h4 id="dk-modal-caption-photo-all9"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all10" src=""/>
+					<img class="photos" id="dk-modal-image-all10" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all10"></h1>
 						<h4 id="dk-modal-caption-photo-all10"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all11" src=""/>
+					<img class="photos" id="dk-modal-image-all11" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all11"></h1>
 						<h4 id="dk-modal-caption-photo-all11"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all12" src=""/>
+					<img class="photos" id="dk-modal-image-all12" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all12"></h1>
 						<h4 id="dk-modal-caption-photo-all12"></h4>
@@ -180,28 +180,28 @@
 			</div>
 			<div class="row dk-all" id="photos">	
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all13" src=""/>
+					<img class="photos" id="dk-modal-image-all13" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all13"></h1>
 						<h4 id="dk-modal-caption-photo-all13"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all14" src=""/>
+					<img class="photos" id="dk-modal-image-all14" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all14"></h1>
 						<h4 id="dk-modal-caption-photo-all14"></h4>
 					</span>
 				</div>
 				<a href="#sesuatu" ><div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all15" src=""/>
+					<img class="photos" id="dk-modal-image-all15" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all15"></h1>
 						<h4 id="dk-modal-caption-photo-all15"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" id="dk-modal-image-all16" src=""/>
+					<img class="photos" id="dk-modal-image-all16" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
 						<h1 id="dk-modal-title-photo-all16"></h1>
 						<h4 id="dk-modal-caption-photo-all16"></h4>
