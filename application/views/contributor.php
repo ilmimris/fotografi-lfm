@@ -8,7 +8,7 @@
 		<div class="box col-md-3">
 			<img class="photos photos-contributor" src="<?= img_url().$contributor->foto?>"/>
 			<span class="caption fade-caption photos-contributor">
-				<h2>Nama Seseorang</h2>
+				<h2><?=$contributor->first_name?> <?=$contributor->last_name?></h2>
 			</span>
 		</div>
 		</a>
