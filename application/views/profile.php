@@ -19,6 +19,21 @@
 				<h2>Photos</h2>
 				<div class="scroll">
 				<div class="row">
+<?php $i = 0; foreach ($photos as $photo) {
+	$i++;
+?>
+					<div class="box col-md-6">
+						<img class="photos" src="<?= img_url().$photo->photo?>"/>
+						<span class="caption fade-caption">
+							<h1><?=$photo->title?></h1>
+						</span>
+					</div>
+<?php
+	if (($i>0) && ($i%4==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\">";
+}
+?>
+				</div>
+				<div class="row">
 					<div class="box col-md-6">
 						<img class="photos" src="<?= img_url()?>pp-8.jpg"/>
 						<span class="caption fade-caption">

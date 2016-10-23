@@ -244,8 +244,11 @@ class Fotografi extends CI_Controller {
 		$this->load->model("model_profile");
 		$profile = $this->model_profile->findById($id);
 		if ($profile === false) return show_404();
-
 		$data['profile'] = $profile;
+
+		$this->load->model("model_photos");
+		$photos = $this->model_photos->find(['user_id' => $id]);
+		$data['photos'] = $photos;
 
 		$data['title'] = 'Profile | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
