@@ -232,8 +232,8 @@
 
 		id = $('#input-upload-for').val();
 		if (data.status == "ok") {
-			$('#input-'.id).val(data.photo.id);
-			$('#image-'.id).attr('src', data.photo.photo);
+			$('#input-'+id).val(data.photo.id);
+			$('#image-'+id).attr('src', data.photo.photo);
 		} else {
 			alert("Something wrong, technical details: " + data.error);
 		}
