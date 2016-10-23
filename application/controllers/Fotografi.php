@@ -167,81 +167,11 @@ class Fotografi extends CI_Controller {
 		else
 		{
 			// Super Admin
-		}
-	}
-	public function dkdesc()
-	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
 			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
+			$data['islogin'] = 2; // Login Sebagai user biasa
 			$this->load->view('header', $data);
-			$this->load->view('dkdesc', $data);
+			$this->load->view('upload_dk', $data);
 			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('dkdesc', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
-		}
-	}
-	public function dkelite()
-	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-			$this->load->view('header', $data);
-			$this->load->view('dkelite', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('dkelite', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
-		}
-	}
-	public function dkall()
-	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-			$this->load->view('header', $data);
-			$this->load->view('dkall', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('dkall', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
 		}
 	}
 	public function contact()
