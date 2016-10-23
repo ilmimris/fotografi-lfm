@@ -22,4 +22,5 @@ class Model_profile extends ORM {
     $this->db->where($filter);
     return $this->db->get($this->table);
   }
+  
 }
