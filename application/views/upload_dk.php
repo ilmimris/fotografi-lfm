@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<form class = "form-horizontal" role="form">
-		<div id="input-photo-form">
+		<div id="input-dk-form">
 			<div class="col-md-12">
 			  <h3>Upload Cover DK ukuran 230x410px</h3>
 		      <label for = "dk-title" class = "control-label title">D&ensp;K&ensp;&ensp;T&ensp;i&ensp;t&ensp;l&ensp;e</label>
@@ -153,9 +153,6 @@
 			  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
 			</div>
 		</div>
-		<div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
-			<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
-		</div>
 		</form>	
 	</div>
 </div>
@@ -230,7 +227,7 @@
 
 	function refresh_page(data) {
 		id = $('#input-upload-for').val();
-		$('input-'.id).val(data.id);
-		$('image-'.id).attr('src', data.photo);
+		$('#input-'.id).val(data.id);
+		$('#image-'.id).attr('src', data.photo);
 	}
 </script>
