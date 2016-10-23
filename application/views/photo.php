@@ -111,8 +111,7 @@
 
 	var modal = document.getElementById('showphoto');
 	var showdesc = document.getElementById('showdescphoto');
-	var	addphoto = document.getElementById('addphoto');
-
+	
 	if ($("#btn-addphoto").length) {
 		$("#btn-addphoto").click(function(){
 			$('#input-photo-progress').css("display","none");
@@ -129,12 +128,6 @@
 		$("#showdescphoto").modal('hide');
 		$("#showphoto").modal('show');
 	});
-
-	$("#addphoto").click(function() {
-	    modal.style.display = "block";
-		showdesc.style.display = "none";
-	});
-
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
