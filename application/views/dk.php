@@ -310,6 +310,8 @@
 }());
 
 function open_detail_dk(){
+	var img_root = "<?=img_url()?>";
+
 	var id = $(this).attr('data-id');
 	var photos_key = ["elite1","elite2","elite3","elite4","all1","all2","all3","all4","all5","all6","all7","all8","all9","all10","all11","all12","all13","all14","all15","all16"];
 	$.get( "/fotografi/dk_detail/" + id , function( data ) {
@@ -320,9 +322,11 @@ function open_detail_dk(){
 		$('#dk-modal-description').html(dk.caption);
 
 		console.log(dk.photos);
-		// for (var i = photos_key.length - 1; i >= 0; i--) {
-		// 	$('#dk-modal-title-photo-'+photos_key[i]) = 
-		// }
+		for (var i = photos_key.length - 1; i >= 0; i--) {
+			var photo = dk.photos[photos_key[i]];
+			$('#dk-modal-title-photo-'+photos_key[i]) = photo.title;
+			$('#dk-modal-title-image-'+photos_key[i]).attr("src", img_root + "users_content/" + photo.photo);
+		}
 		
 		$('#showphoto').modal('hide');
 		$('#showphoto').modal('dk');
