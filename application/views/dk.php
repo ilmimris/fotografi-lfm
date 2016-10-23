@@ -375,7 +375,7 @@ function open_detail_dk(){
 			$('#dk-modal-title-photo-'+photos_key[i]).html(photo.title);
 			$('#dk-modal-caption-photo-'+photos_key[i]).html(photo.caption);
 			$('#dk-modal-link-'+photos_key[i]).attr("data-id", photo.id);
-			$('#dk-modal-image-'+photos_key[i]).attr("src", img_root + "users_content/" + photo.photo);
+			$('#dk-modal-image-'+photos_key[i]).attr("src", img_root + "users_content/_thumb/" + photo.photo);
 		}
 		
 		$('#showphoto').modal('hide');

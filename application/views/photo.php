@@ -14,7 +14,7 @@
 ?>
 		<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
 		<div class="box col-md-4">
-			<img class="photos" src="<?=img_url()."users_content/".$photo->photo?>"/>
+			<img class="photos" src="<?=img_url()."users_content/_thumb/".$photo->photo?>"/>
 			<span class="caption fade-caption">
 				<h1><?=$photo->title?></h1>
 				<h4><?=$photo->first_name." ".$photo->last_name?></h4>
