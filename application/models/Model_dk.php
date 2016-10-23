@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if (!class_exists('ORM')) require APPPATH . '/models/ORM.php';
 
 
-class Model_profile extends ORM {
+class Model_dk extends ORM {
 
   public function __construct(){
     parent::__construct();
