@@ -346,11 +346,11 @@ class Fotografi extends CI_Controller {
 	{
 		if (!$this->ion_auth->logged_in()) return show_404();
 
+		$this->config->load('form_validation');
 		$this->load->library('form_validation');
 
 		if ($this->form_validation->run('update_profile') == FALSE)
 		{
-			var_dump($this->input->post());
 			echo validation_errors('<span class="error">', '</span>');
 
 			$data['title'] = 'Edit Profile | Fotografi LFM';
