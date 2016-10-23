@@ -108,12 +108,12 @@ var cont = document.getElementById("cont");
 
 // When the user clicks on the button, open the modal 
 $("#register").click(function() {
+	$("#part1").show();
+	$("#cont_").show();
+	$("#part2").hide();
+	$("#done_").hide();
     $("form-reg").modal('hide');
     $("form-reg").modal();
-	part1.style.display = "block";
-	cont_.style.display = "block";
-	part2.style.display = "none";
-	done_.style.display = "none";
 });
 
 masuk.onclick = function() {
@@ -122,11 +122,10 @@ masuk.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 
 $("#registration-cont").click(function() {
-	part1.style.display = "none";
-	cont_.style.display = "none";
-	part2.style.display = "block";
-	done_.style.display = "block";
-    $("form-reg").modal('hide');
+	$("#part1").hide();
+	$("#cont_").hide();
+	$("#part2").show();
+	$("#done_").show();
 });
 
 // When the user clicks anywhere outside of the modal, close it
