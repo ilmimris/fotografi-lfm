@@ -146,6 +146,11 @@ class Fotografi extends CI_Controller {
 
 	public function dk()
 	{
+		$this->load->model('model_dk');
+		$photos = $this->model_dk->all();
+
+		$data['dk'] = $dk;
+
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
@@ -173,6 +178,7 @@ class Fotografi extends CI_Controller {
 			$this->load->view('upload_dk', $data);
 			$this->load->view('footer');
 		}
+		echo json_encode($response);
 	}
 	public function contact()
 	{
