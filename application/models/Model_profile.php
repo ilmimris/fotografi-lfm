@@ -17,9 +17,10 @@ class Model_profile extends ORM {
 
   protected function _find_query($filter){
     $this->db->select(["users_profile.*","users.first_name","users.last_name"]);
-    $this->db->join("users", "users_profile.user_id=users.id", "left");
+    $this->db->join("users", "users_profile.id=users.id", "left");
 
     $this->db->where($filter);
     return $this->db->get($this->table);
   }
+  
 }
