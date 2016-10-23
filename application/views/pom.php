@@ -122,6 +122,16 @@ $('#registration-post').click(function(){
 	};
 
 	console.log(data);
+	var jqxhr = $.post( "/auth/create_user_ajax", data)
+	.done(function(data) {
+		console.log("done: " + data);
+	})
+	.fail(function(data) {
+		console.log("fail: " + data);
+	})
+	.always(function() {
+		console.log("finished: " + data);
+	});
 });
 
 window.onclick = function(event) {
