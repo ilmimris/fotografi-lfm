@@ -126,10 +126,12 @@ $('#registration-post').click(function(){
 	};
 
 	console.log(data);
+
 	var jqxhr = $.post( "/auth/create_user_ajax", data)
 	.done(function(data) {
+		var data_object = JSON.parse(data);
 		$("#registration-status").show();
-		$("#registration-status-text").html(data.message);
+		$("#registration-status-text").html(data_object.message);
 		$("#part2").hide();
 		$("#done_").hide();
 		$("#part1").hide();
