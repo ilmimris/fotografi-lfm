@@ -34,7 +34,7 @@ abstract class ORM extends CI_Model {
 	}
 
 
-	public function save($obj) {
+	public function save(&$obj) {
 
 		$db_debug = $this->db->db_debug;
 		$this->db->db_debug = FALSE;
@@ -44,18 +44,19 @@ abstract class ORM extends CI_Model {
 
 			$data = $this->_filter_property($obj);
 			if ($data->id == "") $data->id = $this->uuid();
-			$status = $this->db->insert($this->table, $data);
+			$this->db->insert($this->table, $data);
+
+			return $data->id;
 
 		} else {
 
 			$data = $this->_filter_property($obj);
-			$status = $this->db->update($this->table, $data, ["id"=>$data->id]);
-			
+			$this->db->update($this->table, $data, ["id"=>$data->id]);
+		
+			return $data->id;
 		}
 
 		$this->db->db_debug = $db_debug;
-
-		return $status;
 	}
 
 	public function delete($data) {

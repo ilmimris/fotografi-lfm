@@ -53,7 +53,7 @@ class Fotografi extends CI_Controller {
 	public function photos()
 	{
 		$this->load->model('model_photos');
-		$photos = $this->model_photos->all();
+		$photos = $this->model_photos->find(['type'=>0]);
 
 		$data['photos'] = $photos;
 
@@ -135,7 +135,7 @@ class Fotografi extends CI_Controller {
 			$photo->other = $metadata['other'];
 			$photo->photo = $uploaded['file_name'];
 
-			$photo->save();
+			$photo->id = $photo->save();
 
 			$response = array('status'=>'ok', 'photo' => $photo);
 		}
@@ -205,6 +205,47 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 		}
 	}
+
+	public function dk_add() {
+		
+		if (!$this->ion_auth->logged_in()) return show_404();
+
+		$this->load->library('UUID');
+
+		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
+		$config['allowed_types'] = 'jpg|png';
+		$config['file_name'] = $this->uuid->v4();
+		
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('cover')) {
+
+			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
+
+		} else {
+
+			$metadata = $this->input->post();
+			$this->load->model('model_dk');
+			
+			$uploaded = $this->upload->data();
+
+			$dk = $this->model_dk->create();
+			foreach ($metadata as $key => $metadata_element) {
+				echo($key . ":" . $metadata_element);
+				$dk->{$key} = $metadata_element;
+			}
+			$dk->cover = $uploaded['file_name'];
+
+			$dk->id = $dk->save();
+
+			$response = array('status'=>'ok', 'dk' => $dk);
+		}
+		
+		echo json_encode($response);
+
+	}
+
+
 	public function project()
 	{
 		if (!$this->ion_auth->logged_in())
