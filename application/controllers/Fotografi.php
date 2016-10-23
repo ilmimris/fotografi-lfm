@@ -18,50 +18,18 @@ class Fotografi extends CI_Controller {
 
 	public function index()
 	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
+		// redirect them to the home page because they must be an administrator to view this
+		$data['title'] = 'Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
 
-			if ($data['islogin']) {
-				$user_id = $this->ion_auth->get_user_id();
-				$data['user'] = $this->model_profile->findById($user_id);
-			}
-
-			$this->load->view('header', $data);
-			$this->load->view('pom', $data);
-			$this->load->view('footer');
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
 
-			if ($data['islogin']) {
-				$user_id = $this->ion_auth->get_user_id();
-				$data['user'] = $this->model_profile->findById($user_id);
-			}
-
-			$this->load->view('header', $data);
-			$this->load->view('pom', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// set the flash data error message if there is one
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
-			foreach ($this->data['users'] as $k => $user)
-			{
-				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-			}
-
-			$this->load->view('auth/index', $this->data);
-		}
+		$this->load->view('header', $data);
+		$this->load->view('pom', $data);
+		$this->load->view('footer');
 	}
 	public function photos()
 	{
@@ -445,5 +413,20 @@ class Fotografi extends CI_Controller {
 			$this->load->view('upload_project', $data);
 			$this->load->view('footer');
 		}
+	}
+
+	public function users(){
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) return show_404();
+
+		$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+		//list the users
+		$this->data['users'] = $this->ion_auth->users()->result();
+		foreach ($this->data['users'] as $k => $user)
+		{
+			$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
+		}
+
+		$this->load->view('auth/index', $this->data);
 	}
 }
