@@ -533,7 +533,7 @@ class Auth extends CI_Controller {
         	$profile->id = $id;
         	$profile->jurusan = $this->input->post('field_of_study');
         	$profile->angkatan = $this->input->post('batch');
-        	$profile->angkatan_lfm = $this->input->post('batch_lfm');
+        	$profile->angkatan_lfm = $this->input->post('lfm_batch');
         	$profile->email_alternatif = $this->input->post('alternative_email');
         	$profile->save();
 
