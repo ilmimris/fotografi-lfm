@@ -233,7 +233,7 @@
 		id = $('#input-upload-for').val();
 		if (data.status == "ok") {
 			$('#input-'+id).val(data.photo.id);
-			$('#image-'+id).attr('src', data.photo.photo);
+			$('#image-'+id).attr('src', "<?=img_url()."users_content/"?>" + data.photo.photo);
 		} else {
 			alert("Something wrong, technical details: " + data.error);
 		}
