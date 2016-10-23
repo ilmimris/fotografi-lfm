@@ -23,7 +23,7 @@
 	$i++;
 ?>
 					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url().$photo->photo?>"/>
+						<img class="photos" src="<?= img_url()."users_content/".$photo->photo?>"/>
 						<span class="caption fade-caption">
 							<h1><?=$photo->title?></h1>
 						</span>
@@ -45,6 +45,24 @@
 			<div class="profile_projects">
 				<h2>Projects</h2>
 				<div class="scroll">
+					<div class="row">
+<?php $i = 0; foreach ($projects as $project) {
+	$i++;
+?>
+						<div class="col-md-6 img-projects">
+							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
+						</div>
+						<div class="col-md-6 desc-projects">
+							<h1><?=$projects->title?></h1>
+							<h3><?=$projects->year?></h3>
+							<h3><?=$projects->description?></h3>
+							<h3><?=$projects->group_title?></h3>
+						</div>
+<?php
+	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";
+}
+?>
+					</div>
 					<div class="row	">
 						<div class="col-md-6 img-projects">
 							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>

@@ -12,12 +12,11 @@ class Model_project extends ORM {
   }
 
   protected $table = 'projects';
-  protected $contract = ["id", "title", "description", "link"];
+  protected $contract = ["id", "title", "year", "description", "group_id", "link"];
 
   protected function _find_query($filter){
-    $this->db->select(["photos.*","users.first_name","users.last_name"]);
-    $this->db->join("users", "photos.user_id=users.id", "left");
-    $this->db->order_by("photos.created", "desc"); 
+    $this->db->select(["projects.*","projects_groups.title as group_title"]);
+    $this->db->join("projects_groups", "projects.id=projects_groups.id", "left");
 
     $this->db->where($filter);
     return $this->db->get($this->table);

@@ -250,6 +250,10 @@ class Fotografi extends CI_Controller {
 		$photos = $this->model_photos->find(['user_id' => $id]);
 		$data['photos'] = $photos;
 
+		$this->load->model("model_project");
+		$projects = $this->model_project->findByUserId($id);
+		$data['projects'] = $projects;
+
 		$data['title'] = 'Profile | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
 		$this->load->view('header', $data);
