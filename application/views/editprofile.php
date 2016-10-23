@@ -52,7 +52,7 @@
 					  <span class="red title">*&ensp;&ensp;M&ensp;U&ensp;S&ensp;T&ensp;&ensp;B&ensp;E&ensp;&ensp;F&ensp;I&ensp;L&ensp;L&ensp;E&ensp;D</span>
 				</div>
 				<div class="col-md-6">
-			    	<button href="#" id="save" class="save"><span>S&ensp;a&ensp;v&ensp;e</span></button>	
+			    	<button id="save" class="save"><span>S&ensp;a&ensp;v&ensp;e</span></button>	
 				</div>
 			</div>
 			<div class="row">
