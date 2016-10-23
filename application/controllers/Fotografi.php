@@ -135,7 +135,7 @@ class Fotografi extends CI_Controller {
 			$photo->other = $metadata['other'];
 			$photo->photo = $uploaded['file_name'];
 
-			$photo->save();
+			$photo->id = $photo->save();
 
 			$response = array('status'=>'ok', 'photo' => $photo);
 		}
