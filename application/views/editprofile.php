@@ -68,7 +68,8 @@
 	</form>	
 </div>
 <script>
-	$('#profile-pic').attr('src', 'http://placehold.it/350x350');
+	$('#profile-pic').attr('src', '<?=img_url().$user->foto?>');
+
 	function readURL(input) {
     if (input.files && input.files[0]) {
         var reader=new FileReader();
