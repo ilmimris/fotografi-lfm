@@ -376,41 +376,21 @@ class Fotografi extends CI_Controller {
 
 	public function edit_profile()
 	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			// For development
-			$data['title'] = 'Edit Profile | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
+		if (!$this->ion_auth->logged_in()) return show_404();
 
-			if ($data['islogin']) {
-				$user_id = $this->ion_auth->get_user_id();
-				$data['user'] = $this->model_profile->findById($user_id);
-			}
+		$data['title'] = 'Edit Profile | Fotografi LFM';
+		$data['islogin'] = 0; // Belum Login
 
-			$this->load->view('header', $data);
-			$this->load->view('editprofile', $data);
-			$this->load->view('footer');
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
 		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Edit Profile | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
 
-			if ($data['islogin']) {
-				$user_id = $this->ion_auth->get_user_id();
-				$data['user'] = $this->model_profile->findById($user_id);
-			}
+		$this->load->view('header', $data);
+		$this->load->view('editprofile', $data);
+		$this->load->view('footer');
+		
 
-			$this->load->view('header', $data);
-			$this->load->view('editprofile', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
-		}
 	}
 	public function upload_pom()
 	{
