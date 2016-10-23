@@ -125,7 +125,7 @@ $('#registration-post').click(function(){
 });
 
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.is(".modal")) {
         $("#form-reg").modal('hide');
         $("#login").modal('hide');
     }
