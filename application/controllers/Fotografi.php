@@ -241,6 +241,7 @@ class Fotografi extends CI_Controller {
 	{
 		if ($id == "") return show_404();
 		
+		$this->load->model("model_profile");
 		$profile = $this->model_profile->findById($id);
 		if ($profile === false) return show_404();
 
