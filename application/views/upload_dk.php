@@ -252,7 +252,8 @@
 		formData.append('description', $('#dk-desc').val());
 
 		$("#input-dk-form input[type=hidden]").each(function(i, obj) {
-			formData.append(obj.attr('name'), obj.val());
+			formData.append($(obj).attr('name'), $(obj).val());
+			console.log(obj);
 		});
 
 		$('#input-dk-progress').css("display","block");
