@@ -1,22 +1,28 @@
 </header>
 <div class="container-fluid">
-	<form class = "form-horizontal editprofile" role="form">
+	<form class="form-horizontal editprofile" role="form" method="post" enctype="multipart/form-data">
 		<div id="edit-profile-form-1" >
 			<div class="row">	
 				<div class="col-md-6">
-				      <label for = "fullname" class = "control-label title">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e<span class="red">&ensp;*</span></label>
-				      <input type = "text" class = "form-control " id = "fullname" >
-					  <label for = "email" class = "control-label title">E&ensp;m&ensp;a&ensp;i&ensp;l<span class="red">&ensp;*</span></label>
-				      <input type = "text" class = "form-control " id = "email" >
-				      <label for = "jurusan" class = "control-label title">F&ensp;i&ensp;e&ensp;l&ensp;d&ensp; &ensp;o&ensp;f&ensp; &ensp;S&ensp;t&ensp;u&ensp;d&ensp;y<span class="red">&ensp;*</span></label>
-					  <input type = "text" class = "form-control " id = "jurusan" >
-					  <label for = "lfmbatch" class = "control-label title">L&ensp;F&ensp;M&ensp; &ensp;B&ensp;a&ensp;t&ensp;c&ensp;h<span class="red">&ensp;*</span></label>
-					  <input id="input-photo-location" type="text" name="lfmbatch" value="" class="form-control" >
-					  <label for = "alternate_email" class = "control-label title">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;e&ensp;m&ensp;a&ensp;i&ensp;l</label>
-					  <input id="input-photo-other" type="text" name="alternate_email" value="" class="form-control" placeholder="Additional Info">
-					  <label for = "photo" class = "control-label title">D&ensp;i&ensp;s&ensp;p&ensp;l&ensp;a&ensp;y&ensp; &ensp;P&ensp;i&ensp;c&ensp;t&ensp;u&ensp;r&ensp;e</label>
-					  <input id="input-photo-image" type="file" name="photo" accept="image/*" >
+				      <label for="fullname" class="control-label title">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e<span class="red">&ensp;*</span></label>
+				      <input value="<?=set_value('fullname', $user->first_name)?>" type="text" class="form-control " name="fullname" >
+
+					  <label for="email" class="control-label title">E&ensp;m&ensp;a&ensp;i&ensp;l<span class="red">&ensp;*</span></label>
+				      <input value="<?=set_value('email', $user->email)?>" type="text" class="form-control " name="email" >
+
+				      <label for="jurusan" class="control-label title">F&ensp;i&ensp;e&ensp;l&ensp;d&ensp; &ensp;o&ensp;f&ensp; &ensp;S&ensp;t&ensp;u&ensp;d&ensp;y<span class="red">&ensp;*</span></label>
+					  <input value="<?=set_value('jurusan', $user->jurusan)?>" type="text" class="form-control " name="jurusan" >
+
+					  <label for="lfmbatch" class="control-label title">L&ensp;F&ensp;M&ensp; &ensp;B&ensp;a&ensp;t&ensp;c&ensp;h<span class="red">&ensp;*</span></label>
+					  <input value="<?=set_value('angkatan_lfm', $user->angkatan_lfm)?>" id="input-photo-location" type="text" name="angkatan_lfm" class="form-control" >
+					  
+					  <label for="email_alternatif" class="control-label title">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;e&ensp;m&ensp;a&ensp;i&ensp;l</label>
+					  <input value="<?=set_value('email_alternatif', $user->email_alternatif)?>" id="input-photo-other" type="text" name="email_alternatif" class="form-control" placeholder="Additional Info">
+					  
+					  <label for="photo" class="control-label title">D&ensp;i&ensp;s&ensp;p&ensp;l&ensp;a&ensp;y&ensp; &ensp;P&ensp;i&ensp;c&ensp;t&ensp;u&ensp;r&ensp;e</label>
+					  <input  id="input-photo-image" type="file" name="photo" accept="image/*" >
 					  <br>
+					  
 					  <span class="red title">*&ensp;&ensp;M&ensp;U&ensp;S&ensp;T&ensp;&ensp;B&ensp;E&ensp;&ensp;F&ensp;I&ensp;L&ensp;L&ensp;E&ensp;D</span>
 				</div>
 				<div class="col-md-6" style="margin: 3% auto;text-align: center;vertical-align: middle;">
@@ -33,18 +39,20 @@
 		<div id="edit-profile-form-2" style="display: none;">
 			<div class="row" style="margin: 10% auto;">
 				<div class="col-md-6" >
-				     <label for = "username" class = "control-label title">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e<span class="red">&ensp;*</span></label>
-					  <input type = "text" class = "form-control" id = "username" required="required">
-					  <label for = "password" class = "control-label title">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d<span class="red">&ensp;*</span></label>
-					  <input type = "password" class = "form-control" id = "password" required="required">
-					  <label for = "retype_password" class = "control-label title">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d<span class="red">&ensp;*</span></label>
-					  <input type = "password" class = "form-control" id = "retype_password" >
+				     <label for="username" class="control-label title">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e<span class="red">&ensp;*</span></label>
+					  <input value="<?=set_value('username', $user->username)?>" type="text" class="form-control" name="username">
+
+					  <label for="password" class="control-label title">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
+					  <input type="password" class="form-control" name="password">
+
+					  <label for="retype_password" class="control-label title">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
+					  <input type="password" class="form-control" name="retype_password" >
 				      
 					  <br>
 					  <span class="red title">*&ensp;&ensp;M&ensp;U&ensp;S&ensp;T&ensp;&ensp;B&ensp;E&ensp;&ensp;F&ensp;I&ensp;L&ensp;L&ensp;E&ensp;D</span>
 				</div>
 				<div class="col-md-6">
-			    	<a href="#" id="save" class="save"><span>S&ensp;a&ensp;v&ensp;e</span></a>	
+			    	<button id="save" class="save"><span>S&ensp;a&ensp;v&ensp;e</span></button>	
 				</div>
 			</div>
 			<div class="row">
@@ -60,12 +68,13 @@
 	</form>	
 </div>
 <script>
-	$('#profile-pic').attr('src', 'http://placehold.it/350x350');
+	$('#profile-pic').attr('src', '<?=img_url()."users_profile/_thumb/".$user->foto?>');
+
 	function readURL(input) {
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
+        var reader=new FileReader();
 
-        reader.onload = function (e) {
+        reader.onload=function (e) {
             $('#profile-pic').attr('src', e.target.result);
         }
 

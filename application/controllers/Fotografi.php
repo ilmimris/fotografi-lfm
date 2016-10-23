@@ -9,6 +9,7 @@ class Fotografi extends CI_Controller {
 		$this->load->database();
 		$this->load->library(array('ion_auth','form_validation'));
 		$this->load->helper(array('url','language'));
+		$this->load->model("model_profile");
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
@@ -17,40 +18,18 @@ class Fotografi extends CI_Controller {
 
 	public function index()
 	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
-			$this->load->view('header', $data);
-			$this->load->view('pom', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
-			$this->load->view('header', $data);
-			$this->load->view('pom', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// set the flash data error message if there is one
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+		// redirect them to the home page because they must be an administrator to view this
+		$data['title'] = 'Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
 
-			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
-			foreach ($this->data['users'] as $k => $user)
-			{
-				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-			}
-
-			$this->load->view('auth/index', $this->data);
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
 		}
+
+		$this->load->view('header', $data);
+		$this->load->view('pom', $data);
+		$this->load->view('footer');
 	}
 	public function photos()
 	{
@@ -60,7 +39,12 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Photos | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('photo', $data);
 		$this->load->view('footer');
@@ -107,7 +91,7 @@ class Fotografi extends CI_Controller {
 
 			}
 
-			$this->_create_thumbnail($config['upload_path'], $uploaded['file_name']);
+			$this->_create_thumbnail($config['upload_path'], $uploaded['file_name'], 300);
 
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
@@ -140,7 +124,7 @@ class Fotografi extends CI_Controller {
 		$this->jpegtranlib->modify($fullpath, $options);
 	}
 
-	public function _create_thumbnail($path, $filename) {
+	public function _create_thumbnail($path, $filename, $size) {
 	    $source_path = $path . $filename;
 	    $target_path = $path . '_thumb/' . $filename;
 	    $config = array(
@@ -148,7 +132,7 @@ class Fotografi extends CI_Controller {
 	        'source_image' => $source_path,
 	        'new_image' => $target_path,
 	        'maintain_ratio' => TRUE,
-	        'height' => 300
+	        'height' => $size
 	    );
 	    $this->load->library('image_lib', $config);
 	    if (!$this->image_lib->resize()) {
@@ -166,7 +150,12 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('dk', $data);
 		$this->load->view('footer');
@@ -177,7 +166,12 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('upload_dk', $data);
 		$this->load->view('footer');
@@ -207,7 +201,12 @@ class Fotografi extends CI_Controller {
 	{
 		$data['title'] = 'Contact Us | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in(); // Belum Login
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('contact', $data);
 		$this->load->view('footer');		
@@ -262,8 +261,13 @@ class Fotografi extends CI_Controller {
 
 		// redirect them to the home page because they must be an administrator to view this
 		$data['title'] = 'Project | Fotografi LFM';
-		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai use
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('project', $data);
 		$this->load->view('footer');
@@ -297,7 +301,12 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Contributor | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('contributor', $data);
 		$this->load->view('footer');
@@ -322,7 +331,12 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Profile | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
-		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('profile', $data);
 		$this->load->view('footer');
@@ -330,30 +344,77 @@ class Fotografi extends CI_Controller {
 
 	public function edit_profile()
 	{
-		if (!$this->ion_auth->logged_in())
+		if (!$this->ion_auth->logged_in()) return show_404();
+
+		$this->load->library('form_validation');
+
+		if ($this->form_validation->run('update_profile') == FALSE)
 		{
-			// redirect them to the login page
-			// For development
+			echo validation_errors('<span class="error">', '</span>');
+
 			$data['title'] = 'Edit Profile | Fotografi LFM';
 			$data['islogin'] = 0; // Belum Login
-			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+			$data['user_id'] = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($data['user_id']);
+
 			$this->load->view('header', $data);
 			$this->load->view('editprofile', $data);
 			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Edit Profile | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
-			$this->load->view('header', $data);
-			$this->load->view('editprofile', $data);
-			$this->load->view('footer');
+
 		}
 		else
 		{
-			// Super Admin
+			$profile = $this->model_profile->findById($this->ion_auth->get_user_id());
+
+			$profile->jurusan = $this->input->post('jurusan');
+			$profile->angkatan_lfm = $this->input->post('angkatan_lfm');
+			$profile->email_alternatif = $this->input->post('email_alternatif');
+			$profile->save();
+
+			$this->load->model("model_users");
+			$user = $this->model_users->findById($this->ion_auth->get_user_id());
+			$user->username = $this->input->post('username');
+			$user->first_name = $this->input->post('fullname');
+			$user->email = $this->input->post('email');
+			$user->save();
+
+			if ($this->input->post('password')!="") {
+				$this->ion_auth->reset_password($this->input->post('username'),$this->input->post('password'));
+			} 
+
+			$this->load->library('UUID');
+
+			$config['upload_path'] = FCPATH . 'assets/img/users_profile/';
+			$config['allowed_types'] = 'jpg|png';
+			$config['file_name'] = $this->uuid->v4();
+		
+			$this->load->library('upload', $config);
+
+			$is_uploaded = $this->upload->do_upload('photo');
+				
+			if ($is_uploaded) {
+
+				$uploaded = $this->upload->data();
+
+				if(exif_imagetype($config['upload_path'].$uploaded['file_name']) == IMAGETYPE_JPEG) {
+
+				    $fullpath = $config['upload_path'].$uploaded['file_name'];
+				    $this->_jpeg_progressive($fullpath);
+
+				}
+
+				$this->_create_thumbnail($config['upload_path'], $uploaded['file_name'], 300);
+				
+				$profile->foto = $uploaded['file_name'];
+				$profile->save();
+
+			} else {
+				echo $this->upload->display_errors();
+			}
+
+			redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
+
 		}
 	}
 	public function upload_pom()
@@ -373,7 +434,12 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 			$data['title'] = 'Edit POM | Fotografi LFM';
 			$data['islogin'] = 2; // Login Sebagai user biasa
-			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+			if ($data['islogin']) {
+				$user_id = $this->ion_auth->get_user_id();
+				$data['user'] = $this->model_profile->findById($user_id);
+			}
+
 			$this->load->view('header', $data);
 			$this->load->view('upload_pom', $data);
 			$this->load->view('footer');
@@ -396,7 +462,12 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 			$data['title'] = 'Edit POM | Fotografi LFM';
 			$data['islogin'] = 2; // Login Sebagai user biasa
-			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
+
+			if ($data['islogin']) {
+				$user_id = $this->ion_auth->get_user_id();
+				$data['user'] = $this->model_profile->findById($user_id);
+			}
+
 			$this->load->view('header', $data);
 			$this->load->view('upload_project', $data);
 			$this->load->view('footer');
@@ -408,5 +479,20 @@ class Fotografi extends CI_Controller {
 		$this->load->model('model_profile');
 		$users = $this->model_profile->all();
 		echo json_encode($users);
+	}
+
+	public function users(){
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) return show_404();
+
+		$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+		//list the users
+		$this->data['users'] = $this->ion_auth->users()->result();
+		foreach ($this->data['users'] as $k => $user)
+		{
+			$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
+		}
+
+		$this->load->view('auth/index', $this->data);
 	}
 }

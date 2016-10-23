@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="profile_pic">
-				<img class="photos" src="<?= img_url()?><?=$profile->foto?>"/>
+				<img class="photos" src="<?= img_url()."users_profile/_thumb/".$profile->foto?>"/>
 				<br>
 				<h3><?=$profile->first_name?> <?=$profile->last_name?></h3>
 				<h3 style="color:grey;"><?=$profile->jurusan?></h3>
