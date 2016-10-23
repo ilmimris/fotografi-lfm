@@ -379,6 +379,7 @@ function open_detail(){
 	
 	$.get( "/fotografi/photo_detail/" + id , function( data ) {
 		console.log( data );
+		console.log( "open detail photo of " + id + "..." );
 
 		photo = JSON.parse(data);
 		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
