@@ -126,7 +126,7 @@
 		showdesc.style.display = "block";
 	});
 
-	$("#up-photo").click(function() {
+	$("#addphoto").click(function() {
 	    modal.style.display = "block";
 		showdesc.style.display = "none";
 	});
@@ -134,7 +134,13 @@
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 	    if (event.target == showdesc) {
+	    
 	        $('#showphoto').modal('hide');
+	    
+	    } else if (event.target == showdesc) {
+	    
+	        $('#showphoto').modal('hide');
+	    
 	    }
 	}
 
