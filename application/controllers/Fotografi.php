@@ -176,7 +176,7 @@ class Fotografi extends CI_Controller {
 		$this->load->view('header', $data);
 		$this->load->view('upload_dk', $data);
 		$this->load->view('footer');
-	};
+	}
 
 	public function dk_detail($id = ""){
 
@@ -318,7 +318,7 @@ class Fotografi extends CI_Controller {
 		$this->load->view('profile', $data);
 		$this->load->view('footer');
 	}
-	
+
 	public function edit_profile()
 	{
 		if (!$this->ion_auth->logged_in())
