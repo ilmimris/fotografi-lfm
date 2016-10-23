@@ -63,7 +63,7 @@
 	    </ul>
     </div>
     <?php if (!$islogin == 0) {?>
-    <div id="profpic"><img class="img-circle" src="<?= img_url()?>gambar1.jpg"></div>
+    <div id="profpic"><img class="img-circle" src="<?= img_url()?><?=$user->foto?>"></div>
     <?php } ?>
   </div>
 </nav>
