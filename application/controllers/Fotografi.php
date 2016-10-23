@@ -348,6 +348,7 @@ class Fotografi extends CI_Controller {
 
 		if ($this->form_validation->run('update_profile') == FALSE)
 		{
+			echo validation_errors();
 
 			$data['title'] = 'Edit Profile | Fotografi LFM';
 			$data['islogin'] = 0; // Belum Login
