@@ -229,7 +229,11 @@
 
 	function refresh_page(data) {
 		id = $('#input-upload-for').val();
-		$('#input-'.id).val(data.id);
-		$('#image-'.id).attr('src', data.photo);
+		if (data.status == "ok") {
+			$('#input-'.id).val(data.photo.id);
+			$('#image-'.id).attr('src', data.photo.photo);
+		} else {
+			alert("Something wrong, technical details: " + data.error);
+		}
 	}
 </script>
