@@ -46,7 +46,7 @@ abstract class ORM extends CI_Model {
 			if ($data->id == "") $data->id = $this->uuid();
 			$this->db->insert($this->table, $data);
 
-			return $data->id
+			return $data->id;
 
 		} else {
 
