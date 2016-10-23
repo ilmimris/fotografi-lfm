@@ -22,6 +22,7 @@ class Fotografi extends CI_Controller {
 			// redirect them to the login page
 			$data['title'] = 'Fotografi LFM';
 			$data['islogin'] = 0; // Belum Login
+			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 			$this->load->view('header', $data);
 			$this->load->view('pom', $data);
 			$this->load->view('footer');
@@ -31,6 +32,7 @@ class Fotografi extends CI_Controller {
 			// redirect them to the home page because they must be an administrator to view this
 			$data['title'] = 'Fotografi LFM';
 			$data['islogin'] = 1; // Login Sebagai user biasa
+			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 			$this->load->view('header', $data);
 			$this->load->view('pom', $data);
 			$this->load->view('footer');
@@ -58,6 +60,7 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Photos | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('photo', $data);
 		$this->load->view('footer');
@@ -163,6 +166,7 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('dk', $data);
 		$this->load->view('footer');
@@ -173,6 +177,7 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('upload_dk', $data);
 		$this->load->view('footer');
@@ -202,6 +207,7 @@ class Fotografi extends CI_Controller {
 	{
 		$data['title'] = 'Contact Us | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in(); // Belum Login
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('contact', $data);
 		$this->load->view('footer');		
@@ -257,6 +263,7 @@ class Fotografi extends CI_Controller {
 		// redirect them to the home page because they must be an administrator to view this
 		$data['title'] = 'Project | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('project', $data);
 		$this->load->view('footer');
@@ -290,6 +297,7 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Contributor | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('contributor', $data);
 		$this->load->view('footer');
@@ -314,6 +322,7 @@ class Fotografi extends CI_Controller {
 
 		$data['title'] = 'Profile | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
+		if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 		$this->load->view('header', $data);
 		$this->load->view('profile', $data);
 		$this->load->view('footer');
@@ -327,6 +336,7 @@ class Fotografi extends CI_Controller {
 			// For development
 			$data['title'] = 'Edit Profile | Fotografi LFM';
 			$data['islogin'] = 0; // Belum Login
+			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 			$this->load->view('header', $data);
 			$this->load->view('editprofile', $data);
 			$this->load->view('footer');
@@ -336,6 +346,7 @@ class Fotografi extends CI_Controller {
 			// redirect them to the home page because they must be an administrator to view this
 			$data['title'] = 'Edit Profile | Fotografi LFM';
 			$data['islogin'] = 1; // Login Sebagai user biasa
+			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 			$this->load->view('header', $data);
 			$this->load->view('editprofile', $data);
 			$this->load->view('footer');
@@ -362,6 +373,7 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 			$data['title'] = 'Edit POM | Fotografi LFM';
 			$data['islogin'] = 2; // Login Sebagai user biasa
+			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 			$this->load->view('header', $data);
 			$this->load->view('upload_pom', $data);
 			$this->load->view('footer');
@@ -384,6 +396,7 @@ class Fotografi extends CI_Controller {
 			// Super Admin
 			$data['title'] = 'Edit POM | Fotografi LFM';
 			$data['islogin'] = 2; // Login Sebagai user biasa
+			if ($data['islogin']) $data['user'] = $this->ion_auth->user()->row();
 			$this->load->view('header', $data);
 			$this->load->view('upload_project', $data);
 			$this->load->view('footer');
