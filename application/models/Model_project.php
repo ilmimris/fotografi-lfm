@@ -22,10 +22,34 @@ class Model_project extends ORM {
     return $this->db->get($this->table);
   }
 
+  protected function _create_object($_ORM, $_data) {
+    return new Project_Object($_ORM, $_data);
+  }
+
   public function findByUserId($id) {
     $query = "SELECT * FROM `projects` WHERE `projects`.`id` IN (SELECT `project_id` FROM `projects_contributors` WHERE user_id = ?)";
     $ci_query = $this->db->query($query, [$id]);
 
     return $ci_query->result();
   }
+
+  public function findContributorByUserId($id) {
+    $query = "SELECT * FROM `projects` WHERE `projects`.`id` IN (SELECT `project_id` FROM `projects_contributors` WHERE user_id = ?)";
+    $ci_query = $this->db->query($query, [$id]);
+
+    return $ci_query->result();
+  }
+}
+
+class Project_Object extends ORM_Object {
+
+  protected $Model;
+
+  public function findContributors() {
+    $query = "SELECT `user_id` FROM `projects_contributors` WHERE project_id = ?";
+    $ci_query = $this->Model->db->query($query, [$this->id]);
+
+    return $ci_query->result();
+  }
+
 }
