@@ -179,6 +179,26 @@ class Fotografi extends CI_Controller {
 			$this->load->view('footer');
 		}
 	}
+	public function dk_detail($id = ""){
+
+		if ($id == "") return show_404();
+
+		$this->load->model('model_dk');
+		$this->load->model('model_photos');
+		
+		$dk = $this->model_dk->findById($id);
+
+		$photos_key = ["elite1","elite2","elite3","elite4","all1","all2","all3","all4","all5","all6","all7","all8","all9","all10","all11","all12","all13","all14","all15","all16"];
+
+		$photos = new stdClass();
+		foreach ($photos_key as $photo_key) {
+			$photos->{$photo_key} = $this->model_photos->findById($dk->{$photo_key});
+		}
+		$dk->photos = $photos;
+
+		echo json_encode($dk);
+
+	}
 	public function contact()
 	{
 		if (!$this->ion_auth->logged_in())

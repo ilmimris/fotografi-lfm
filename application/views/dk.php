@@ -6,7 +6,7 @@
 <?php $i = 0; foreach ($dks as $dk) {
 	$i++;
 ?>
-				<div class="inline img-dk"><a href="#" class="btn-dk-desc" style="text-decoration: none;"><img style="height: 410px;width: 230px;" src="<?= img_url().'users_content/'.$dk->cover?>"><h4 class="dk-month"><?= $dk->month ?></h4><h4 class="dk-title"><?= $dk->title ?></h4></a></div>
+				<div class="inline img-dk"><a href="#" onclick="open_detail_dk.call(this)" class="btn-dk-desc" style="text-decoration: none;" data-id="<?=$dk->id?>"><img style="height: 410px;width: 230px;" src="<?= img_url().'users_content/'.$dk->cover?>"><h4 class="dk-month"><?= $dk->month ?></h4><h4 class="dk-title"><?= $dk->title ?></h4></a></div>
 <?php }?>
 			</div>
 		</div>
@@ -17,8 +17,8 @@
 <div id="dk-showdescmodal" class="modal dk-showmodal">
 	<div class="col-md-offset-1 col-md-10 dk-modal">
 		<div id="showdesc" class="dk-content-desc content-desc">
-			<h1><u>Dul Juduldul</u></h1>
-			<p>
+			<h1><u id="dk-modal-title">Dul Juduldul</u></h1>
+			<p id="dk-modal-description">
 			Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
 			The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -41,33 +41,33 @@
 			</div>
 			<div class="row" id="photos">
 				<a id="photo1" href="#sesuatu" data-toggle="modal" data-target="#showphoto"><div class="box col-md-offset-1 col-md-5">
-					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<img class="photos" id="dk-modal-image-elite1" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 1</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-elite1"></h1>
+						<h4 id="dk-modal-caption-photo-elite1"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-5">
-					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<img class="photos" id="dk-modal-image-elite2" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 2</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-elite2"></h1>
+						<h4 id="dk-modal-caption-photo-elite2"></h4>
 					</span>
 				</div>
 			</div>
 			<div class="row" id="photos">	
 				<div class="col-md-offset-1 box col-md-5">
-					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<img class="photos" id="dk-modal-image-elite3" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 4 </h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-elite3"></h1>
+						<h4 id="dk-modal-caption-photo-elite3"></h4>
 					</span>
 				</div>
 				<div class="box col-md-5">
-					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<img class="photos" id="dk-modal-image-elite4" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 5</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-elite4"></h1>
+						<h4 id="dk-modal-caption-photo-elite4"></h4>
 					</span>
 				</div>
 			</div>
@@ -90,121 +90,121 @@
 			<div class="row dk-all" id="photos">
 				<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<img class="photos" id="dk-modal-image-all1" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 1</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all1"></h1>
+						<h4 id="dk-modal-caption-photo-all1"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<img class="photos" id="dk-modal-image-all2" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 2</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all2"></h1>
+						<h4 id="dk-modal-caption-photo-all2"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<img class="photos" id="dk-modal-image-all3" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 4 </h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all3"></h1>
+						<h4 id="dk-modal-caption-photo-all3"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<img class="photos" id="dk-modal-image-all4" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 5</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all4"></h1>
+						<h4 id="dk-modal-caption-photo-all4"></h4>
 					</span>
 				</div>
 			</div>
 			<div class="row dk-all" id="photos">	
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<img class="photos" id="dk-modal-image-all5" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 4 </h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all5"></h1>
+						<h4 id="dk-modal-caption-photo-all5"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<img class="photos" id="dk-modal-image-all6" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 5</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all6"></h1>
+						<h4 id="dk-modal-caption-photo-all6"></h4>
 					</span>
 				</div>
 				<a href="#sesuatu"><div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<img class="photos" id="dk-modal-image-all7" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 1</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all7"></h1>
+						<h4 id="dk-modal-caption-photo-all7"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<img class="photos" id="dk-modal-image-all8" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 2</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all8"></h1>
+						<h4 id="dk-modal-caption-photo-all8"></h4>
 					</span>
 				</div>
 			</div>
 			<div class="row dk-all" id="photos">
 				<a href="#sesuatu" ><div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<img class="photos" id="dk-modal-image-all9" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 1</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all9"></h1>
+						<h4 id="dk-modal-caption-photo-all9"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<img class="photos" id="dk-modal-image-all10" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 2</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all10"></h1>
+						<h4 id="dk-modal-caption-photo-all10"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<img class="photos" id="dk-modal-image-all11" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 4 </h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all11"></h1>
+						<h4 id="dk-modal-caption-photo-all11"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<img class="photos" id="dk-modal-image-all12" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 5</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all12"></h1>
+						<h4 id="dk-modal-caption-photo-all12"></h4>
 					</span>
 				</div>
 			</div>
 			<div class="row dk-all" id="photos">	
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar4.jpg"/>
+					<img class="photos" id="dk-modal-image-all13" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 4 </h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all13"></h1>
+						<h4 id="dk-modal-caption-photo-all13"></h4>
 					</span>
 				</div>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar5.jpg"/>
+					<img class="photos" id="dk-modal-image-all14" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 5</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all14"></h1>
+						<h4 id="dk-modal-caption-photo-all14"></h4>
 					</span>
 				</div>
 				<a href="#sesuatu" ><div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
+					<img class="photos" id="dk-modal-image-all15" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 1</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all15"></h1>
+						<h4 id="dk-modal-caption-photo-all15"></h4>
 					</span>
 				</div></a>
 				<div class="box col-md-3">
-					<img class="photos" src="<?= img_url()?>gambar2.jpg"/>
+					<img class="photos" id="dk-modal-image-all16" src=""/>
 					<span class="caption fade-caption">
-						<h1>Judul 2</h1>
-						<h4>Nama Seseorang</h4>
+						<h1 id="dk-modal-title-photo-all16"></h1>
+						<h4 id="dk-modal-caption-photo-all16"></h4>
 					</span>
 				</div>
 			</div>
@@ -308,6 +308,26 @@
 
 
 }());
+
+function open_detail_dk(){
+	var id = $(this).attr('data-id');
+	var photos_key = ["elite1","elite2","elite3","elite4","all1","all2","all3","all4","all5","all6","all7","all8","all9","all10","all11","all12","all13","all14","all15","all16"];
+	$.get( "/fotografi/dk_detail/" + id , function( data ) {
+		console.log( data );
+
+		dk = JSON.parse(data);
+		$('#dk-modal-title').html(dk.title);
+		$('#dk-modal-description').html(dk.caption);
+
+		console.log(dk.photos);
+		// for (var i = photos_key.length - 1; i >= 0; i--) {
+		// 	$('#dk-modal-title-photo-'+photos_key[i]) = 
+		// }
+		
+		$('#showphoto').modal('hide');
+		$('#showphoto').modal('dk');
+	});
+}
 
 function open_detail(){
 	var img_root = "<?=img_url()?>";
