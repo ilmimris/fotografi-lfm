@@ -346,17 +346,34 @@ class Fotografi extends CI_Controller {
 	{
 		if (!$this->ion_auth->logged_in()) return show_404();
 
-		$data['title'] = 'Edit Profile | Fotografi LFM';
-		$data['islogin'] = 0; // Belum Login
+		if ($this->form_validation->run('update_profile') == FALSE)
+		{
 
-		$data['user_id'] = $this->ion_auth->get_user_id();
-		$data['user'] = $this->model_profile->findById($data['user_id']);
+			$data['title'] = 'Edit Profile | Fotografi LFM';
+			$data['islogin'] = 0; // Belum Login
 
-		$this->load->view('header', $data);
-		$this->load->view('editprofile', $data);
-		$this->load->view('footer');
-		
+			$data['user_id'] = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($data['user_id']);
 
+			$this->load->view('header', $data);
+			$this->load->view('editprofile', $data);
+			$this->load->view('footer');
+
+		}
+		else
+		{
+			$user = $this->model_profile->findById($this->ion_auth->get_user_id());
+
+			$user->jurusan = $this->input->post('jurusan');
+			$user->angkatan_lfm = $this->input->post('angkatan_lfm');
+			$user->email_alternatif = $this->input->post('email_alternatif');
+			$user->username = $this->input->post('username');
+
+			$user->save();
+
+		    redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
+
+		}
 	}
 	public function upload_pom()
 	{
