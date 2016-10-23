@@ -346,6 +346,8 @@ class Fotografi extends CI_Controller {
 	{
 		if (!$this->ion_auth->logged_in()) return show_404();
 
+		$this->load->library('form_validation');
+
 		if ($this->form_validation->run('update_profile') == FALSE)
 		{
 			var_dump($this->input->post());
