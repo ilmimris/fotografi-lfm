@@ -296,6 +296,11 @@ class Fotografi extends CI_Controller {
 	}
 	public function contributor()
 	{
+		$this->load->model("model_profil");
+		$contributors = $this->model_profil->all();
+
+		var_dump($contributors);
+
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
