@@ -21,6 +21,6 @@ class Model_photos extends ORM {
     $this->db->order_by("photos.created", "desc"); 
 
     $this->db->where($filter);
-    return $this->db->get('schedule');
+    return $this->db->get($this->$tabel);
   }
 }
