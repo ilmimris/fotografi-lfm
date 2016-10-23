@@ -68,7 +68,7 @@
 	</form>	
 </div>
 <script>
-	$('#profile-pic').attr('src', '<?=img_url().$user->foto?>');
+	$('#profile-pic').attr('src', '<?=img_url()."users_profile/_thumb/".$user->foto?>');
 
 	function readURL(input) {
     if (input.files && input.files[0]) {
