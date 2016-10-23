@@ -42,10 +42,18 @@
 			    	<div class="img-project" style="background-image: url('<?= img_url()?>pp-9.jpg');"></div>
 			    	<h4 class="nama-contributor">Nama seseorang</h4>
 		    	</div>
-		    	<div class="contributor">
-			    	<div class="img-project" style="background-image: url('<?= img_url()?>pp-4.jpg');"></div>
-			    	<h4 class="nama-contributor">Nama seseorang</h4>
-		    	</div>
+				<div class="contributor">
+					<div class="img-project" style="background-image: url('<?= img_url()?>pp-4.jpg');"></div>
+					<h4 class="nama-contributor">Nama seseorang</h4>
+				</div>
+<?php foreach ($contributors as $contributor) { ?>
+			<a href="<?=site_url('/fotografi/profile/' . $contributor->id)?>" class="show-detail-contributor">
+				<div class="contributor">
+					<div class="img-project" style="background-image: url('<?= img_url().$contributor->foto?>');"></div>
+					<h4 class="nama-contributor"><?=$contributor->first_name?> <?=$contributor->last_name?></h4>
+				</div>
+			</a>
+<?php } ?>
 		    </div>	
 		    <div class="col-md-6 content-desc project-detail-content project-detail-content-part">
 		    	<hr>

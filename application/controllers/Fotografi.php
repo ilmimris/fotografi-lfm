@@ -339,9 +339,15 @@ class Fotografi extends CI_Controller {
 		if ($id == "") return show_404();
 
 		$this->load->model('model_project');
+		$this->load->model('model_profile');
 		$project = $this->model_project->findById($id);
+		$project->contributors = [];
 
-		$project->contributors = $project->findContributors();
+		$contributors_id = $project->findContributors();
+
+		foreach ($contributors_id as $contributor_id) {
+			$project->contributors[] = $this->model_profile->findById($contributor_id->user_id);
+		}
 
 		echo json_encode($project);
 
