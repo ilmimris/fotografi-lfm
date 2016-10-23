@@ -413,7 +413,7 @@ class Fotografi extends CI_Controller {
 				echo $this->upload->display_errors();
 			}
 
-			//redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
+			redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
 
 		}
 	}
