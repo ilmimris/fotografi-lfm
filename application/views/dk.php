@@ -40,7 +40,7 @@
 			    </a>
 			</div>
 			<div class="row" id="photos">
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite1">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-elite1">
 				<div class="box col-md-offset-1 col-md-5">
 					<img class="photos" id="dk-modal-image-elite1" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
@@ -49,7 +49,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite2">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-elite2">
 				<div class="box col-md-5">
 					<img class="photos" id="dk-modal-image-elite2" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -60,7 +60,7 @@
 				</a>
 			</div>
 			<div class="row" id="photos">	
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite3">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-elite3">
 				<div class="col-md-offset-1 box col-md-5">
 					<img class="photos" id="dk-modal-image-elite3" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -69,7 +69,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-elite4">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-elite4">
 				<div class="box col-md-5">
 					<img class="photos" id="dk-modal-image-elite4" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -96,7 +96,7 @@
 			    </a>
 			</div>
 			<div class="row dk-all" id="photos">
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all1">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all1">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all1" src="<?= img_url()?>chevron.png"/>
 					<span class="caption fade-caption">
@@ -105,7 +105,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all2">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all2">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all2" src="<?= img_url()?>chevron.png"/>
 					<span class="caption fade-caption">
@@ -114,7 +114,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all3">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all3">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all3" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
@@ -123,7 +123,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all4">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all4">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all4" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -134,7 +134,7 @@
 				</a>
 			</div>
 			<div class="row dk-all" id="photos">	
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all5">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all5">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all5" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -143,7 +143,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all6">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all6">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all6" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -152,7 +152,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all7">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all7">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all7" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -161,7 +161,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all8">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all8">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all8" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -172,7 +172,7 @@
 				</a>
 			</div>
 			<div class="row dk-all" id="photos">
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all9">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all9">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all9" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
@@ -181,7 +181,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all10">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all10">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all10" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -190,7 +190,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all11">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all11">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all11" src="<?= img_url()?>gambar1.jpg"/>
 					<span class="caption fade-caption">
@@ -199,7 +199,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all12">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all12">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all12" src="<?= img_url()?>gambar2.jpg"/>
 					<span class="caption fade-caption">
@@ -210,7 +210,7 @@
 				</a>
 			</div>
 			<div class="row dk-all" id="photos">	
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all13">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all13">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all13" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -219,7 +219,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all14">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all14">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all14" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
@@ -228,7 +228,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all15">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all15">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all15" src="<?= img_url()?>gambar4.jpg"/>
 					<span class="caption fade-caption">
@@ -237,7 +237,7 @@
 					</span>
 				</div>
 				</a>
-				<a href="#" onclick="show_detail.call(this)" id="dk-modal-link-all16">
+				<a href="#" onclick="open_detail.call(this)" id="dk-modal-link-all16">
 				<div class="box col-md-3">
 					<img class="photos" id="dk-modal-image-all16" src="<?= img_url()?>gambar5.jpg"/>
 					<span class="caption fade-caption">
