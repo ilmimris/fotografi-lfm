@@ -110,7 +110,7 @@ class ORM_Object {
 	}
 
 	public function save(){
-		return $this->Model->save($this);
+		return $this->Model->save(&$this);
 	}
 
 	public function delete(){
