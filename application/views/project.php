@@ -86,7 +86,7 @@
 			foto = project.contributors[i].foto
 			name = project.contributors[i].first_name
 			
-			element = "<a href=\"/fotografi/profile/"+id+"\" class=\"show-detail-contributor\"><div class=\"contributor\"><div class=\"img-project\" style=\"background-image: url('"+img_root+"users_content/"+foto+"');\"></div><h4 class=\"nama-contributor\">"+name+"</h4></div></a>";
+			element = "<a href=\"/fotografi/profile/"+id+"\" class=\"show-detail-contributor\"><div class=\"contributor\"><div class=\"img-project\" style=\"background-image: url('"+img_root+foto+"');\"></div><h4 class=\"nama-contributor\">"+name+"</h4></div></a>";
 
 
 			$("#modal-project-contributor-list").html("");
