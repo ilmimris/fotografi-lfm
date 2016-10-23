@@ -136,6 +136,10 @@ $('#registration-post').click(function(){
 		$("#done_").hide();
 		$("#part1").hide();
 		$("#cont_").hide();
+
+		if (data_object.status == "ok") {
+			clear_registration_form();
+		}
 	})
 	.fail(function(data) {
 		console.log("fail: "); console.log(data);
@@ -150,5 +154,17 @@ window.onclick = function(event) {
         $("#form-reg").modal('hide');
         $("#login").modal('hide');
     }
+}
+
+function clear_registration_form(){
+	$("#registration-fullname").val("");
+	$("#registration-username").val("");
+	$("#registration-email").val("");
+	$("#registration-password").val("");
+	$("#registration-retype-password").val("");
+	$("#registration-field-of-study").val("");
+	$("#registration-batch").val("");
+	$("#registration-lfm-batch").val("");
+	$("#registration-alternative-email").val("");
 }
 </script>
