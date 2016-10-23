@@ -32,6 +32,7 @@
 		for (var i = data.length - 1; i >= 0; i--) {
 			contributors.push(data[i].username);
 		}
+		console.log(contributors);
 		$('#project-contributor').tagging(contributors);
 
 	}, "json" );
