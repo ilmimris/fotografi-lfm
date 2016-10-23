@@ -113,7 +113,7 @@
 	var showdesc = document.getElementById('showdescphoto');
 	var	addphoto = document.getElementById('addphoto');
 
-	if (add !== null) {
+	if ($("'#btn-addphoto").length) {
 		$("'#btn-addphoto").click(function(){
 			$('#input-photo-progress').css("display","none");
 			$('#input-photo-form').css("display", "block");
