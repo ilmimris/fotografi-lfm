@@ -118,11 +118,12 @@
 	var up = document.getElementById("up-photo");
 	var add = document.getElementById("btn-addphoto");
 
-	// When the user clicks on the button, open the modal
-	add.onclick = function(){
-		$('#input-photo-progress').css("display","none");
-		$('#input-photo-form').css("display", "block");
-		$("#addphoto").modal();
+	if (typeof add !== "undefined") {
+		add.onclick = function(){
+			$('#input-photo-progress').css("display","none");
+			$('#input-photo-form').css("display", "block");
+			$("#addphoto").modal();
+		}
 	}
 
 	desc.onclick = function(){
