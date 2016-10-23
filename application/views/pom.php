@@ -79,8 +79,8 @@
 		<div class="col-mod-12">
 		<?php echo form_open("auth/login");?>
 			<form class = "form-horizontal" role="form">
-		      <label for = "username" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
-			  <input id="username" name="username" class="form-control" placeholder="Username" type="text" autofocus>
+		      <label for = "identity" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+			  <input id="identity" name="identity" class="form-control" placeholder="Username" type="text" autofocus>
 		      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
 			  <input name="password" type="password" value="" class="form-control" placeholder="Password" >
 			  <input type="submit" class="btn btn-info" value="Submit">
@@ -88,7 +88,7 @@
 	    <?php echo form_close();?>
 		</div>
 	</div>
-</div>
+</div>	
 
 <script type="text/javascript">
 //Get the modal
@@ -109,11 +109,11 @@ var cont = document.getElementById("cont");
 // When the user clicks on the button, open the modal 
 $("#register").click(function() {
     $("form-reg").modal('hide');
-    $("form-reg").modal();
-	part1.style.display = "block";
-	cont_.style.display = "block";
-	part2.style.display = "none";
-	done_.style.display = "none";
+	$("#part2").hide();
+	$("#done_").hide();
+	$("#part1").show();
+	$("#cont_").show();
+    $("form-reg").modal('show');
 });
 
 masuk.onclick = function() {
@@ -122,18 +122,17 @@ masuk.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 
 $("#registration-cont").click(function() {
-	part1.style.display = "none";
-	cont_.style.display = "none";
-	part2.style.display = "block";
-	done_.style.display = "block";
-    $("form-reg").modal('hide');
+	$("#part1").hide();
+	$("#cont_").hide();
+	$("#part2").show();
+	$("#done_").show();
 });
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
-        modal2.style.display = "none";
+        $("#form-reg").modal('hide');
+        $("#login").modal('hide');
     }
 }
 </script>
