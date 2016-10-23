@@ -520,12 +520,12 @@ class Auth extends CI_Controller {
     }
 
     function create_user_ajax(){
-    	
+
 		if ($id = $this->ion_auth->register(
 				$this->input->post('identity'), 
 				$this->input->post('password'), 
 				$this->input->post('email'), 
-				$this->input->post('additional_data')) {
+				$this->input->post('additional_data'))) {
 
         	$this->load->model('Model_profile');
         	$profile = $this->model_profile->create();
