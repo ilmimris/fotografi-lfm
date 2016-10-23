@@ -63,7 +63,7 @@
 	    </ul>
     </div>
     <?php if (!$islogin == 0) {?>
-    <a href="<?=site_url()?>fotografi/edit_profile"><div id="profpic"><img class="img-circle" src="<?= img_url()?><?=$user->foto?>"></div></a>
+    <a href="<?=site_url()?>fotografi/edit_profile"><div id="profpic"><img class="img-circle" src="<?= img_url()."users_profile/_thumb/".$user->foto?>"></div></a>
     <?php } ?>
   </div>
 </nav>
