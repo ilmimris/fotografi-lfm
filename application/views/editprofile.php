@@ -1,6 +1,6 @@
 </header>
 <div class="container-fluid">
-	<form class="form-horizontal editprofile" role="form" method="post">
+	<form class="form-horizontal editprofile" role="form" method="post" enctype="multipart/form-data">
 		<div id="edit-profile-form-1" >
 			<div class="row">	
 				<div class="col-md-6">
