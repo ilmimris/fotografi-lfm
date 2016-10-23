@@ -91,7 +91,7 @@ class Fotografi extends CI_Controller {
 
 			}
 
-			$this->_create_thumbnail($config['upload_path'], $uploaded['file_name']);
+			$this->_create_thumbnail($config['upload_path'], $uploaded['file_name'], 300);
 
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
@@ -124,7 +124,7 @@ class Fotografi extends CI_Controller {
 		$this->jpegtranlib->modify($fullpath, $options);
 	}
 
-	public function _create_thumbnail($path, $filename) {
+	public function _create_thumbnail($path, $filename, $size) {
 	    $source_path = $path . $filename;
 	    $target_path = $path . '_thumb/' . $filename;
 	    $config = array(
@@ -132,7 +132,7 @@ class Fotografi extends CI_Controller {
 	        'source_image' => $source_path,
 	        'new_image' => $target_path,
 	        'maintain_ratio' => TRUE,
-	        'height' => 300
+	        'height' => $size
 	    );
 	    $this->load->library('image_lib', $config);
 	    if (!$this->image_lib->resize()) {
@@ -383,7 +383,37 @@ class Fotografi extends CI_Controller {
 				$this->ion_auth->reset_password($this->input->post('username'),$this->input->post('password'));
 			} 
 
-		    redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
+			$this->load->library('UUID');
+
+			$config['upload_path'] = FCPATH . 'assets/img/users_profile/';
+			$config['allowed_types'] = 'jpg|png';
+			$config['file_name'] = $this->uuid->v4();
+		
+			$this->load->library('upload', $config);
+
+			$is_uploaded = $this->upload->do_upload('file');
+				
+			if ($is_uploaded) {
+
+				$uploaded = $this->upload->data();
+
+				if(exif_imagetype($config['upload_path'].$uploaded['file_name']) == IMAGETYPE_JPEG) {
+
+				    $fullpath = $config['upload_path'].$uploaded['file_name'];
+				    $this->_jpeg_progressive($fullpath);
+
+				}
+
+				$this->_create_thumbnail($config['upload_path'], $uploaded['file_name'], 300);
+				
+				$user->foto = $uploaded['file_name'];
+				$user->save();
+
+			} else {
+				echo $this->upload->display_errors();
+			}
+
+			//redirect('/fotografi/profile/'.$this->ion_auth->get_user_id());
 
 		}
 	}
