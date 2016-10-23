@@ -391,7 +391,7 @@ class Fotografi extends CI_Controller {
 		
 			$this->load->library('upload', $config);
 
-			$is_uploaded = $this->upload->do_upload('file');
+			$is_uploaded = $this->upload->do_upload('photo');
 				
 			if ($is_uploaded) {
 
