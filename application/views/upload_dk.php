@@ -219,7 +219,9 @@
 	       contentType: false,  // tell jQuery not to set contentType
 	       success : function(data) {
 	           console.log(data);
-	           refresh_page(data);
+	           data_json = JSON.parse(data);
+	           refresh_page(data_json);
+	           console.log(data_json);
 	           $("#addphoto").modal('hide');
 	       }
 	});
