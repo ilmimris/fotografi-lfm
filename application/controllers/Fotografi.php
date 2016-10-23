@@ -54,42 +54,13 @@ class Fotografi extends CI_Controller {
 	{
 		$this->load->model('model_photos');
 		$photos = $this->model_photos->find(['type'=>0]);
-
 		$data['photos'] = $photos;
 
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Photos | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-
-			$this->load->view('header', $data);
-			$this->load->view('photo', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Photos | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('photo', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// set the flash data error message if there is one
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
-			foreach ($this->data['users'] as $k => $user)
-			{
-				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-			}
-
-			$this->load->view('auth/index', $this->data);
-		}
+		$data['title'] = 'Photos | Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in();
+		$this->load->view('header', $data);
+		$this->load->view('photo', $data);
+		$this->load->view('footer');
 	}
 
 	public function photo_detail($id = ""){
@@ -190,34 +161,23 @@ class Fotografi extends CI_Controller {
 
 		$data['dks'] = $dks;
 
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-			$this->load->view('header', $data);
-			$this->load->view('dk', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('dk', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
-			$data['title'] = 'Dinding Karya | Fotografi LFM';
-			$data['islogin'] = 2; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('upload_dk', $data);
-			$this->load->view('footer');
-		}
+		$data['title'] = 'Dinding Karya | Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in();
+		$this->load->view('header', $data);
+		$this->load->view('dk', $data);
+		$this->load->view('footer');
 	}
+	
+	public function dk_upload(){
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) return show_404();
+
+		$data['title'] = 'Dinding Karya | Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in();
+		$this->load->view('header', $data);
+		$this->load->view('upload_dk', $data);
+		$this->load->view('footer');
+	}
+
 	public function dk_detail($id = ""){
 
 		if ($id == "") return show_404();
@@ -240,28 +200,11 @@ class Fotografi extends CI_Controller {
 	}
 	public function contact()
 	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Contact Us | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-			$this->load->view('header', $data);
-			$this->load->view('contact', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Contact Us | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('contact', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
-		}
+		$data['title'] = 'Contact Us | Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in(); // Belum Login
+		$this->load->view('header', $data);
+		$this->load->view('contact', $data);
+		$this->load->view('footer');		
 	}
 
 	public function dk_add() {
@@ -311,29 +254,14 @@ class Fotografi extends CI_Controller {
 
 		$data['projects'] = $projects;
 
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			$data['title'] = 'Project | Fotografi LFM';
-			$data['islogin'] = 0; // Belum Login
-			$this->load->view('header', $data);
-			$this->load->view('project', $data);
-			$this->load->view('footer');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			$data['title'] = 'Project | Fotografi LFM';
-			$data['islogin'] = 1; // Login Sebagai user biasa
-			$this->load->view('header', $data);
-			$this->load->view('project', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			// Super Admin
-		}
+		// redirect them to the home page because they must be an administrator to view this
+		$data['title'] = 'Project | Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
+		$this->load->view('header', $data);
+		$this->load->view('project', $data);
+		$this->load->view('footer');
 	}
+
 	public function project_detail($id = ""){
 
 		if ($id == "") return show_404();
@@ -366,6 +294,7 @@ class Fotografi extends CI_Controller {
 		$this->load->view('contributor', $data);
 		$this->load->view('footer');
 	}
+
 	public function profile($id = "")
 	{
 		if ($id == "") return show_404();
@@ -389,6 +318,7 @@ class Fotografi extends CI_Controller {
 		$this->load->view('profile', $data);
 		$this->load->view('footer');
 	}
+
 	public function edit_profile()
 	{
 		if (!$this->ion_auth->logged_in())
