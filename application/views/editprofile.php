@@ -16,8 +16,8 @@
 					  <label for="lfmbatch" class="control-label title">L&ensp;F&ensp;M&ensp; &ensp;B&ensp;a&ensp;t&ensp;c&ensp;h<span class="red">&ensp;*</span></label>
 					  <input value="<?=set_value('angkatan_lfm', $user->angkatan_lfm)?>" id="input-photo-location" type="text" name="angkatan_lfm" class="form-control" >
 					  
-					  <label for="alternate_email" class="control-label title">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;e&ensp;m&ensp;a&ensp;i&ensp;l</label>
-					  <input value="<?=set_value('alternate_email', $user->alternate_email)?>" id="input-photo-other" type="text" name="alternate_email" class="form-control" placeholder="Additional Info">
+					  <label for="email_alternatif" class="control-label title">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;e&ensp;m&ensp;a&ensp;i&ensp;l</label>
+					  <input value="<?=set_value('email_alternatif', $user->email_alternatif)?>" id="input-photo-other" type="text" name="email_alternatif" class="form-control" placeholder="Additional Info">
 					  
 					  <label for="photo" class="control-label title">D&ensp;i&ensp;s&ensp;p&ensp;l&ensp;a&ensp;y&ensp; &ensp;P&ensp;i&ensp;c&ensp;t&ensp;u&ensp;r&ensp;e</label>
 					  <input  id="input-photo-image" type="file" name="photo" accept="image/*" >
