@@ -310,6 +310,16 @@
 	//	$("#addphoto").modal();
 	//}
 
+	$("#description").click(function(){
+		$("#showdescphoto").modal('show');
+		$("#showphoto").modal('hide');
+	});
+	$("#up-photo").click(function() {
+		$("#showdescphoto").modal('hide');
+		$("#showphoto").modal('show');
+	});
+
+
 	$('.btn-dk-desc').click(function(){
 
 		//cleanup
