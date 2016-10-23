@@ -42,11 +42,11 @@
 	      <label for = "fullname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
 	      <input type = "text" class = "form-control" id = "fullname" >
 	      <label for = "username" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
-		  <input type = "text" class = "form-control" id = "username" >
+		  <input type = "text" class = "form-control" id = "username" required="required">
 		  <label for = "email" class = "control-label">E&ensp;m&ensp;a&ensp;i&ensp;l</label>
-	      <input type = "text" class = "form-control" id = "email" >
+	      <input type = "text" class = "form-control" id = "email" readonly="required">
 	      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
-		  <input type = "password" class = "form-control" id = "password" >
+		  <input type = "password" class = "form-control" id = "password" required="required">
 	      <label for = "retype_password" class = "control-label">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
 		  <input type = "password" class = "form-control" id = "retype_password" >
 	    </form>	

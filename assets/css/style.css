@@ -148,6 +148,19 @@ input.btn.btn-info {
   font-size: 30px;
   color: #FFF;
 }
+.save {
+  display: block;
+  font-family: 'Bebas';
+  text-align: center;
+  color: black !important;
+  text-decoration: none !important;
+  font-size: 2em;
+  margin: 12% auto;
+
+}
+.save > a, .save > a:hover {
+  text-decoration: none !important;
+}
 a#registration-cont, a#registration-cont:hover{
   color: #FFF;
   text-decoration: none;
@@ -480,8 +493,23 @@ u {
 .editprofile .title{
   font-family: 'Bebas';
 }
-
+.red {
+  color: red !important;
+}
+.pagenation {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+ text-align: center;  
+}
+.pagenation > a > h2:hover {
+  text-decoration: none;
+}
+.pagenation > a > h2 {
+  color: grey !important;
+}
  /* Smartphones (portrait and landscape) ----------- */
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
     
