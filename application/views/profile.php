@@ -19,100 +19,19 @@
 				<h2>Photos</h2>
 				<div class="scroll">
 				<div class="row">
+<?php $i = 0; foreach ($photos as $photo) {
+	$i++;
+?>
 					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-8.jpg"/>
+						<img class="photos" src="<?= img_url()."users_content/".$photo->photo?>"/>
 						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
+							<h1><?=$photo->title?></h1>
 						</span>
 					</div>
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-2.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-1.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-5.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-8.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-2.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-1.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-5.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-8.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-2.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-1.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
-					<div class="box col-md-6">
-						<img class="photos" src="<?= img_url()?>pp-5.jpg"/>
-						<span class="caption fade-caption">
-							<h1>Judul 2</h1>
-							<h4>Nama Seseorang</h4>
-						</span>
-					</div>
+<?php
+	if (($i>0) && ($i%2==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\">";
+}
+?>
 				</div>
 				</div>
 			</div>
@@ -126,49 +45,23 @@
 			<div class="profile_projects">
 				<h2>Projects</h2>
 				<div class="scroll">
-					<div class="row	">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
-					</div>
 					<div class="row">
+<?php $i = 0; foreach ($projects as $project) {
+	$i++;
+?>
 						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
+							<img class="photos" src="<?=img_url()?>pp-3.jpg" />
 						</div>
 						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
+							<h1><?=$projects->title?></h1>
+							<h3><?=$projects->year?></h3>
+							<h3><?=$projects->description?></h3>
+							<h3><?=$projects->group_title?></h3>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 img-projects">
-							<img class="photos" src="<?= img_url()?>pp-3.jpg"/>
-						</div>
-						<div class="col-md-6 desc-projects">
-							<h1>Title Project</h1>
-							<h3>2012</h3>
-							<h3>Deskripsi</h3>
-							<h3>group project</h3>
-						</div>
+<?php
+	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";
+}
+?>
 					</div>
 				</div>
 			</div>
