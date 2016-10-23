@@ -33,9 +33,11 @@
 	<div class="container-fluid">
 		<div class="row" >
 			<div class="col-sm-12 col-md-12 ">
+				<?php if ($islogin == 1) {?>
 				<a id="btn-addphoto" href="#">
 			      <img class="upload btn-left" src="<?= img_url()?>plus.png">
 			    </a>
+			    <?php }?>
 			    <a href="#">
 			      <img class="btn-right" src="<?= img_url()?>chevron.png">
 			    </a>
