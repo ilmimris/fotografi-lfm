@@ -80,11 +80,11 @@
 		$('#modal-project-description').html(project.description);
 		$('#modal-project-link').html(project.link);
 
-		for (var i = data.contributors.length - 1; i >= 0; i--) {
+		for (var i = project.contributors.length - 1; i >= 0; i--) {
 			
-			id = data.contributors[i].foto
-			foto = data.contributors[i].foto
-			name = data.contributors[i].first_name
+			id = project.contributors[i].foto
+			foto = project.contributors[i].foto
+			name = project.contributors[i].first_name
 			
 			element = "<a href=\"/fotografi/profile/"+id+"\" class=\"show-detail-contributor\"><div class=\"contributor\"><div class=\"img-project\" style=\"background-image: url('"+img_root+"users_content/"+foto+"');\"></div><h4 class=\"nama-contributor\">"+name+"</h4></div></a>";
 
