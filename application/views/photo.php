@@ -118,6 +118,7 @@
 	var up = document.getElementById("up-photo");
 	var add = document.getElementById("btn-addphoto");
 
+	console.log(add);
 	if (typeof add !== "undefined") {
 		add.onclick = function(){
 			$('#input-photo-progress').css("display","none");
