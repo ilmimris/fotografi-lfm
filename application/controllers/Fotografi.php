@@ -386,9 +386,9 @@ class Fotografi extends CI_Controller {
 
 		var_dump($data['user_id']);
 
-		$this->load->view('header', $data);
-		$this->load->view('editprofile', $data);
-		$this->load->view('footer');
+		// $this->load->view('header', $data);
+		// $this->load->view('editprofile', $data);
+		// $this->load->view('footer');
 		
 
 	}
