@@ -20,12 +20,6 @@
 				<h2>Nama Seseorang</h2>
 			</span>
 		</div>
-		<div class="box col-md-3">
-			<img class="photos photos-contributor" src="<?= img_url()?>pp-4.jpg"/>
-			<span class="caption fade-caption photos-contributor ">
-				<h2>Nama Seseorang</h2>
-			</span>
-		</div>
 	</div>
 </div>
 </div>
