@@ -384,7 +384,7 @@ class Fotografi extends CI_Controller {
 		$data['user_id'] = $this->ion_auth->get_user_id();
 		$data['user'] = $this->model_profile->findById($user_id);
 
-		var_dump($data['user']);
+		var_dump($data['user_id']);
 
 		$this->load->view('header', $data);
 		$this->load->view('editprofile', $data);
