@@ -19,13 +19,13 @@
 				<div class="col-md-offset-3 col-md-3 upload_dk" data-id="elite-1">
 					<input type="hidden" name="elite-1" id="input-elite-1">
 				    <label for="elite-1">
-				        <img src="http://placehold.it/350?text=Upload+elite+1"/>
+				        <img id="image-elite-1" src="http://placehold.it/350?text=Upload+elite+1"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="elite-2">
 					<input type="hidden" name="elite-2" id="input-elite-2">
 				    <label for="elite-2">
-				        <img src="http://placehold.it/350?text=Upload+elite+2"/>
+				        <img id="image-elite-2" src="http://placehold.it/350?text=Upload+elite+2"/>
 				    </label>
 				</div>
 			</div>
@@ -33,13 +33,13 @@
 				<div class="col-md-offset-3 col-md-3 upload_dk" data-id="elite-3">
 					<input type="hidden" name="elite-3" id="input-elite-3">
 				    <label for="elite-3">
-				        <img src="http://placehold.it/350?text=Upload+elite+3"/>
+				        <img id="image-elite-3" src="http://placehold.it/350?text=Upload+elite+3"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="elite-4">
 					<input type="hidden" name="elite-4" id="input-elite-4">
 				    <label for="elite-4 ">
-				        <img src="http://placehold.it/350?text=Upload+elite+4"/>
+				        <img id="image-elite-4" src="http://placehold.it/350?text=Upload+elite+4"/>
 				    </label>
 				</div>
 			</div>
@@ -49,25 +49,25 @@
 				<div class="col-md-3 upload_dk" data-id="all-1">
 					<input type="hidden" name="all-1" id="input-all-1">
 				    <label for="all-1">
-				        <img src="http://placehold.it/350?text=Upload+all+1"/>
+				        <img id="image-all-1" src="http://placehold.it/350?text=Upload+all+1"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-2">
 					<input type="hidden" name="all-2" id="input-all-2">
 				    <label for="all-2">
-				        <img src="http://placehold.it/350?text=Upload+all+2"/>
+				        <img id="image-all-2" src="http://placehold.it/350?text=Upload+all+2"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-3">
 					<input type="hidden" name="all-3" id="input-all-3">
 				    <label for="all-3">
-				        <img src="http://placehold.it/350?text=Upload+all+3"/>
+				        <img id="image-all-3" src="http://placehold.it/350?text=Upload+all+3"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-4">
 					<input type="hidden" name="all-4" id="input-all-4">
 				    <label for="all-4">
-				        <img src="http://placehold.it/350?text=Upload+all+4"/>
+				        <img id="image-all-4" src="http://placehold.it/350?text=Upload+all+4"/>
 				    </label>
 				</div>
 			</div>
@@ -75,25 +75,25 @@
 				<div class="col-md-3 upload_dk" data-id="all-5">
 					<input type="hidden" name="all-5" id="input-all-5">
 				    <label for="all-5">
-				        <img src="http://placehold.it/350?text=Upload+all+5"/>
+				        <img id="image-all-5" src="http://placehold.it/350?text=Upload+all+5"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-6">
 					<input type="hidden" name="all-6" id="input-all-6">
 				    <label for="all-6">
-				        <img src="http://placehold.it/350?text=Upload+all+6"/>
+				        <img id="image-all-6" src="http://placehold.it/350?text=Upload+all+6"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-7">
 					<input type="hidden" name="all-7" id="input-all-7">
 				    <label for="all-7">
-				        <img src="http://placehold.it/350?text=Upload+all+7"/>
+				        <img id="image-all-7" src="http://placehold.it/350?text=Upload+all+7"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-8">
 					<input type="hidden" name="all-8" id="input-all-8">
 				    <label for="all-8">
-				        <img src="http://placehold.it/350?text=Upload+all+8"/>
+				        <img id="image-all-8" src="http://placehold.it/350?text=Upload+all+8"/>
 				    </label>
 				</div>
 			</div>
@@ -101,25 +101,25 @@
 				<div class="col-md-3 upload_dk" data-id="all-9">
 					<input type="hidden" name="all-9" id="input-all-9">
 				    <label for="all-9">
-				        <img src="http://placehold.it/350?text=Upload+all+9"/>
+				        <img id="image-all-9" src="http://placehold.it/350?text=Upload+all+9"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-10">
 					<input type="hidden" name="all-10" id="input-all-10">
 				    <label for="all-10">
-				        <img src="http://placehold.it/350?text=Upload+all+10"/>
+				        <img id="image-all-10" src="http://placehold.it/350?text=Upload+all+10"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-11">
 					<input type="hidden" name="all-11" id="input-all-11">
 				    <label for="all-11">
-				        <img src="http://placehold.it/350?text=Upload+all+11"/>
+				        <img id="image-all-11" src="http://placehold.it/350?text=Upload+all+11"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-12">
 					<input type="hidden" name="all-12" id="input-all-12">
 				    <label for="all-12">
-				        <img src="http://placehold.it/350?text=Upload+all+12"/>
+				        <img id="image-all-12" src="http://placehold.it/350?text=Upload+all+12"/>
 				    </label>
 				</div>
 			</div>
@@ -127,25 +127,25 @@
 				<div class="col-md-3 upload_dk" data-id="all-13">
 					<input type="hidden" name="all-13" id="input-all-13">
 				    <label for="all-13">
-				        <img src="http://placehold.it/350?text=Upload+all+13"/>
+				        <img id="image-all-13" src="http://placehold.it/350?text=Upload+all+13"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-14">
 					<input type="hidden" name="all-14" id="input-all-14">
 				    <label for="all-14">
-				        <img src="http://placehold.it/350?text=Upload+all+14"/>
+				        <img id="image-all-14" src="http://placehold.it/350?text=Upload+all+14"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-15">
 					<input type="hidden" name="all-15" id="input-all-15">
 				    <label for="all-15">
-				        <img src="http://placehold.it/350?text=Upload+all+15"/>
+				        <img id="image-all-15" src="http://placehold.it/350?text=Upload+all+15"/>
 				    </label>
 				</div>
 				<div class="col-md-3 upload_dk" data-id="all-16">
 					<input type="hidden" name="all-16" id="input-all-16">
 				    <label for="all-16">
-				        <img src="http://placehold.it/350?text=Upload+all+16"/>
+				        <img id="image-all-16" src="http://placehold.it/350?text=Upload+all+16"/>
 				    </label>
 				</div>
 			</div>
@@ -231,7 +231,6 @@
 	function refresh_page(data) {
 		id = $('#input-upload-for').val();
 		$('input-'.id).val(data.id);
-
-
+		$('image-'.id).attr('src', data.photo);
 	}
 </script>

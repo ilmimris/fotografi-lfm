@@ -13,7 +13,7 @@ class Model_photos extends ORM {
 
   protected $table = 'photos';
 
-  protected $contract = ["id", "user_id", "title", "caption", "gear", "location", "other", "photo"];
+  protected $contract = ["id", "user_id", "title", "caption", "gear", "location", "other", "photo", "type"];
 
   protected function _find_query($filter){
     $this->db->select(["photos.*","users.first_name","users.last_name"]);
