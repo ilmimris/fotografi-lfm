@@ -301,6 +301,8 @@ class Fotografi extends CI_Controller {
 
 		$data['contributors'] = $contributors;
 
+		var_dump($contributors);
+
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
