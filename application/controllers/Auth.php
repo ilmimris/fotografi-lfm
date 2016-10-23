@@ -527,7 +527,7 @@ class Auth extends CI_Controller {
 				$this->input->post('email'), 
 				$this->input->post('additional_data'))) {
 
-        	$this->load->model('Model_profile');
+        	$this->load->model('model_profile');
         	$profile = $this->model_profile->create();
         	$profile->id = $id;
         	$profile->jurusan = $this->input->post('filed_of_study');
@@ -541,7 +541,7 @@ class Auth extends CI_Controller {
         } else {
 
             $response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
-            
+
         }
 
         echo json_encode($response);
