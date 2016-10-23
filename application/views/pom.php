@@ -38,36 +38,36 @@
   <!-- Modal content -->
   <div class="modal-content">
     <div id="part1" class="form col-md-3">
-    	<form class = "form-horizontal" role="form">
-	      <label for = "fullname" class = "control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
-	      <input type = "text" class = "form-control" id = "fullname" >
-	      <label for = "username" class = "control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
-		  <input type = "text" class = "form-control" id = "username" >
-		  <label for = "email" class = "control-label">E&ensp;m&ensp;a&ensp;i&ensp;l</label>
-	      <input type = "text" class = "form-control" id = "email" >
-	      <label for = "password" class = "control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
-		  <input type = "password" class = "form-control" id = "password" >
-	      <label for = "retype_password" class = "control-label">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
-		  <input type = "password" class = "form-control" id = "retype_password" >
+    	<form class="form-horizontal" role="form">
+	      <label for="fullname" class="control-label">F&ensp;u&ensp;l&ensp;l&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+	      <input type="text" class="form-control" id="registration-fullname" >
+	      <label for="username" class="control-label">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e</label>
+		  <input type="text" class="form-control" id="registration-username" >
+		  <label for="email" class="control-label">E&ensp;m&ensp;a&ensp;i&ensp;l</label>
+	      <input type="text" class="form-control" id="registration-email" >
+	      <label for="password" class="control-label">P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
+		  <input type="password" class="form-control" id="registration-password" >
+	      <label for="retype_password" class="control-label">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
+		  <input type="password" class="form-control" id="registration-retype-password" >
 	    </form>	
     </div>
     <div id="cont_" class="col-md-9 continue">
     	<a href="#" id="registration-cont"><span>C&ensp;o&ensp;n&ensp;t&ensp;i&ensp;n&ensp;u&ensp;e</span><img src="<?=asset_url()?>/img/chevron.png" class="next"></a>	
     </div>
     <div id="part2" class="form col-md-3" style="display: none;">
-    	<form class = "form-horizontal" role="form">
-	      <label for = "field" class = "control-label">F&ensp;i&ensp;e&ensp;l&ensp;d&ensp; &ensp;o&ensp;f&ensp; &ensp;S&ensp;t&ensp;u&ensp;d&ensp;y</label>
-	      <input type = "text" class = "form-control" id = "field" >
-	      <label for = "year" class = "control-label">Y&ensp;e&ensp;a&ensp;r</label>
-		  <input type = "text" class = "form-control" id = "year" >
-		  <label for = "lfm_batch" class = "control-label">L&ensp;F&ensp;M&ensp; &ensp;B&ensp;a&ensp;t&ensp;c&ensp;h</label>
-	      <input type = "text" class = "form-control" id = "lfm_batch" >
-	      <label for = "alternate_email" class = "control-label">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;E&ensp;m&ensp;a&ensp;i&ensp;l</label>
-		  <input type = "text" class = "form-control" id = "alternate_email" >
+    	<form class="form-horizontal" role="form">
+	      <label for="field" class="control-label">F&ensp;i&ensp;e&ensp;l&ensp;d&ensp; &ensp;o&ensp;f&ensp; &ensp;S&ensp;t&ensp;u&ensp;d&ensp;y</label>
+	      <input type="text" class="form-control" id="registration-field-of-study" >
+	      <label for="year" class="control-label">Y&ensp;e&ensp;a&ensp;r</label>
+		  <input type="text" class="form-control" id="registration-batch" >
+		  <label for="lfm_batch" class="control-label">L&ensp;F&ensp;M&ensp; &ensp;B&ensp;a&ensp;t&ensp;c&ensp;h</label>
+	      <input type="text" class="form-control" id="registration-lfm-batch" >
+	      <label for="alternate_email" class="control-label">A&ensp;l&ensp;t&ensp;e&ensp;r&ensp;n&ensp;a&ensp;t&ensp;e&ensp; &ensp;E&ensp;m&ensp;a&ensp;i&ensp;l</label>
+		  <input type="text" class="form-control" id="registration-alternative-email" >
 	    </form>	
     </div>
     <div id="done_" class="col-md-9 continue" style="display: none;">
-    	<a href="#" id="registration-done"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
+    	<a href="#" id="registration-post"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
     </div>
     
   </div>
@@ -91,6 +91,7 @@
 </div>	
 
 <script type="text/javascript">
+
 $("#register").click(function() {
     $("form-reg").modal('hide');
 	$("#part2").hide();
@@ -105,6 +106,22 @@ $("#registration-cont").click(function() {
 	$("#cont_").hide();
 	$("#part2").show();
 	$("#done_").show();
+});
+
+$('#registration-post').click(function(){
+	var data = {
+		fullname : $("#registration-fullname").val(),
+		username : $("#registration-username").val(),
+		email : $("#registration-email").val(),
+		password : $("#registration-password").val(),
+		retype_password : $("#registration-retype-password").val(),
+		field_of_study : $("#registration-field-of-study").val(),
+		batch : $("#registration-batch").val(),
+		lfm_batch : $("#registration-lfm-batch").val(),
+		alternative_email : $("#registration-alternative-email").val(),
+	};
+
+	console.log(data);
 });
 
 window.onclick = function(event) {

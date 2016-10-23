@@ -519,6 +519,32 @@ class Auth extends CI_Controller {
         }
     }
 
+    function create_user_ajax(){
+    	
+		if ($id = $this->ion_auth->register(
+				$this->input->post('identity'), 
+				$this->input->post('password'), 
+				$this->input->post('email'), 
+				$this->input->post('additional_data')) {
+
+        	$this->load->model('Model_profile');
+        	$profile = $this->model_profile->create();
+        	$profile->id = $id;
+        	$profile->jurusan = $this->input->post('filed_of_study');
+        	$profile->angkatan = $this->input->post('batch');
+        	$profile->angkatan_lfm = $this->input->post('batch_lfm');
+        	$profile->email_alternatif = $this->input->post('alternative_email');
+        	$profile->save();
+
+            $response = ['status'=>'ok','message'=> $this->ion_auth->messages()];
+
+        } else {
+            $response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
+        }
+
+        echo json_encode($response);
+    }
+
 	// edit a user
 	function edit_user($id)
 	{
