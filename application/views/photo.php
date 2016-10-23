@@ -122,14 +122,19 @@
 	}
 
 	$("#description").click(function(){
-		modal.style.display = "none";
-		showdesc.style.display = "block";
+		$("#showdescphoto").modal('hide');
+		$("#showphoto").modal('show');
+	});
+	$("#up-photo").click(function() {
+		$("#showdescphoto").modal('show');
+		$("#showphoto").modal('hide');
 	});
 
 	$("#addphoto").click(function() {
 	    modal.style.display = "block";
 		showdesc.style.display = "none";
 	});
+
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
