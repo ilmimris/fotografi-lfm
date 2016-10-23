@@ -1,6 +1,6 @@
 </header>
 <div class="container-fluid">
-	<div class="row contributor" id="photos">
+	<div class="row" id="photos">
 		<a id="photo1" href="<?= site_url()?>fotografi/profile/">
 		<div class="box col-md-3">
 			<img class="photos photos-contributor" src="<?= img_url()?>pp-1.jpg"/>
