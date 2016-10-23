@@ -66,6 +66,9 @@
 		  <input type="text" class="form-control" id="registration-alternative-email" >
 	    </form>	
     </div>
+    <div id="registration-status" class="form col-md-3" style="display: none;">
+    	<div id="registration-status-text" style="margin: 100px auto;"></div>
+    </div>
     <div id="done_" class="col-md-9 continue" style="display: none;">
     	<a href="#" id="registration-post"><span>D&ensp;o&ensp;n&ensp;e</span></a>	
     </div>
@@ -94,6 +97,7 @@
 
 $("#register").click(function() {
     $("form-reg").modal('hide');
+	$("#registration-status").hide();
 	$("#part2").hide();
 	$("#done_").hide();
 	$("#part1").show();
@@ -124,7 +128,12 @@ $('#registration-post').click(function(){
 	console.log(data);
 	var jqxhr = $.post( "/auth/create_user_ajax", data)
 	.done(function(data) {
-		console.log("done: "); console.log(data);
+		$("#registration-status").show();
+		$("#registration-status-text").html(data.message);
+		$("#part2").hide();
+		$("#done_").hide();
+		$("#part1").hide();
+		$("#cont_").hide();
 	})
 	.fail(function(data) {
 		console.log("fail: "); console.log(data);
