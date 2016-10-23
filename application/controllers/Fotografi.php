@@ -402,4 +402,11 @@ class Fotografi extends CI_Controller {
 			$this->load->view('footer');
 		}
 	}
+	public function get_users()
+	{
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) return show_404();
+		$this->load->model('model_profile');
+		$users = $this->model_profile->all();
+		echo json_encode($users);
+	}
 }

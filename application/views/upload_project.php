@@ -14,9 +14,7 @@
 					<label for = "project-link" class = "control-label title">Link</label>
 					<input id="project-link" name="project-link" class="form-control"s type="text" required="required">
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
-					<input id="project-contributor" name="project-contributor" class="form-control"s type="text" required="required">
-
-					
+					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required" value="">
 				</div>
 				<div class="col-md-6">
 					
@@ -25,3 +23,17 @@
 		</form>
 	</div>
 </div>
+
+<script>
+	
+	$.get( "/fotografi/get_users", function( data ) {
+		
+		var contributors = [];
+		for (var i = data.length - 1; i >= 0; i--) {
+			contributors.push(data[i].username);
+		}
+		$('#project-contributor').tagging(contributors);
+
+	}, "json" );
+
+</script>

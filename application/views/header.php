@@ -29,11 +29,14 @@
 	<?=css('slick.css')?>
 	<?=css('slick-theme.css')?>
 	<?=css('style.css')?>
+	<?=css('typeahead.tagging.css')?>
 	<?=js('jquery.js')?>
 	<?=js('bootstrap.min.js')?>
 	<?=js('jquery-ui.min.js')?>
 	<?=js('jquery.backstretch.min.js')?>
 	<?=js('slick.js')?>
+	<?=js('libs/typeahead.bundle.min.js')?>
+	<?=js('typeahead.tagging.js')?>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
