@@ -381,10 +381,8 @@ class Fotografi extends CI_Controller {
 		$data['title'] = 'Edit Profile | Fotografi LFM';
 		$data['islogin'] = 0; // Belum Login
 
-		if ($data['islogin']) {
-			$user_id = $this->ion_auth->get_user_id();
-			$data['user'] = $this->model_profile->findById($user_id);
-		}
+		$data['user_id'] = $this->ion_auth->get_user_id();
+		$data['user'] = $this->model_profile->findById($user_id);
 
 		$this->load->view('header', $data);
 		$this->load->view('editprofile', $data);
