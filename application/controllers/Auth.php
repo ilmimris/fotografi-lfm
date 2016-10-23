@@ -528,6 +528,9 @@ class Auth extends CI_Controller {
 				$this->input->post('additional_data'))) {
 
         	$this->load->model('model_profile');
+
+        	var_dump($this->input->post());
+
         	$profile = $this->model_profile->create();
         	$profile->id = $id;
         	$profile->jurusan = $this->input->post('filed_of_study');
