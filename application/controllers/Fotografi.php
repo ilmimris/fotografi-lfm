@@ -174,7 +174,6 @@ class Fotografi extends CI_Controller {
 	        'source_image' => $source_path,
 	        'new_image' => $target_path,
 	        'maintain_ratio' => TRUE,
-	        'create_thumb' => TRUE,
 	        'height' => 300
 	    );
 	    $this->load->library('image_lib', $config);
