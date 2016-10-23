@@ -6,7 +6,7 @@
 ?>
 		<a id="photo1" href="<?= site_url()?>fotografi/profile/">
 		<div class="box col-md-3">
-			<img class="photos photos-contributor" src="<?= img_url().$contributor->foto?>.jpg"/>
+			<img class="photos photos-contributor" src="<?= img_url().$contributor->foto?>"/>
 			<span class="caption fade-caption photos-contributor ">
 				<h2>Nama Seseorang</h2>
 			</span>
