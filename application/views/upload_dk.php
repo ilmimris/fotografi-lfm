@@ -8,9 +8,9 @@
 		      <label for = "dk-title" class = "control-label title">D&ensp;K&ensp;&ensp;T&ensp;i&ensp;t&ensp;l&ensp;e</label>
 			  <input id="dk-title" name="dk-title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
 			  <label for = "dk-month" class = "control-label title">B&ensp;u&ensp;l&ensp;a&ensp;n</label>
-			  <input id="dk-month" name="dk-month" class="form-control" placeholder="Title" type="text" required="required">
+			  <input id="dk-month" name="dk-month" class="form-control" placeholder="Bulan" type="text" required="required">
 			  <label for = "dk-desc" class = "control-label title">D&ensp;e&ensp;s&ensp;k&ensp;r&ensp;i&ensp;p&ensp;s&ensp;i</label>
-			  <textarea id="dk-desc" name="dk-desc" class="form-control" placeholder="Title" type="text" required="required" autofocus></textarea>
+			  <textarea id="dk-desc" name="dk-desc" class="form-control" type="text" required="required" autofocus></textarea>
 			  <input id="dk-cover" type="file" name="dk-cover" accept="image/*" required="required" >
 			  <hr/>
 			</div>
