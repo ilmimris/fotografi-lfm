@@ -34,7 +34,7 @@ abstract class ORM extends CI_Model {
 	}
 
 
-	public function save($obj) {
+	public function save(&$obj) {
 
 		$db_debug = $this->db->db_debug;
 		$this->db->db_debug = FALSE;
@@ -110,7 +110,7 @@ class ORM_Object {
 	}
 
 	public function save(){
-		return $this->Model->save(&$this);
+		return $this->Model->save($this);
 	}
 
 	public function delete(){
