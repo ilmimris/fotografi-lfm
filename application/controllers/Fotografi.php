@@ -406,8 +406,8 @@ class Fotografi extends CI_Controller {
 
 				$this->_create_thumbnail($config['upload_path'], $uploaded['file_name'], 300);
 				
-				$user->foto = $uploaded['file_name'];
-				$user->save();
+				$profile->foto = $uploaded['file_name'];
+				$profile->save();
 
 			} else {
 				echo $this->upload->display_errors();
