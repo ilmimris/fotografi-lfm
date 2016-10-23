@@ -521,7 +521,11 @@ class Auth extends CI_Controller {
 
     function create_user_ajax(){
 
-		if ($id = $this->ion_auth->register(
+		if ($this->ion_auth->username_check($this->input->post('username'))) {
+
+			$response = ['status'=>'failed','message'=> 'Username already used.'];
+
+		} else if ($id = $this->ion_auth->register(
 				$this->input->post('username'), 
 				$this->input->post('password'), 
 				$this->input->post('email'), 
@@ -541,7 +545,9 @@ class Auth extends CI_Controller {
 
         } else {
 
-            $response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
+        	if ($this->ion_auth->username_check($this->input->post('username'))) {
+            	$response = ['status'=>'failed','message'=> $this->ion_auth->messages()];
+        	}
 
         }
 
