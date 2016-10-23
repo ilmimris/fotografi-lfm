@@ -526,7 +526,7 @@ class Auth extends CI_Controller {
 			$response = ['status'=>'failed','message'=> '<p>Username is already in use.</p>'];
 
 		} else if ($id = $this->ion_auth->register(
-				$this->input->post('username'), 
+				strtolower($this->input->post('username')), 
 				$this->input->post('password'), 
 				$this->input->post('email'), 
 				['first_name' =>$this->input->post('fullname'),'last_name' => ''])) {
