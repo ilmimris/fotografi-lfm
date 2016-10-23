@@ -1,7 +1,7 @@
 </header>
 <div class="container-fluid">
 	<div class="row">
-		<form class = "form-horizontal addphoto" role="form">
+		<form class = "form-horizontal" role="form">
 		<div id="input-photo-form">
 			<div class="col-md-12">
 			  <h3>Upload Cover DK ukuran 230x410px</h3>
@@ -16,24 +16,28 @@
 			</div>
 			<div class="row">
 				<h3>Upload DK Elite</h3>
-				<div class="col-md-offset-3 col-md-3 upload_dk ">
+				<div class="col-md-offset-3 col-md-3 upload_dk" data-id="elite-1">
+					<input type="hidden" name="elite-1" id="input-elite-1">
 				    <label for="elite-1">
 				        <img src="http://placehold.it/350?text=Upload+elite+1"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="elite-2">
+					<input type="hidden" name="elite-2" id="input-elite-2">
 				    <label for="elite-2">
 				        <img src="http://placehold.it/350?text=Upload+elite+2"/>
 				    </label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-offset-3 col-md-3 upload_dk">
+				<div class="col-md-offset-3 col-md-3 upload_dk" data-id="elite-3">
+					<input type="hidden" name="elite-3" id="input-elite-3">
 				    <label for="elite-3">
 				        <img src="http://placehold.it/350?text=Upload+elite+3"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="elite-4">
+					<input type="hidden" name="elite-4" id="input-elite-4">
 				    <label for="elite-4 ">
 				        <img src="http://placehold.it/350?text=Upload+elite+4"/>
 				    </label>
@@ -42,88 +46,104 @@
 			<hr/>
 			<div class="row">
 				<h3>Upload DK All</h3>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-1">
+					<input type="hidden" name="all-1" id="input-all-1">
 				    <label for="all-1">
 				        <img src="http://placehold.it/350?text=Upload+all+1"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-2">
+					<input type="hidden" name="all-2" id="input-all-2">
 				    <label for="all-2">
 				        <img src="http://placehold.it/350?text=Upload+all+2"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-3">
+					<input type="hidden" name="all-3" id="input-all-3">
 				    <label for="all-3">
 				        <img src="http://placehold.it/350?text=Upload+all+3"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-4">
+					<input type="hidden" name="all-4" id="input-all-4">
 				    <label for="all-4">
 				        <img src="http://placehold.it/350?text=Upload+all+4"/>
 				    </label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-5">
+					<input type="hidden" name="all-5" id="input-all-5">
 				    <label for="all-5">
 				        <img src="http://placehold.it/350?text=Upload+all+5"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-6">
+					<input type="hidden" name="all-6" id="input-all-6">
 				    <label for="all-6">
 				        <img src="http://placehold.it/350?text=Upload+all+6"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-7">
+					<input type="hidden" name="all-7" id="input-all-7">
 				    <label for="all-7">
 				        <img src="http://placehold.it/350?text=Upload+all+7"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-8">
+					<input type="hidden" name="all-8" id="input-all-8">
 				    <label for="all-8">
 				        <img src="http://placehold.it/350?text=Upload+all+8"/>
 				    </label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-9">
+					<input type="hidden" name="all-9" id="input-all-9">
 				    <label for="all-9">
 				        <img src="http://placehold.it/350?text=Upload+all+9"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-10">
+					<input type="hidden" name="all-10" id="input-all-10">
 				    <label for="all-10">
 				        <img src="http://placehold.it/350?text=Upload+all+10"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-11">
+					<input type="hidden" name="all-11" id="input-all-11">
 				    <label for="all-11">
 				        <img src="http://placehold.it/350?text=Upload+all+11"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-12">
+					<input type="hidden" name="all-12" id="input-all-12">
 				    <label for="all-12">
 				        <img src="http://placehold.it/350?text=Upload+all+12"/>
 				    </label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-13">
+					<input type="hidden" name="all-13" id="input-all-13">
 				    <label for="all-13">
 				        <img src="http://placehold.it/350?text=Upload+all+13"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-14">
+					<input type="hidden" name="all-14" id="input-all-14">
 				    <label for="all-14">
 				        <img src="http://placehold.it/350?text=Upload+all+14"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-15">
+					<input type="hidden" name="all-15" id="input-all-15">
 				    <label for="all-15">
 				        <img src="http://placehold.it/350?text=Upload+all+15"/>
 				    </label>
 				</div>
-				<div class="col-md-3 upload_dk">
+				<div class="col-md-3 upload_dk" data-id="all-16">
+					<input type="hidden" name="all-16" id="input-all-16">
 				    <label for="all-16">
 				        <img src="http://placehold.it/350?text=Upload+all+16"/>
 				    </label>
@@ -145,18 +165,19 @@
 		<form class = "form-horizontal addphoto" role="form">
 		<div id="input-photo-form">
 			<div class="col-md-6">
-			      <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
-				  <input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
-			      <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
-				  <textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
-				  <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
-				  <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
-				  <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
-				  <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
-				  <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
-				  <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
-				  <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
-				  <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+				<input type="hidden" name="upload-for" id="input-upload-for">
+				<label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
+				<input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
+				<label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
+				<textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
+				<label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
+				<input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
+				<label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
+				<input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
+				<label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
+				<input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
+				<label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
+				<input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
 			</div>
 			<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
 			  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
@@ -174,6 +195,7 @@
 		$('#input-photo-progress').css("display","none");
 		$('#input-photo-form').css("display", "block");
 		$("#addphoto").modal('show');
+		console.log(this);
 	});
 
 	function upload_photo(){
