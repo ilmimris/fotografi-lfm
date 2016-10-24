@@ -8,9 +8,11 @@
 					<label for = "project-title" class = "control-label title">Title of Project</label>
 					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" placeholder="Title of Project" autofocus>
 					<label for = "project-cover" class = "control-label title">Project Cover</label>
-					<input id="project-cover" type="file" name="dk-cover" accept="image/*" required="required" placeholder="Photo cover of project">
+					<input id="project-cover" type="file" name="project-cover" accept="image/*" required="required" placeholder="Photo cover of project">
 					<label for = "project-desc" class = "control-label title">Description</label>
 					<textarea id="project-desc" name="project-desc" class="form-control" type="text" required="required" placeholder="Description of project"></textarea>
+					<label for = "project-group" class = "control-label title">Group Project</label>
+					<input id="project-link" name="project-group" class="form-control"s type="text" required="required" placeholder="Group of project">
 					<label for = "project-link" class = "control-label title">Link</label>
 					<input id="project-link" name="project-link" class="form-control"s type="text" required="required" placeholder="link of project">
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
@@ -44,10 +46,11 @@
 	function upload_project(){
 		var formData = new FormData();
 
-		formData.append('cover', $('#dk-cover')[0].files[0]);
-		formData.append('title', $('#dk-title').val());
-		formData.append('month', $('#dk-month').val());
-		formData.append('description', $('#dk-desc').val());
+		formData.append('title', $('#project-title').val());
+		formData.append('cover', $('#project-cover')[0].files[0]);
+		formData.append('group', $('#project-group').val());
+		formData.append('link', $('#project-link').val());
+		formData.append('description', $('#project-desc').val());
 
 		$("#input-dk-form input[type=hidden]").each(function(i, obj) {
 			formData.append($(obj).attr('name'), $(obj).val());

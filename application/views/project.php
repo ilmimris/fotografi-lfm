@@ -38,8 +38,8 @@
 		    </div>	
 		    <div class="col-md-6 content-desc project-detail-content project-detail-content-part">
 		    	<hr>
-		    	<a href="#" class="see-project">
-			    	<h2 id="modal-project-link"></h2>  	
+		    	<a id="modal-project-link" href="#" class="see-project">
+			    	<h2>Visit Link Project</h2>  	
 		    	</a>
 		    </div>
 	    </div>
@@ -78,7 +78,7 @@
 		project = JSON.parse(data);
 		$('#modal-project-title').html(project.title);
 		$('#modal-project-description').html(project.description);
-		$('#modal-project-link').html(project.link);
+		$('#modal-project-link').attr("href",project.link);
 
 		$("#modal-project-contributor-list").html("");
 		for (var i = project.contributors.length - 1; i >= 0; i--) {

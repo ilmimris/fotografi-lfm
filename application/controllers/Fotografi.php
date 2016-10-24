@@ -306,6 +306,44 @@ class Fotografi extends CI_Controller {
 		$this->load->view('upload_project', $data);
 		$this->load->view('footer');
 	}
+	public function project_add() {
+		
+		if (!$this->ion_auth->logged_in()) return show_404();
+
+		$this->load->library('UUID');
+
+		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
+		$config['allowed_types'] = 'jpg|png';
+		$config['file_name'] = $this->uuid->v4();
+		
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('cover')) {
+
+			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
+
+		} else {
+
+			$metadata = $this->input->post();
+			$this->load->model('model_project');
+			
+			$uploaded = $this->upload->data();
+
+			$project = $this->model_project->create();
+			foreach ($metadata as $key => $metadata_element) {
+				echo($key . ":" . $metadata_element);
+				$project->{$key} = $metadata_element;
+			}
+			$project->cover = $uploaded['file_name'];
+
+			$project->id = $project->save();
+
+			$response = array('status'=>'ok', 'project' => $project);
+		}
+		
+		echo json_encode($response);
+
+	}
 
 	public function contributor()
 	{
