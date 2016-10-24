@@ -69,7 +69,7 @@
 		$('#input-project-form').css("display", "none");
 
 		$.ajax({
-		       url : '/fotografi/dk_add',
+		       url : '/fotografi/project_add',
 		       type : 'POST',
 		       data : formData,
 		       processData: false,  // tell jQuery not to process the data
