@@ -69,7 +69,7 @@
 
 	function open_detail(){
 	var site_root = "<?=site_url()?>";
-	var img_root = "<?=img_url()?>";
+	var img_root = "<?=img_url()?>"+"users_profile/_thumb";
 	var id = $(this).attr('data-id');
 	
 	$.get( "/fotografi/project_detail/" + id , function( data ) {
