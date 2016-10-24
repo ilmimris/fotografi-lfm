@@ -291,6 +291,21 @@ class Fotografi extends CI_Controller {
 		echo json_encode($project);
 
 	}
+	public function project_upload(){
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) return show_404();
+
+		$data['title'] = 'Add Project | Fotografi LFM';
+		$data['islogin'] = $this->ion_auth->logged_in();
+
+		if ($data['islogin']) {
+			$user_id = $this->ion_auth->get_user_id();
+			$data['user'] = $this->model_profile->findById($user_id);
+		}
+
+		$this->load->view('header', $data);
+		$this->load->view('upload_project', $data);
+		$this->load->view('footer');
+	}
 
 	public function contributor()
 	{
@@ -417,7 +432,7 @@ class Fotografi extends CI_Controller {
 
 		}
 	}
-	public function upload_pom()
+	public function pom_upload()
 	{
 		if (!$this->ion_auth->logged_in())
 		{
@@ -442,34 +457,6 @@ class Fotografi extends CI_Controller {
 
 			$this->load->view('header', $data);
 			$this->load->view('upload_pom', $data);
-			$this->load->view('footer');
-		}
-	}
-	public function upload_project()
-	{
-		if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			return show_error('You must be an administrator to view this page.');
-		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
-		}
-		else
-		{
-			// Super Admin
-			$data['title'] = 'Edit POM | Fotografi LFM';
-			$data['islogin'] = 2; // Login Sebagai user biasa
-
-			if ($data['islogin']) {
-				$user_id = $this->ion_auth->get_user_id();
-				$data['user'] = $this->model_profile->findById($user_id);
-			}
-
-			$this->load->view('header', $data);
-			$this->load->view('upload_project', $data);
 			$this->load->view('footer');
 		}
 	}

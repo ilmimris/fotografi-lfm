@@ -6,15 +6,15 @@
 			<div class="row">
 				<div class="col-md-6">
 					<label for = "project-title" class = "control-label title">Title of Project</label>
-					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" autofocus>
+					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" placeholder="Title of Project" autofocus>
 					<label for = "project-cover" class = "control-label title">Project Cover</label>
-					<input id="project-cover" type="file" name="dk-cover" accept="image/*" required="required" >
-					<label for = "project-desc" class = "control-label title">Deskripsi</label>
-					<textarea id="project-desc" name="project-desc" class="form-control" type="text" required="required"></textarea>
+					<input id="project-cover" type="file" name="dk-cover" accept="image/*" required="required" placeholder="Photo cover of project">
+					<label for = "project-desc" class = "control-label title">Description</label>
+					<textarea id="project-desc" name="project-desc" class="form-control" type="text" required="required" placeholder="Description of project"></textarea>
 					<label for = "project-link" class = "control-label title">Link</label>
-					<input id="project-link" name="project-link" class="form-control"s type="text" required="required">
+					<input id="project-link" name="project-link" class="form-control"s type="text" required="required" placeholder="link of project">
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
-					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required" value="">
+					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required"  placeholder="Enter name of contributors" value="">
 				</div>
 				<div class="col-md-6" style="margin: 10% auto;text-align: center;">
 					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
