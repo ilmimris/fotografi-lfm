@@ -16,7 +16,7 @@
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
 					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required" value="">
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6" style="margin: 10% auto;text-align: center;">
 					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
 					<div id="input-photo-progress" style="display:none; margin: auto;">
 						<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
