@@ -3,7 +3,7 @@
 	<div class="row">
 		<form class = "form-horizontal" role="form">
 			<div class="row"><h3>Add Project</h3></div>
-			<div class="row">
+			<div class="row" id="input-project-form">
 				<div class="col-md-6">
 					<label for = "project-title" class = "control-label title">Title of Project</label>
 					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" placeholder="Title of Project" autofocus>
@@ -20,9 +20,9 @@
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
 					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required"  placeholder="Enter name of contributors" value="">
 				</div>
-				<div class="col-md-6" style="margin: 10% auto;text-align: center;">
+				<div id="upload_project" class="col-md-6" style="margin: 10% auto;text-align: center;">
 					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
-					<div id="input-photo-progress" style="display:none; margin: auto;">
+					<div id="input-project-progress" style="display:none; margin: auto;">
 						<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
 					</div>
 				</div>
@@ -32,7 +32,12 @@
 </div>
 
 <script>
-	
+	$("#upload_project").click(function(){
+		$('#input-project-progress').css("display","none");
+		$('#input-project-form').css("display", "block");
+	});
+
+
 	$.get( "/fotografi/get_users", function( data ) {
 		
 		var contributors = [];
@@ -55,13 +60,13 @@
 		formData.append('year', $('#project-year').val());
 		formData.append('description', $('#project-desc').val());
 
-		$("#input-dk-form input[type=hidden]").each(function(i, obj) {
+		$("#input-project-form input[type=hidden]").each(function(i, obj) {
 			formData.append($(obj).attr('name'), $(obj).val());
 			console.log(obj);
 		});
 
-		$('#input-dk-progress').css("display","block");
-		$('#input-dk-form').css("display", "none");
+		$('#input-project-progress').css("display","block");
+		$('#input-project-form').css("display", "none");
 
 		$.ajax({
 		       url : '/fotografi/dk_add',
