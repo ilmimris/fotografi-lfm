@@ -32,13 +32,6 @@ class Model_project extends ORM {
 
     return $ci_query->result();
   }
-
-  public function findContributorByUserId($id) {
-    $query = "SELECT * FROM `projects` WHERE `projects`.`id` IN (SELECT `project_id` FROM `projects_contributors` WHERE user_id = ?)";
-    $ci_query = $this->db->query($query, [$id]);
-
-    return $ci_query->result();
-  }
 }
 
 class Project_Object extends ORM_Object {

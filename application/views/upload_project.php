@@ -17,7 +17,10 @@
 					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required" value="">
 				</div>
 				<div class="col-md-6">
-					
+					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
+					<div id="input-photo-progress" style="display:none; margin: auto;">
+						<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
+					</div>
 				</div>
 			</div>
 		</form>
@@ -37,4 +40,33 @@
 
 	}, "json" );
 
+
+	function upload_project(){
+		var formData = new FormData();
+
+		formData.append('cover', $('#dk-cover')[0].files[0]);
+		formData.append('title', $('#dk-title').val());
+		formData.append('month', $('#dk-month').val());
+		formData.append('description', $('#dk-desc').val());
+
+		$("#input-dk-form input[type=hidden]").each(function(i, obj) {
+			formData.append($(obj).attr('name'), $(obj).val());
+			console.log(obj);
+		});
+
+		$('#input-dk-progress').css("display","block");
+		$('#input-dk-form').css("display", "none");
+
+		$.ajax({
+		       url : '/fotografi/dk_add',
+		       type : 'POST',
+		       data : formData,
+		       processData: false,  // tell jQuery not to process the data
+		       contentType: false,  // tell jQuery not to set contentType
+		       success : function(data) {
+		           alert("success");
+		           console.log(data);
+		       }
+		});
+	}
 </script>
