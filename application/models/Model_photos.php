@@ -16,7 +16,7 @@ class Model_photos extends ORM {
   protected $contract = ["id", "user_id", "title", "caption", "gear", "location", "other", "photo", "type"];
 
   protected function _find_query($filter){
-    $this->db->select(["photos.*","users.first_name","users.last_name"]);
+    $this->db->select(["photos.*","users.first_name as author"]);
     $this->db->join("users", "photos.user_id=users.id", "left");
     $this->db->order_by("photos.created", "desc"); 
 

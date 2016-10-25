@@ -17,7 +17,7 @@
 			<img class="photos" src="<?=img_url()."users_content/_thumb/".$photo->photo?>"/>
 			<span class="caption fade-caption">
 				<h1><?=$photo->title?></h1>
-				<h4><?=$photo->first_name." ".$photo->last_name?></h4>
+				<h4><?=$photo->author?></h4>
 			</span>
 		</div>
 		</a>
@@ -154,6 +154,7 @@ function open_detail(){
 		photo = JSON.parse(data);
 		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
 		$('#modal-photo-title').html(photo.title);
+		$('#modal-photo-author').html(photo.author);
 		$('#modal-photo-caption').html(photo.caption);
 		$('#modal-photo-gear').html(photo.gear);
 		$('#modal-photo-other').html(photo.other);
