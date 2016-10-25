@@ -387,11 +387,13 @@ a:focus {
   text-transform: uppercase;
 
 }
+#modal-photo-content {
+  color: white;
+}
 .content-desc > h2 {
   text-align: left;
   margin-top: 30px;
   font-size: 4em;
-  color: white;
   line-height: 1.0;
 }
 
