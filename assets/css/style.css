@@ -389,8 +389,10 @@ a:focus {
 }
 .content-desc > h2 {
   font-size: 4em;
+  color: white;
   line-height: 1.0;
 }
+
 .content-desc > p {
   font-size: 1.5em;
   white-space: pre-line;
