@@ -389,6 +389,7 @@ a:focus {
 }
 .content-desc > h2 {
   font-size: 4em;
+  text-align: left;
   color: white;
   line-height: 1.0;
 }
