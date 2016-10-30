@@ -387,10 +387,16 @@ a:focus {
   text-transform: uppercase;
 
 }
+#modal-photo-author {
+  color: white;
+}
 .content-desc > h2 {
+  text-align: left;
+  margin-top: 30px;
   font-size: 4em;
   line-height: 1.0;
 }
+
 .content-desc > p {
   font-size: 1.5em;
   white-space: pre-line;
