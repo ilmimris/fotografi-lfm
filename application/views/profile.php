@@ -18,7 +18,7 @@
 			<div id="photos" class="profile_photos">
 				<h2>Photos</h2>
 				<div class="scroll">
-				<div class="row">
+				<div class="row" style="margin-right: 0.5rem;">
 <?php $i = 0; foreach ($photos as $photo) {
 	$i++;
 ?>
