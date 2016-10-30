@@ -29,7 +29,7 @@
 						</span>
 					</div>
 <?php
-	if (($i>0) && ($i%2==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\">";
+	if (($i>0) && ($i%2==0) && (($i+1)<count($photos))) echo "</div><div class=\"row\" style=\"margin-right: 0.5rem;\">";
 }
 ?>
 				</div>
