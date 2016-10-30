@@ -54,9 +54,6 @@
 						</div>
 						<div class="col-md-6 desc-projects">
 							<h1><?=$project->title?></h1>
-							<h3><?=$project->year?></h3>
-							<h3><?=$project->description?></h3>
-							<h3><?=$project->group_title?></h3>
 						</div>
 <?php
 	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";
