@@ -281,7 +281,7 @@ img.dk-prev {
 #photos .box:hover > img {
    -webkit-filter: brightness(50%);
    filter: brightness(50%);
-   transform: scale(1.2);
+   transform: scale(1);
    -webkit-transition: transform 8s ease-out;
    -moz-transition: transform 8s ease-out;
    -o-transition: transform 8s ease-out;
@@ -725,6 +725,12 @@ u {
 
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
 /* Styles */
+    .navbar-brand > img {
+        width: 12rem;
+        margin: auto auto;
+        position: relative;
+        top: -1.3rem;
+    }
 }
 
 
@@ -764,6 +770,9 @@ u {
     .profile_pic {
       max-width: 30%;
       text-align: center;
+    }
+    .logo-brand {
+      max-width: 23%;
     }
 }
 

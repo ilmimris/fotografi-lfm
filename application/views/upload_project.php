@@ -13,8 +13,8 @@
 					<input id="project-cover" type="file" name="project-cover" accept="image/*" required="required" placeholder="Photo cover of project">
 					<label for = "project-desc" class = "control-label title">Description</label>
 					<textarea id="project-desc" name="project-desc" class="form-control" type="text" required="required" placeholder="Description of project"></textarea>
-					<label for = "project-group" class = "control-label title">Group Project</label>
-					<input id="project-link" name="project-group" class="form-control"s type="text" required="required" placeholder="Group of project">
+					<!-- <label for = "project-group" class = "control-label title">Group Project</label>
+					<input id="project-link" name="project-group" class="form-control"s type="text" required="required" placeholder="Group of project"> -->
 					<label for = "project-link" class = "control-label title">Link</label>
 					<input id="project-link" name="project-link" class="form-control"s type="text" required="required" placeholder="link of project">
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
@@ -55,7 +55,7 @@
 
 		formData.append('title', $('#project-title').val());
 		formData.append('photo', $('#project-cover')[0].files[0]);
-		formData.append('group', $('#project-group').val());
+		formData.append('group_id', $('#project-group').val());
 		formData.append('link', $('#project-link').val());
 		formData.append('year', $('#project-year').val());
 		formData.append('description', $('#project-desc').val());

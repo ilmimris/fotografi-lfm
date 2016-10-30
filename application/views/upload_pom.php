@@ -8,6 +8,8 @@
                 <div id="preview-image" src="#" ></div>
                 <label for = "foto" class = "control-label title">P&ensp;o&ensp;t&ensp;h&ensp;o&ensp;</label>
                 <input id="imageupload" type="file" name="foto" accept="image/*" multiple>
+                <label for = "pom-month" class = "control-label title">Bulan</label>
+                <input id="pom-month" name="pom-month" class="form-control"s type="text" required="required" placeholder="Bulan">
             </div>
         </div>
         <div class="row">

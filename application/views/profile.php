@@ -53,10 +53,10 @@
 							<img class="photos" src="<?=img_url()?>pp-3.jpg" />
 						</div>
 						<div class="col-md-6 desc-projects">
-							<h1><?=$projects->title?></h1>
+							<h1><?=$projects->title?></h1><!-- 
 							<h3><?=$projects->year?></h3>
 							<h3><?=$projects->description?></h3>
-							<h3><?=$projects->group_title?></h3>
+							<h3><?=$projects->group_title?></h3> -->
 						</div>
 <?php
 	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";

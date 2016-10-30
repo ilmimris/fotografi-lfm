@@ -1,8 +1,8 @@
 </header>
 <div class="container-fluid">
 	<div class="show-project">
-		<div class="row project" >
-			<h1><u>Project</u></h1>
+		<div class="row project" ><!-- 
+			<h1><u>Project</u></h1> -->
 		</div>
 		<div class="row" >
 <?php $i = 0; foreach ($projects as $project) {
@@ -12,7 +12,7 @@
 			<div class="col-md-4">
 				<img class="photos" src="<?= img_url()?>gambar1.jpg"/>
 				<span class="project-caption">
-					<h3><i><u><?=$project->title?></u></i></h3>
+					<h3><?=$project->title?></h3>
 				</span>
 			</div>
 			</a>
@@ -39,7 +39,7 @@
 		    <div class="col-md-6 content-desc project-detail-content project-detail-content-part">
 		    	<hr>
 		    	<a id="modal-project-link" href="#" class="see-project">
-			    	<h2>Visit Link Project</h2>  	
+			    	<h2>Visit Full Project</h2>  	
 		    	</a>
 		    </div>
 	    </div>
