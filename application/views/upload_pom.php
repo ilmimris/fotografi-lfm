@@ -123,8 +123,8 @@
         formData.append('bulan', $('#pom-month').val());
 
         $("#input-pom-form input[type=hidden]").each(function(i, obj) {
-            formData.append($(obj).attr('name'), $(obj).val(photo.photo));
-            console.log($(obj).val(photo.photo));
+            formData.append($(obj).attr('name'), $(obj).val(photo));
+            console.log($(obj).val(photo));
         });
 
         // $('#input-pom-progress').css("display","block");
