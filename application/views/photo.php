@@ -148,7 +148,7 @@
 	        $("#description").click();
 	    }
 	});
-	$('#up-photo').bind('mousewheel', function(e) {
+	$('#showdescphoto').bind('mousewheel', function(e) {
 	    if(e.originalEvent.wheelDelta / 100 > 0) {
 	        $("#description").click();
 	    } else {
