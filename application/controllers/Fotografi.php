@@ -22,6 +22,10 @@ class Fotografi extends CI_Controller {
 		$data['title'] = 'Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
 
+		$this->load->model('model_pom');
+		$photos = $this->model_pom->all();
+		$data['imgs'] = $photos;
+
 		if ($data['islogin']) {
 			$user_id = $this->ion_auth->get_user_id();
 			$data['user'] = $this->model_profile->findById($user_id);

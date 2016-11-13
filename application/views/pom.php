@@ -8,7 +8,7 @@
 	<div class="container-fluid">
 		<div class="row" >
 			<div class="col-sm-6 col-md-8 col-lg-8" id="info">
-				<p>F     e     b     r     u     a     r     y</p>
+				<p><?=$imgs->bulan?></p>
 				<p>P     h     o     t     o&ensp;&ensp;o     f&ensp;&ensp;T     h     e&ensp;&ensp;M     o     n     t     h</p>
 			</div>
 			<div class="col-sm-6 col-md-4 col-lg-4" style="float: right;">
@@ -27,9 +27,9 @@
 </div>
 <script type="text/javascript">
 	  $.backstretch([
-	      "<?= img_url()?>users_content/gambar1.jpg"
-	    , "<?= img_url()?>users_content/gambar2.jpg"
-	    , "<?= img_url()?>users_content/gambar3.jpg"
+	      "<?= img_url()?>users_content/<?=$imgs->gambar1?>"
+	    , "<?= img_url()?>users_content/<?=$imgs->gambar2?>"
+	    , "<?= img_url()?>users_content/<?=$imgs->gambar3?>"
 	  ], {duration: 10000, fade: 750});
 </script>
 
