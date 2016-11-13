@@ -423,17 +423,3 @@ function open_detail(){
 </script>
 <!--
 -->
-<script>
-	$('#dk-showdescmodal').bind('mousewheel DOMMouseScroll', function (event) {           
-     if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-          //up
-    
-     }
-     else {
-          //down
-      $('#dk-showdescelite').modal('show');
-
-      $('#dk-showdescmodal').modal('hide');
-     }
-	});
-</script>
