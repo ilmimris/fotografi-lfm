@@ -30,7 +30,7 @@ class Fotografi extends CI_Controller {
 		$gambar3 = $this->model_photos->findById($pom[0]->gambar3);
 		//print_r($gambar1->photo);
 		
-		$gambar = (object) array(
+		$gambar[] = (object) array(
 		 		'gambar1' => $gambar1->photo,
 		 		'gambar2' => $gambar2->photo,
 		 		'gambar3' => $gambar3->photo
