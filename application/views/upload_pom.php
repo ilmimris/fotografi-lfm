@@ -39,12 +39,12 @@
     </div>
 </div>
 
-<div id="addphoto" class="modal" style="display: block;">
+<div id="addphoto" class="modal">
     <div class="modal-content">
         <form class = "form-horizontal addphoto" role="form">
         <div id="input-photo-form">
-            <div class="col-md-6">
-                <!-- <input type="hidden" name="upload-for" id="input-upload-for">
+            <div class="col-md-6"><!-- 
+                <input type="hidden" name="upload-for" id="input-upload-for">
                 <label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
                 <input id="input-photo-contributor" name="contributor" data-max-tags="1" class="form-control" placeholder="Contributor" type="text" value="" required="required" autofocus>
                 <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
@@ -55,13 +55,13 @@
                 <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
                 <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
                 <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
-                <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label> -->
-                <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
+                <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
+                <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info"> -->
                 <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
                 <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
-            </div>
+            <!-- </div>
             <div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
-                <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+             -->    <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
             </div>
         </div>
         <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
