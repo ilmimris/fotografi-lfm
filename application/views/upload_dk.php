@@ -202,6 +202,17 @@
 		$('#input-upload-for').val(id);
 	});
 
+	$.get( "/fotografi/get_users", function( data ) {
+		
+		var contributors = [];
+		for (var i = data.length - 1; i >= 0; i--) {
+			contributors.push(data[i].username);
+		}
+		console.log(contributors);
+		$('#input-photo-contributor').tagging(contributors);
+
+	}, "json" );
+
 	function upload_photo(){
 		var formData = new FormData();
 
