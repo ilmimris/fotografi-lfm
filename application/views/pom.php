@@ -29,9 +29,9 @@
 
 <script type="text/javascript">
 	  $.backstretch([
-	      "<?= img_url()?>users_content/<?=$imgs->gambar1?>"
-	    , "<?= img_url()?>users_content/<?=$imgs->gambar2?>"
-	    , "<?= img_url()?>users_content/<?=$imgs->gambar3?>"
+	      "<?= img_url()?>users_content/<?=$img->gambar1?>"
+	    , "<?= img_url()?>users_content/<?=$img->gambar2?>"
+	    , "<?= img_url()?>users_content/<?=$img->gambar3?>"
 	  ], {duration: 10000, fade: 750});
 </script>
 <?php }?>
