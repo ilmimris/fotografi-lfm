@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-offset-md-3 col-md-3">
                 <label for = "pom-month" class = "control-label title">Bulan</label>
                 <input id="pom-month" name="pom-month" class="form-control"s type="text" required="required" placeholder="Bulan">
             </div>
-            <div class="col-md-12" style="margin: 3% auto;text-align: center;">
+            <div class="col-md-3" style="margin: 3% auto;text-align: center;">
                 <a class="btn btn-primary" onclick="upload_photo.call(this)">Submit</a>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <form class = "form-horizontal addphoto" role="form">
         <div id="input-photo-form">
             <div class="col-md-6">
-                <input type="hidden" name="upload-for" id="input-upload-for">
+                <!-- <input type="hidden" name="upload-for" id="input-upload-for">
                 <label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
                 <input id="input-photo-contributor" name="contributor" data-max-tags="1" class="form-control" placeholder="Contributor" type="text" value="" required="required" autofocus>
                 <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
@@ -55,7 +55,7 @@
                 <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
                 <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
                 <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
-                <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
+                <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label> -->
                 <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
                 <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
                 <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
@@ -76,13 +76,13 @@
         var formData = new FormData();
 
         formData.append('file', $('#input-photo-image')[0].files[0]);
-        formData.append('contributor', $('.tagging_new_input.tt-input').val());
-        formData.append('title', $('#input-photo-title').val());
-        formData.append('caption', $('#input-photo-caption').val());
-        formData.append('gear', $('#input-photo-gear').val());
-        formData.append('location', $('#input-photo-location').val());
-        formData.append('other', $('#input-photo-other').val());
-        formData.append('type', 2);
+        // formData.append('contributor', $('.tagging_new_input.tt-input').val());
+        // formData.append('title', $('#input-photo-title').val());
+        // formData.append('caption', $('#input-photo-caption').val());
+        // formData.append('gear', $('#input-photo-gear').val());
+        // formData.append('location', $('#input-photo-location').val());
+        // formData.append('other', $('#input-photo-other').val());
+        // formData.append('type', 2);
 
         console.log(formData);
 
@@ -90,7 +90,7 @@
         $('#input-photo-form').css("display", "none");
 
         $.ajax({
-               url : '/fotografi/photo_add',
+               url : '/fotografi/pom_add',
                type : 'POST',
                data : formData,
                processData: false,  // tell jQuery not to process the data
