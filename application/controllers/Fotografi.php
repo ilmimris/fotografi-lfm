@@ -28,15 +28,17 @@ class Fotografi extends CI_Controller {
 		$gambar1 = $this->model_photos->findById($pom[0]->gambar1);
 		$gambar2 = $this->model_photos->findById($pom[0]->gambar2);
 		$gambar3 = $this->model_photos->findById($pom[0]->gambar3);
+		$bulan = $this->model_photos->findById($pom[0]->bulan);
 		//print_r($gambar1->photo);
 		
 		$gambar[] = (object) array(
 		 		'gambar1' => $gambar1->photo,
 		 		'gambar2' => $gambar2->photo,
-		 		'gambar3' => $gambar3->photo
+		 		'gambar3' => $gambar3->photo,
+		 		'bulan' => $bulan
 			);
 		$data['gambar'] = $gambar;
-		$data['imgs'] = $pom[0];
+		// $data['imgs'] = $pom;
 		// var_dump($pom[0]->photo);
 		// var_dump($pom);
 

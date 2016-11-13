@@ -4,7 +4,7 @@
 </header>
 
 <!-- Photo of The Month -->
-<?php foreach ($imgs as $img)  {?>
+<?php foreach ($gambar as $img)  {?>
 <div id="footer">
 	<div class="container-fluid">
 		<div class="row" >
