@@ -2,17 +2,32 @@
 <div class="container-fluid">
     <div id="addphoto">
         <form class = "form-horizontal addphoto" role="form">
-        <div id="input-photo-form">
+        <div id="input-photo-form row">
             <h3>Choose 3 photos to upload to photo of the month</h3>
-            <div class="col-md-12">
-                <div id="preview-image" src="#" ></div>
-                <label for = "foto" class = "control-label title">P&ensp;o&ensp;t&ensp;h&ensp;o&ensp;</label>
-                <input id="imageupload" type="file" name="foto" accept="image/*" multiple>
-                <label for = "pom-month" class = "control-label title">Bulan</label>
-                <input id="pom-month" name="pom-month" class="form-control"s type="text" required="required" placeholder="Bulan">
+            <div class="col-md-4" data-id="pom-1">
+                <input type="hidden" name="pom-1" id="input-pom-1">
+                <label for="pom-1">
+                    <img id="image-pom-1" src="http://placehold.it/350?text=Upload+pom+1"/>
+                </label>
+            </div>
+            <div class="col-md-4" data-id="pom-2">
+                <input type="hidden" name="pom-2" id="input-pom-2">
+                <label for="pom-2">
+                    <img id="image-pom-2" src="http://placehold.it/350?text=Upload+pom+2"/>
+                </label>
+            </div>
+            <div class="col-md-4" data-id="pom-3">
+                <input type="hidden" name="pom-3" id="input-pom-3">
+                <label for="pom-3">
+                    <img id="image-pom-3" src="http://placehold.it/350?text=Upload+pom+3"/>
+                </label>
             </div>
         </div>
         <div class="row">
+            <div class="col-md-12">
+                <label for = "pom-month" class = "control-label title">Bulan</label>
+                <input id="pom-month" name="pom-month" class="form-control"s type="text" required="required" placeholder="Bulan">
+            </div>
             <div class="col-md-12" style="margin: 3% auto;text-align: center;">
                 <a class="btn btn-primary" onclick="upload_photo.call(this)">Submit</a>
             </div>
@@ -24,38 +39,81 @@
     </div>
 </div>
 
+<div id="addphoto" class="modal">
+    <div class="modal-content">
+        <form class = "form-horizontal addphoto" role="form">
+        <div id="input-photo-form">
+            <div class="col-md-6">
+                <input type="hidden" name="upload-for" id="input-upload-for">
+                <label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
+                <input id="input-photo-contributor" name="contributor" data-max-tags="1" class="form-control" placeholder="Contributor" type="text" value="" required="required" autofocus>
+                <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
+                <input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
+                <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
+                <textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
+                <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
+                <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
+                <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
+                <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
+                <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
+                <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info">
+                <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
+                <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+            </div>
+            <div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
+                <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+            </div>
+        </div>
+        <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
+            <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
+        </div>
+        </form> 
+    </div>
+</div>
+
 <script >
- $("#imageupload").on('change', function () {
- 
-     var countFiles = $(this)[0].files.length;
- 
-     var imgPath = $(this)[0].value;
-     var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-     var image_holder = $("#preview-image");
-     image_holder.empty();
- 
-     if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
-         if (typeof (FileReader) != "undefined") {
- 
-             for (var i = 0; i < countFiles; i++) {
- 
-                 var reader = new FileReader();
-                 reader.onload = function (e) {
-                     $("<img />", {
-                         "src": e.target.result,
-                             "class": "thumbimage"
-                     }).appendTo(image_holder);
-                 }
- 
-                 image_holder.show();
-                 reader.readAsDataURL($(this)[0].files[i]);
-             }
- 
-         } else {
-             alert("It doesn't supports");
-         }
-     } else {
-         alert("Select Only images");
-     }
- });
+    function upload_photo(){
+        var formData = new FormData();
+
+        formData.append('file', $('#input-photo-image')[0].files[0]);
+        formData.append('contributor', $('.tagging_new_input.tt-input').val());
+        formData.append('title', $('#input-photo-title').val());
+        formData.append('caption', $('#input-photo-caption').val());
+        formData.append('gear', $('#input-photo-gear').val());
+        formData.append('location', $('#input-photo-location').val());
+        formData.append('other', $('#input-photo-other').val());
+        formData.append('type', 2);
+
+        console.log(formData);
+
+        $('#input-photo-progress').css("display","block");
+        $('#input-photo-form').css("display", "none");
+
+        $.ajax({
+               url : '/fotografi/photo_add',
+               type : 'POST',
+               data : formData,
+               processData: false,  // tell jQuery not to process the data
+               contentType: false,  // tell jQuery not to set contentType
+               success : function(data) {
+                   console.log(data);
+                   data_json = JSON.parse(data);
+                   refresh_page(data_json);
+                   console.log(data_json);
+                   $("#addphoto").modal('hide');
+               }
+        });
+    }
+
+    function refresh_page(data) {
+        console.log("refresh_page");
+
+        id = $('#input-upload-for').val();
+        if (data.status == "ok") {
+            $('#input-'+id).val(data.photo.id);
+            $('#image-'+id).attr('src', "<?=img_url()."users_content/_thumb/"?>" + data.photo.photo);
+        } else {
+            alert("Something wrong, technical details: " + data.error);
+        }
+    }
 </script>

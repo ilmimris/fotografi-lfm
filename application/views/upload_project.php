@@ -18,7 +18,7 @@
 					<label for = "project-link" class = "control-label title">Link</label>
 					<input id="project-link" name="project-link" class="form-control"s type="text" required="required" placeholder="link of project">
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
-					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required"  placeholder="Enter name of contributors" value="">
+					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required"  placeholder="Enter name of contributors" value="" >
 				</div>
 				<div id="upload_project" class="col-md-6" style="margin: 10% auto;text-align: center;">
 					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
@@ -59,6 +59,7 @@
 		formData.append('link', $('#project-link').val());
 		formData.append('year', $('#project-year').val());
 		formData.append('description', $('#project-desc').val());
+		formData.append('contributor', $('.tagging_new_input.tt-input').val());
 
 		$("#input-project-form input[type=hidden]").each(function(i, obj) {
 			formData.append($(obj).attr('name'), $(obj).val());

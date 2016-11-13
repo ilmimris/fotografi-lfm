@@ -331,7 +331,8 @@ class Fotografi extends CI_Controller {
 
 			$metadata = $this->input->post();
 			$this->load->model('model_project');
-			
+			$this->load->model('model_users');
+
 			$uploaded = $this->upload->data();
 
 			$project = $this->model_project->create();
@@ -342,6 +343,15 @@ class Fotografi extends CI_Controller {
 			$project->cover = $uploaded['file_name'];
 
 			$project->id = $project->save();
+
+			$project_id = $project->id;
+
+			$users = explode($metadata['contributor'],",");
+
+			foreach ($users as $user) {
+				$user_id = $this->model_users->getIdByUsername($user);
+				$project_id, $user_id
+			}
 
 			$response = array('status'=>'ok', 'project' => $project);
 		}
@@ -526,5 +536,10 @@ class Fotografi extends CI_Controller {
 		}
 
 		$this->load->view('auth/index', $this->data);
+	}
+
+	public function asdfghjkl(){
+		$this->load->database();
+		var_dump($this->db);
 	}
 }
