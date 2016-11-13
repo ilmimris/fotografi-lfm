@@ -40,9 +40,8 @@
 </div>
 
 
-<div id="addphotos" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div id="addphoto" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
         <form class = "form-horizontal addphoto" role="form">
         <div id="input-photo-form">
             <div class="col-md-6"><!-- 
@@ -70,7 +69,6 @@
             <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
         </div>
         </form> 
-    </div>
   </div>
 </div>
 
@@ -78,7 +76,7 @@
     $(".pom").click(function(){
         $('#input-photo-progress').css("display","none");
         $('#input-photo-form').css("display", "block");
-        $("#addphotos").modal('show');
+        $("#addphoto").modal('show');
 
         id = $(this).attr('data-id');
         $('#input-upload-for').val(id);
