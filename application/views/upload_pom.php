@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-offset-md-3 col-md-3">
-                <label for = "pom-month" class = "control-label title">Bulan</label>
+            <div class="col-md-3" style="margin: 3% auto;text-align: center;">
+                <!-- <label for = "pom-month" class = "control-label title">Bulan</label> -->
                 <input id="pom-month" name="pom-month" class="form-control"s type="text" required="required" placeholder="Bulan">
             </div>
             <div class="col-md-3" style="margin: 3% auto;text-align: center;">
