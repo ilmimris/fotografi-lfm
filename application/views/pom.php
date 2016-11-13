@@ -26,13 +26,12 @@
 		</div>
 	</div>
 </div>
-<?php }?>
-<?php foreach ($photos as $photo) { var_dump($photo)?>
+
 <script type="text/javascript">
 	  $.backstretch([
-	      "<?= img_url()?>users_content/<?=$photo->gambar1?>.jpg"
-	    , "<?= img_url()?>users_content/<?=$photo->gambar2?>.jpg"
-	    , "<?= img_url()?>users_content/<?=$photo->gambar3?>.jpg"
+	      "<?= img_url()?>users_content/<?=$imgs->gambar1?>.jpg"
+	    , "<?= img_url()?>users_content/<?=$imgs->gambar2?>.jpg"
+	    , "<?= img_url()?>users_content/<?=$imgs->gambar3?>.jpg"
 	  ], {duration: 10000, fade: 750});
 </script>
 <?php }?>
