@@ -124,7 +124,7 @@
 
         $("#input-pom-form input[type=hidden]").each(function(i, obj) {
             formData.append($(obj).attr('name'), $(obj).val());
-            console.log(obj);
+            console.log(formData.append($(obj).attr('name'), $(obj).val()));
         });
 
         $('#input-pom-progress').css("display","block");
