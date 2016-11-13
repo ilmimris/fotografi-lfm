@@ -5,19 +5,19 @@
         <div id="input-pom-form row">
             <h3>Choose 3 photos to upload to photo of the month</h3>
             <div class="col-md-4 pom" data-id="pom-1">
-                <input type="hidden" name="gambar1" id="input-pom-1">
+                <input type="hidden" name="pom-1" id="input-pom-1">
                 <label for="pom-1">
                     <img id="image-pom-1" src="http://placehold.it/350?text=Upload+pom+1"/>
                 </label>
             </div>
             <div class="col-md-4 pom" data-id="pom-2">
-                <input type="hidden" name="gambar2" id="input-pom-2">
+                <input type="hidden" name="pom-2" id="input-pom-2">
                 <label for="pom-2">
                     <img id="image-pom-2" src="http://placehold.it/350?text=Upload+pom+2"/>
                 </label>
             </div>
             <div class="col-md-4 pom" data-id="pom-3">
-                <input type="hidden" name="gambar3" id="input-pom-3">
+                <input type="hidden" name="pom-3" id="input-pom-3">
                 <label for="pom-3">
                     <img id="image-pom-3" src="http://placehold.it/350?text=Upload+pom+3"/>
                 </label>
@@ -40,16 +40,16 @@
 </div>
 
 
-<div id="addphoto" class="modal fade bs-example-modal-md" tabindex="-1" role="dialog">
+<div id="addphoto" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <form class = "form-horizontal addphoto" role="form">
-            <div id="input-photo-form">
+            <div id="input-pom-form">
                 <div class="col-md-6">
                     <input type="hidden" name="upload-for" id="input-upload-for">
                     <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
                     <br>
-                    <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+                    <input id="input-pom-image" type="file" name="photo" accept="image/*" required="required" >
                     <br>
                     <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
                 </div>
@@ -64,8 +64,8 @@
 
 <script >
     $(".pom").click(function(){
-        $('#input-photo-progress').css("display","none");
-        $('#input-photo-form').css("display", "block");
+        $('#input-pom-progress').css("display","none");
+        $('#input-pom-form').css("display", "block");
         $("#addphoto").modal('show');
 
         id = $(this).attr('data-id');
@@ -76,7 +76,7 @@
     function upload_photo(){
         var formData = new FormData();
 
-        formData.append('file', $('#input-photo-image')[0].files[0]);
+        formData.append('file', $('#input-pom-image')[0].files[0]);
         formData.append('contributor', "-");
         formData.append('title', "-");
         formData.append('caption', "-");
@@ -87,8 +87,8 @@
 
         console.log(formData);
 
-        $('#input-photo-progress').css("display","block");
-        $('#input-photo-form').css("display", "none");
+        $('#input-pom-progress').css("display","block");
+        $('#input-pom-form').css("display", "none");
 
         $.ajax({
                url : '/fotografi/photo_add',
@@ -127,8 +127,8 @@
             console.log(obj);
         });
 
-        $('#input-photo-progress').css("display","block");
-        $('#input-photo-form').css("display", "none");
+        $('#input-pom-progress').css("display","block");
+        $('#input-pom-form').css("display", "none");
 
         $.ajax({
                url : '/fotografi/pom_add',
