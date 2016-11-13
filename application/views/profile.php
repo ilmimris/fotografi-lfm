@@ -9,7 +9,6 @@
 				<h3 style="color:grey;"><?=$profile->jurusan?></h3>
 				<div class="socmed">
 					<a href="http://instagram.com/instalfm"  target="_blank"><img class="img-center" alt="instagram LFM" src="<?= img_url()?>logo_ig.png"/></a>
-					<a href="https://twitter.com/LFM_ITB"  target="_blank"><img class="img-center" alt="Twitter LFM" src="<?= img_url()?>logo_tw.png"/></a>
 					<a href="https://issuu.com/fotografilfm/stacks/dba0b7ba35ed438faa01be88fbc50e61"  target="_blank"><img alt="issuu" class="img-center" src="<?= img_url()?>logo_un.png"/></a>
 				</div>
 			</div>
