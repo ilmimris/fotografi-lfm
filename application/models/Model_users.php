@@ -15,7 +15,7 @@ class Model_users extends ORM {
 
   protected $contract = ["id", "first_name", "last_name", "email"];
 
-  public string getIdByUsername($username){
+  public getIdByUsername($username){
 
   	$user = $this->findOne(["username"=>$username]);
   	if ($user != false) {
@@ -23,7 +23,7 @@ class Model_users extends ORM {
   	} else {
   		return false;
   	}
-  	
+
   }
 
 }
