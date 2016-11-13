@@ -111,7 +111,7 @@ class Fotografi extends CI_Controller {
 
 			$photo->id = $photo->save();
 
-			$response = array('status'=>'ok', 'photo' => $photo);
+			$response = array('status'=>'ok', 'photo' => $photo, 'contributor' => $user);
 		}
 		
 		echo json_encode($response);
