@@ -36,7 +36,7 @@ class Fotografi extends CI_Controller {
 				'gambar3' => $jpg[2]
 			);
 		$data['photos'] = $photos;
-		$data['imgs'] = $photo->photo;
+		$data['imgs'] = $photo;
 
 		if ($data['islogin']) {
 			$user_id = $this->ion_auth->get_user_id();
