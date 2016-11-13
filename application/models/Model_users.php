@@ -13,6 +13,6 @@ class Model_users extends ORM {
 
   protected $table = 'users';
 
-  protected $contract = ["id", "first_name", "last_name", "email", "instagram", "issuu"];
+  protected $contract = ["id", "first_name", "last_name", "email"];
 
 }

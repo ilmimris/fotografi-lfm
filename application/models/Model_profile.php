@@ -13,7 +13,7 @@ class Model_profile extends ORM {
 
   protected $table = 'users_profile';
 
-  protected $contract = ["id", "jurusan", "angkatan", "angkatan_lfm", "email_alternatif", "foto"];
+  protected $contract = ["id", "jurusan", "angkatan", "angkatan_lfm", "email_alternatif", "foto", "instagram", "issuu"];
 
   protected function _find_query($filter){
     $this->db->select(["users_profile.*","users.first_name","users.last_name","users.email","users.username"]);

@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div id="edit-profile-form-2" style="display: none;">
-			<div class="row" style="margin: 10% auto;">
+			<div class="row" style="margin: 5% auto;">
 				<div class="col-md-6" >
 				     <label for="username" class="control-label title">U&ensp;s&ensp;e&ensp;r&ensp; &ensp;N&ensp;a&ensp;m&ensp;e<span class="red">&ensp;*</span></label>
 					  <input value="<?=set_value('username', $user->username)?>" type="text" class="form-control" name="username">
