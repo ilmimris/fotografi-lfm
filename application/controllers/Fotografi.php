@@ -93,9 +93,12 @@ class Fotografi extends CI_Controller {
 
 			$this->_create_thumbnail($config['upload_path'], $uploaded['file_name'], 300);
 
+			//Get User_id for contributor
+			$user = $metadata['contributor'];
+
 			$photo = $this->model_photos->create();
 			$photo->title = $metadata['title'];
-			$photo->user_id = $this->ion_auth->get_user_id();
+			$photo->user_id = $this->model_users->getIdByUsername($user);
 			$photo->caption = $metadata['caption'];
 			$photo->gear = $metadata['gear'];
 			$photo->location = $metadata['location'];
