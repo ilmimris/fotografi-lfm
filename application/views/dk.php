@@ -346,21 +346,21 @@
 	});
 
 	$('#dk-showdescmodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta / 150 > 0) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
 	        $("#dk-showdescmodal").modal('hide');
 	    } else {
 	        $('.btn-dk-elite').click();
 	    }
 	});
 	$('#dk-showelitemodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta / 150 > 0) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
 	        $('.btn-dk-desc').click();
 	    } else {
 	        $('.btn-dk-all').click();
 	    }
 	});
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta / 200 > 0) {
+	    if(e.originalEvent.wheelDelta / 80 > 0) {
 	        $('.btn-dk-elite').click();
 	    }
 	});
