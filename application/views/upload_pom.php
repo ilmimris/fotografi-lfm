@@ -1,7 +1,7 @@
 </header>
 <div class="container-fluid">
     <div id="addphoto">
-        <form class = "form-horizontal addphoto" role="form">
+        <form class="form-horizontal addphoto" role="form">
         <div id="input-photo-form row">
             <h3>Choose 3 photos to upload to photo of the month</h3>
             <div class="col-md-4" data-id="pom-1">
@@ -72,6 +72,16 @@
 </div>
 
 <script >
+    $(".col-md-4").click(function(){
+        $('#input-photo-progress').css("display","none");
+        $('#input-photo-form').css("display", "block");
+        $("#addphoto").modal('show');
+
+        id = $(this).attr('data-id');
+        $('#input-upload-for').val(id);
+    });
+
+
     function upload_photo(){
         var formData = new FormData();
 
