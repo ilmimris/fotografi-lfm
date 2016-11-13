@@ -359,11 +359,11 @@
 	        $('.btn-dk-all').click();
 	    }
 	});
-	$('#dk-showallmodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta / 80 > 0) {
-	        $('.btn-dk-elite').click();
-	    }
-	});
+	// $('#dk-showallmodal').bind('mousewheel', function(e) {
+	//     if(e.originalEvent.wheelDelta / 80 > 0) {
+	//         $('.btn-dk-elite').click();
+	//     }
+	// });
 	//up.onclick = function() {
 	//    modal.style.display = "block";
 	//	showdesc.style.display = "none";
