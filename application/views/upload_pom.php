@@ -47,7 +47,9 @@
             <div id="input-photo-form">
                 <div class="col-md-6">
                     <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
+                    <br>
                     <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+                    <br>
                     <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
                 </div>
             </div>
