@@ -25,28 +25,20 @@ class Fotografi extends CI_Controller {
 		$this->load->model(array('model_pom','model_photos'));
 		$pom = $this->model_pom->all();
 
-		$photos_key = ["gambar1","gambar2","gambar3"];
-
-		$photos = new stdClass();
-		foreach ($photos_key as $photo_key) {
-			$photos->{$photo_key} = $this->model_photos->findById($pom[0]->{$photo_key});
-		}
-		$pom[0]->photo = $photos;
-
-		// $gambar1 = $this->model_photos->findById($pom[0]->gambar1);
-		// $gambar2 = $this->model_photos->findById($pom[0]->gambar2);
-		// $gambar3 = $this->model_photos->findById($pom[0]->gambar3);
-		// //print_r($gambar1->photo);
+		$gambar1 = $this->model_photos->findById($pom[0]->gambar1);
+		$gambar2 = $this->model_photos->findById($pom[0]->gambar2);
+		$gambar3 = $this->model_photos->findById($pom[0]->gambar3);
+		//print_r($gambar1->photo);
 		
-		// $gambar[] = array(
-		//  		'gambar1' => $gambar1->photo,
-		//  		'gambar2' => $gambar2->photo,
-		//  		'gambar3' => $gambar3->photo
-		// 	);
+		$gambar[] = array(
+		 		'gambar1' => $gambar1->photo,
+		 		'gambar2' => $gambar2->photo,
+		 		'gambar3' => $gambar3->photo
+			);
 		$data['gambar'] = $pom[0]->photo;
 		$data['imgs'] = $pom;
-		var_dump($pom[0]->photo);
-		var_dump($pom);
+		// var_dump($pom[0]->photo);
+		// var_dump($pom);
 
 		if ($data['islogin']) {
 			$user_id = $this->ion_auth->get_user_id();
