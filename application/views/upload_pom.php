@@ -1,7 +1,7 @@
 </header>
 <div class="container-fluid">
-    <div id="addphoto">
-        <form class="form-horizontal addphoto" role="form">
+    <div id="addpom">
+        <form class="form-horizontal addpom" role="form">
         <div id="input-photo-form row">
             <h3>Choose 3 photos to upload to photo of the month</h3>
             <div class="col-md-4 pom" data-id="pom-1">
