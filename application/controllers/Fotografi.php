@@ -23,8 +23,16 @@ class Fotografi extends CI_Controller {
 		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
 
 		$this->load->model(array('model_pom','model_photos'));
-		$photo = $this->model_pom->findById('cedef05c48654fe1809367d9fb525eac');
+		$pom = $this->model_pom->all();
 		
+		$photos_key = ["gambar1","gambar2","gambar3"];
+
+		$photos = new stdClass();
+		foreach ($photos_key as $photo_key) {
+			$photos->{$photo_key} = $this->model_photos->findById($pom->{$photo_key});
+		}
+		$pom->photos = $photos;
+		var_dump($photos);
 		$data['imgs'] = $photo;
 
 		if ($data['islogin']) {
