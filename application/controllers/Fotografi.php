@@ -24,19 +24,28 @@ class Fotografi extends CI_Controller {
 
 		$this->load->model(array('model_pom','model_photos'));
 		$pom = $this->model_pom->all();
-		$gambar1 = $this->model_photos->findById($pom[0]->gambar1);
-		$gambar2 = $this->model_photos->findById($pom[0]->gambar2);
-		$gambar3 = $this->model_photos->findById($pom[0]->gambar3);
-		//print_r($gambar1->photo);
+
+		$photos_key = ["gambar1","gambar2","gambar3"];
+
+		$photos = new stdClass();
+		foreach ($photos_key as $photo_key) {
+			$photos->{$photo_key} = $this->model_photos->findById($pom[0]->{$photo_key});
+		}
+		$pom[0]->photos = $photos;
+
+		// $gambar1 = $this->model_photos->findById($pom[0]->gambar1);
+		// $gambar2 = $this->model_photos->findById($pom[0]->gambar2);
+		// $gambar3 = $this->model_photos->findById($pom[0]->gambar3);
+		// //print_r($gambar1->photo);
 		
-		$gambar[] = array(
-		 		'gambar1' => $gambar1->photo,
-		 		'gambar2' => $gambar2->photo,
-		 		'gambar3' => $gambar3->photo
-			);
+		// $gambar[] = array(
+		//  		'gambar1' => $gambar1->photo,
+		//  		'gambar2' => $gambar2->photo,
+		//  		'gambar3' => $gambar3->photo
+		// 	);
 		$data['gambar'] = $gambar[0];
 		$data['imgs'] = $pom;
-		var_dump($gambar[0]);
+		var_dump($photos);
 		var_dump($pom);
 
 		if ($data['islogin']) {
