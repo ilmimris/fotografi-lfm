@@ -27,9 +27,7 @@
 	</div>
 </div>
 <?php }?>
-<?php foreach ($photos as $photo) {
-	# code...
-}{?>
+<?php foreach ($photos as $photo) {?>
 <script type="text/javascript">
 	  $.backstretch([
 	      "<?= img_url()?>users_content/<?=$photo->gambar1?>.jpg"
