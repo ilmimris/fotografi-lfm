@@ -340,7 +340,7 @@ class Fotografi extends CI_Controller {
 				echo($key . ":" . $metadata_element);
 				$project->{$key} = $metadata_element;
 			}
-			$project->cover = $uploaded['file_name'];
+			$project->photo = $uploaded['file_name'];
 
 			$project->id = $project->save();
 
