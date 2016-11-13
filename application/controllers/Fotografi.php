@@ -350,7 +350,7 @@ class Fotografi extends CI_Controller {
 
 			foreach ($users as $user) {
 				$user_id = $this->model_users->getIdByUsername($user);
-				$project_id, $user_id
+				// $project_id, $user_id
 			}
 
 			$response = array('status'=>'ok', 'project' => $project);
