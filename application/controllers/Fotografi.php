@@ -30,7 +30,7 @@ class Fotografi extends CI_Controller {
 		$photos = [];
 		var_dump($pom[0]);
 		foreach ($photos_key as $photo_key) {
-			$photos[$photo_key] = $this->model_photos->findById($pom->$photo_key);
+			$photos[$photo_key] = $this->model_photos->findById($pom[0]->$photo_key);
 		}
 		$pom->photos = $photos;
 		$data['imgs'] = $photo;
