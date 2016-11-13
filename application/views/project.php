@@ -10,7 +10,7 @@
 ?>
 			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
 			<div class="col-md-4">
-				<img class="photos" src="<?= img_url("users_content/")?><?=$project->photo?>"/>
+				<img class="photos" src="<?= img_url()?>users_content/<?=$project->photo?>"/>
 				<span class="project-caption">
 					<h3><?=$project->title?></h3>
 				</span>
