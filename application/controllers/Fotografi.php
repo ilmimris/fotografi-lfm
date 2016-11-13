@@ -36,7 +36,7 @@ class Fotografi extends CI_Controller {
 		 		'gambar3' => $gambar3->photo
 			);
 		$data['gambar'] = $gambar;
-		$data['imgs'] = $pom;
+		$data['imgs'] = $pom[0];
 		// var_dump($pom[0]->photo);
 		// var_dump($pom);
 
