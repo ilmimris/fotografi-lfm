@@ -44,17 +44,17 @@
   <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <form class = "form-horizontal addphoto" role="form">
-            <div id="input-pom-form">
+            <div id="input-photo-form">
                 <div class="col-md-6">
                     <input type="hidden" name="upload-for" id="input-upload-for">
                     <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
                     <br>
-                    <input id="input-pom-image" type="file" name="photo" accept="image/*" required="required" >
+                    <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
                     <br>
                     <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
                 </div>
             </div>
-            <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
+            <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
                 <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
             </div>
             </form> 
@@ -64,8 +64,8 @@
 
 <script >
     $(".pom").click(function(){
-        $('#input-pom-progress').css("display","none");
-        $('#input-pom-form').css("display", "block");
+        $('#input-photo-progress').css("display","none");
+        $('#input-photo-form').css("display", "block");
         $("#addphoto").modal('show');
 
         id = $(this).attr('data-id');
@@ -76,7 +76,7 @@
     function upload_photo(){
         var formData = new FormData();
 
-        formData.append('file', $('#input-pom-image')[0].files[0]);
+        formData.append('file', $('#input-photo-image')[0].files[0]);
         formData.append('contributor', "-");
         formData.append('title', "-");
         formData.append('caption', "-");
@@ -87,8 +87,8 @@
 
         console.log(formData);
 
-        $('#input-pom-progress').css("display","block");
-        $('#input-pom-form').css("display", "none");
+        $('#input-photo-progress').css("display","block");
+        $('#input-photo-form').css("display", "none");
 
         $.ajax({
                url : '/fotografi/photo_add',
