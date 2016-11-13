@@ -423,6 +423,8 @@ class Fotografi extends CI_Controller {
 			$profile->jurusan = $this->input->post('jurusan');
 			$profile->angkatan_lfm = $this->input->post('angkatan_lfm');
 			$profile->email_alternatif = $this->input->post('email_alternatif');
+			$profile->instagram = $this->input->post('instagram');
+			$profile->issuu = $this->input->post('issuu');
 			$profile->save();
 
 			$this->load->model("model_users");
