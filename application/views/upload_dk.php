@@ -216,7 +216,6 @@
 	function upload_photo(){
 		var formData = new FormData();
 
-
 		formData.append('file', $('#input-photo-image')[0].files[0]);
 		formData.append('contributor', $('#input-photo-contributor').val());
 		formData.append('title', $('#input-photo-title').val());
@@ -225,6 +224,8 @@
 		formData.append('location', $('#input-photo-location').val());
 		formData.append('other', $('#input-photo-other').val());
 		formData.append('type', 1);
+
+		console.log(formData);
 
 		$('#input-photo-progress').css("display","block");
 		$('#input-photo-form').css("display", "none");
