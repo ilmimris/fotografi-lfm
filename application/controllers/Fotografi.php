@@ -82,6 +82,7 @@ class Fotografi extends CI_Controller {
 
 			$metadata = $this->input->post();
 			$this->load->model('model_photos');
+			$this->load->model('model_users');
 			
 			$uploaded = $this->upload->data();
 
