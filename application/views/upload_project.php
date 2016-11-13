@@ -8,7 +8,7 @@
 					<label for = "project-title" class = "control-label title">Title of Project</label>
 					<input id="project-title" name="project-title" class="form-control"s type="text" required="required" placeholder="Title of Project" autofocus>
 					<label for = "project-year" class = "control-label title">Year</label>
-					<input id="project-link" name="project-year" class="form-control"s type="text" required="required" placeholder="Year">
+					<input id="project-year" name="project-year" class="form-control"s type="text" required="required" placeholder="Year">
 					<label for = "project-cover" class = "control-label title">Project Cover</label>
 					<input id="project-cover" type="file" name="project-cover" accept="image/*" required="required" placeholder="Photo cover of project">
 					<label for = "project-desc" class = "control-label title">Description</label>
@@ -55,11 +55,11 @@
 
 		formData.append('title', $('#project-title').val());
 		formData.append('cover', $('#project-cover')[0].files[0]);
-		formData.append('group_id', $('#project-group').val());
+		formData.append('group_id', 0);
 		formData.append('link', $('#project-link').val());
 		formData.append('year', $('#project-year').val());
 		formData.append('description', $('#project-desc').val());
-		formData.append('contributor', $('.tagging_new_input.tt-input').val());
+		formData.append('contributor', $('#project-contributor').val();
 
 		$("#input-project-form input[type=hidden]").each(function(i, obj) {
 			formData.append($(obj).attr('name'), $(obj).val());
