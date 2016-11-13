@@ -4,12 +4,12 @@
 </header>
 
 <!-- Photo of The Month -->
-<?php foreach ($gambar as $img)  {?>
+<?php //foreach ($imgs as $img)  {?>
 <div id="footer">
 	<div class="container-fluid">
 		<div class="row" >
 			<div class="col-sm-6 col-md-8 col-lg-8" id="info">
-				<?php $bulan = wordwrap($img->bulan,1,"&ensp;",true);?>
+				<?php $bulan = wordwrap($imgs[0]->bulan,1,"&ensp;",true);?>
 				<p><?=$bulan?></p>
 				<p>P     h     o     t     o&ensp;&ensp;o     f&ensp;&ensp;T     h     e&ensp;&ensp;M     o     n     t     h</p>
 			</div>
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 </div>
-<?php }?>
+<?php //}?>
 <?php foreach ($gambar as $i)  {?>
 <script type="text/javascript">
 	  $.backstretch([
