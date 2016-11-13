@@ -30,9 +30,9 @@
 <?php var_dump($gambar); foreach ($gambar as $i)  {?>
 <script type="text/javascript">
 	  $.backstretch([
-	      "<?= img_url()?>users_content/<?=$i=>gambar1?>"
-	    , "<?= img_url()?>users_content/<?=$i=>gambar2?>"
-	    , "<?= img_url()?>users_content/<?=$i=>gambar3?>"
+	      "<?= img_url()?>users_content/<?=$i['gambar1']?>"
+	    , "<?= img_url()?>users_content/<?=$i->gambar2?>"
+	    , "<?= img_url()?>users_content/<?=$i->gambar3?>"
 	  ], {duration: 10000, fade: 750});
 </script>
 <?php }?>
