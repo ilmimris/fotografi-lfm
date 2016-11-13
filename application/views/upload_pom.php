@@ -41,7 +41,7 @@
 
 
 <div id="addphoto" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
+  <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <form class = "form-horizontal addphoto" role="form">
             <div id="input-photo-form">
