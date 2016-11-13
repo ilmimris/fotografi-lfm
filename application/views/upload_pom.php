@@ -39,7 +39,7 @@
     </div>
 </div>
 
-<div id="addphoto" class="modal">
+<div id="addphoto" class="modal" style="display: block;">
     <div class="modal-content">
         <form class = "form-horizontal addphoto" role="form">
         <div id="input-photo-form">
