@@ -27,7 +27,7 @@
 	</div>
 </div>
 <?php }?>
-<?php vardump($gambar); foreach ($gambar as $i)  {?>
+<?php var_dump($gambar); foreach ($gambar as $i)  {?>
 <script type="text/javascript">
 	  $.backstretch([
 	      "<?= img_url()?>users_content/<?=$i->gambar1?>"
