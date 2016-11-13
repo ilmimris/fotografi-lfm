@@ -4,11 +4,12 @@
 </header>
 
 <!-- Photo of The Month -->
+<?php foreach ($imgs as $img) {?>
 <div id="footer">
 	<div class="container-fluid">
 		<div class="row" >
 			<div class="col-sm-6 col-md-8 col-lg-8" id="info">
-				<p><?=$imgs->bulan?></p>
+				<p><?=$img->bulan?></p>
 				<p>P     h     o     t     o&ensp;&ensp;o     f&ensp;&ensp;T     h     e&ensp;&ensp;M     o     n     t     h</p>
 			</div>
 			<div class="col-sm-6 col-md-4 col-lg-4" style="float: right;">
@@ -27,12 +28,12 @@
 </div>
 <script type="text/javascript">
 	  $.backstretch([
-	      "<?= img_url()?>users_content/<?=$imgs->gambar1?>"
-	    , "<?= img_url()?>users_content/<?=$imgs->gambar2?>"
-	    , "<?= img_url()?>users_content/<?=$imgs->gambar3?>"
+	      "<?= img_url()?>users_content/<?=$img->gambar1?>"
+	    , "<?= img_url()?>users_content/<?=$img->gambar2?>"
+	    , "<?= img_url()?>users_content/<?=$img->gambar3?>"
 	  ], {duration: 10000, fade: 750});
 </script>
-
+<?php }?>
 <!-- The Modal -->
 <div id="form-reg" class="modal">
   <!-- Modal content -->
