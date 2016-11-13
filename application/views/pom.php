@@ -9,7 +9,7 @@
 	<div class="container-fluid">
 		<div class="row" >
 			<div class="col-sm-6 col-md-8 col-lg-8" id="info">
-				<?php $bulan = wordwrap($img->bulan,1,'\t',true);?>
+				<?php $bulan = wordwrap($img->bulan,1,"&ensp;",true);?>
 				<p><?=$bulan?></p>
 				<p>P     h     o     t     o&ensp;&ensp;o     f&ensp;&ensp;T     h     e&ensp;&ensp;M     o     n     t     h</p>
 			</div>
