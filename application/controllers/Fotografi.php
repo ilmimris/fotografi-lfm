@@ -366,7 +366,7 @@ class Fotografi extends CI_Controller {
         'user_id' => $user_id,
         'project_id' => $project_id
 		);
-		$table = "projects_contributors"
+		$table = "projects_contributors";
 		$this->db->insert($table, $data); 
 	}
 
