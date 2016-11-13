@@ -54,7 +54,7 @@
 		var formData = new FormData();
 
 		formData.append('title', $('#project-title').val());
-		formData.append('photo', $('#project-cover')[0].files[0]);
+		formData.append('cover', $('#project-cover')[0].files[0]);
 		formData.append('group_id', $('#project-group').val());
 		formData.append('link', $('#project-link').val());
 		formData.append('year', $('#project-year').val());
