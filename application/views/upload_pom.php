@@ -40,7 +40,7 @@
 </div>
 
 
-<div id="addphoto" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div id="addphotos" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
         <form class = "form-horizontal addphoto" role="form">
@@ -78,7 +78,7 @@
     $(".pom").click(function(){
         $('#input-photo-progress').css("display","none");
         $('#input-photo-form').css("display", "block");
-        $("#addphoto").modal('show');
+        $("#addphotos").modal('show');
 
         id = $(this).attr('data-id');
         $('#input-upload-for').val(id);
