@@ -350,7 +350,7 @@ class Fotografi extends CI_Controller {
 
 			foreach ($users as $user) {
 				$user_id = $this->model_users->getIdByUsername($user);
-				// $project_id, $user_id
+				insertProjectContributor_($user_id, $project_id);
 			}
 
 			$response = array('status'=>'ok', 'project' => $project);
@@ -358,6 +358,16 @@ class Fotografi extends CI_Controller {
 		
 		echo json_encode($response);
 
+	}
+
+	private function insertProjectContributor_($user_id, $project_id)
+	{
+		$data = array(
+        'user_id' => $user_id,
+        'project_id' => $project_id
+		);
+		$table = "projects_contributors"
+		$this->db->insert($table, $data); 
 	}
 
 	public function contributor()
