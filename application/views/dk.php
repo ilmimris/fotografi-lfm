@@ -384,7 +384,7 @@ function open_detail_dk(){
 
 		dk = JSON.parse(data);
 		$('#dk-modal-title').html(dk.title);
-		$('#dk-modal-description').html(dk.caption);
+		$('#dk-modal-description').html(dk.description);
 
 		for (var i = photos_key.length - 1; i >= 0; i--) {
 			var photo = dk.photos[photos_key[i]];
