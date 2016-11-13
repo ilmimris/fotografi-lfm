@@ -30,9 +30,9 @@ class Fotografi extends CI_Controller {
 		$photos = new stdClass();
 		foreach ($photos_key as $photo_key) {
 			$photos->{$photo_key} = $this->model_photos->findById($pom->{$photo_key});
+			var_dump($photos);
 		}
 		$pom->photos = $photos;
-		var_dump($photos);
 		$data['imgs'] = $photo;
 
 		if ($data['islogin']) {
