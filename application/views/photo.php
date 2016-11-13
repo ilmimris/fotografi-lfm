@@ -141,6 +141,20 @@
 	    
 	    }
 	}
+	$('#showphoto').bind('mousewheel', function(e) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
+	        $('#showphoto').modal('hide');
+	    } else {
+	        $("#description").click();
+	    }
+	});
+	$('#up-photo').bind('mousewheel', function(e) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
+	        $("#description").click();
+	    } else {
+	        $("#up-photo").click();
+	    }
+	});
 
 }());
 
