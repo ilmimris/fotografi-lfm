@@ -4,7 +4,7 @@
 </header>
 
 <!-- Photo of The Month -->
-<?php foreach ($imgs as $img) and ($photos as $photo) {?>
+<?php foreach ($imgs as $img)  {?>
 <div id="footer">
 	<div class="container-fluid">
 		<div class="row" >
@@ -26,6 +26,10 @@
 		</div>
 	</div>
 </div>
+<?php }?>
+<?php foreach ($photos as $photo) {
+	# code...
+}{?>
 <script type="text/javascript">
 	  $.backstretch([
 	      "<?= img_url()?>users_content/<?=$photo->gambar1?>.jpg"
