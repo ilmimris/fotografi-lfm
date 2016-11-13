@@ -76,7 +76,7 @@
     function upload_photo(){
         var formData = new FormData();
 
-        formData.append('file', $('#input-pom-image')[0].files[0]);
+        formData.append('file', $('#input-photo-image')[0].files[0]);
         formData.append('contributor', "-");
         formData.append('title', "-");
         formData.append('caption', "-");
