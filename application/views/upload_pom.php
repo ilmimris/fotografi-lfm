@@ -128,8 +128,8 @@
             console.log(obj);
         });
 
-        $('#input-pom-progress').css("display","block");
-        $('#input-pom-form').css("display", "none");
+        // $('#input-pom-progress').css("display","block");
+        // $('#input-pom-form').css("display", "none");
 
         $.ajax({
                url : '/fotografi/pom_add',
@@ -138,7 +138,7 @@
                processData: false,  // tell jQuery not to process the data
                contentType: false,  // tell jQuery not to set contentType
                success : function(data) {
-                   // alert("success");
+                   alert("success");
                    console.log(data);
                }
         });
