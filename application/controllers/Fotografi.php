@@ -28,9 +28,9 @@ class Fotografi extends CI_Controller {
 		$photos_key = ["gambar1","gambar2","gambar3"];
 
 		$photos = [];
+		var_dump($pom);
 		foreach ($photos_key as $photo_key) {
 			$photos[$photo_key] = $this->model_photos->findById($pom->$photo_key);
-			var_dump($pom[$photo_key]);
 		}
 		$pom->photos = $photos;
 		$data['imgs'] = $photo;
