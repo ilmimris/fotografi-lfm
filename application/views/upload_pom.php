@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div id="addpom">
         <form class="form-horizontal addpom" role="form">
-        <div id="input-pom-form row">
+        <div id="input-pom-form">
             <h3>Choose 3 photos to upload to photo of the month</h3>
             <div class="col-md-4 pom" data-id="pom-1">
                 <input type="hidden" name="gambar1" id="input-pom-1">
@@ -22,7 +22,6 @@
                     <img id="image-pom-3" src="http://placehold.it/350?text=Upload+pom+3"/>
                 </label>
             </div>
-        </div>
         <div class="row">
             <div class="col-md-offset-3 col-md-3" style="margin: 3% auto;text-align: center;">
                 <!-- <label for = "pom-month" class = "control-label title">Bulan</label> -->
@@ -31,6 +30,7 @@
             <div class="col-md-3" style="margin: 3% auto;text-align: center;">
                 <a class="btn btn-primary" onclick="upload_pom.call(this)">Submit</a>
             </div>
+        </div>
         </div>
         <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
             <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
@@ -138,7 +138,7 @@
                processData: false,  // tell jQuery not to process the data
                contentType: false,  // tell jQuery not to set contentType
                success : function(data) {
-                   alert("success");
+                   // alert("success");
                    console.log(data);
                }
         });
