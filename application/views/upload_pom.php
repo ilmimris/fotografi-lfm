@@ -42,33 +42,20 @@
 
 <div id="addphoto" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
-        <form class = "form-horizontal addphoto" role="form">
-        <div id="input-photo-form">
-            <div class="col-md-6"><!-- 
-                <input type="hidden" name="upload-for" id="input-upload-for">
-                <label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
-                <input id="input-photo-contributor" name="contributor" data-max-tags="1" class="form-control" placeholder="Contributor" type="text" value="" required="required" autofocus>
-                <label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
-                <input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
-                <label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
-                <textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
-                <label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
-                <input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
-                <label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
-                <input id="input-photo-location" type="text" name="location" value="" class="form-control" placeholder="location">
-                <label for = "other" class = "control-label title">O&ensp;t&ensp;h&ensp;e&ensp;r</label>
-                <input id="input-photo-other" type="text" name="other" value="" class="form-control" placeholder="Additional Info"> -->
-                <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
-                <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
-            <!-- </div>
-            <div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
-             -->    <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+        <div class="modal-content">
+            <form class = "form-horizontal addphoto" role="form">
+            <div id="input-photo-form">
+                <div class="col-md-6">
+                    <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
+                    <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+                    <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+                </div>
             </div>
+            <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
+                <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
+            </div>
+            </form> 
         </div>
-        <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
-            <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
-        </div>
-        </form> 
   </div>
 </div>
 
