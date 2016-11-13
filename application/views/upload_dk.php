@@ -166,7 +166,7 @@
 		<div id="input-photo-form">
 			<div class="col-md-6">
 				<input type="hidden" name="upload-for" id="input-upload-for">
-				<label for = "contributor" class = "control-label contributor">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
+				<label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
 				<input id="input-photo-contributor" name="contributor" class="form-control" placeholder="Contributor" type="text" required="required" autofocus>
 				<label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
 				<input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
