@@ -31,7 +31,7 @@ class Fotografi extends CI_Controller {
 		foreach ($photos_key as $photo_key) {
 			$photos->{$photo_key} = $this->model_photos->findById($pom[0]->{$photo_key});
 		}
-		$pom[0]->photos = $photos;
+		$pom[0]->photo = $photos;
 
 		// $gambar1 = $this->model_photos->findById($pom[0]->gambar1);
 		// $gambar2 = $this->model_photos->findById($pom[0]->gambar2);
@@ -43,9 +43,9 @@ class Fotografi extends CI_Controller {
 		//  		'gambar2' => $gambar2->photo,
 		//  		'gambar3' => $gambar3->photo
 		// 	);
-		$data['gambar'] = $gambar[0];
+		// $data['gambar'] = $gambar[0];
 		$data['imgs'] = $pom;
-		var_dump($photos);
+		var_dump($pom[0]->photo);
 		var_dump($pom);
 
 		if ($data['islogin']) {
