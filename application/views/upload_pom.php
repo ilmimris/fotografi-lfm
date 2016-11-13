@@ -32,9 +32,9 @@
                 <a class="btn btn-primary" onclick="upload_pom.call(this)">Submit</a>
             </div>
         </div>
-        <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
+<!--         <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
             <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
-        </div>
+        </div> -->
         </form> 
     </div>
 </div>
@@ -44,19 +44,19 @@
   <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <form class = "form-horizontal addphoto" role="form">
-            <div id="input-pom-form">
+            <div id="input-photo-form">
                 <div class="col-md-6">
                     <input type="hidden" name="upload-for" id="input-upload-for">
                     <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
                     <br>
-                    <input id="input-pom-image" type="file" name="photo" accept="image/*" required="required" >
+                    <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
                     <br>
                     <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
                 </div>
             </div>
-            <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
+<!--             <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
                 <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
-            </div>
+            </div> -->
             </form> 
         </div>
   </div>
@@ -64,8 +64,8 @@
 
 <script >
     $(".pom").click(function(){
-        $('#input-pom-progress').css("display","none");
-        $('#input-pom-form').css("display", "block");
+        $('#input-photo-progress').css("display","none");
+        $('#input-photo-form').css("display", "block");
         $("#addphoto").modal('show');
 
         id = $(this).attr('data-id');
@@ -87,8 +87,8 @@
 
         console.log(formData);
 
-        $('#input-pom-progress').css("display","block");
-        $('#input-pom-form').css("display", "none");
+        // $('#input-photo-progress').css("display","block");
+        // $('#input-photo-form').css("display", "none");
 
         $.ajax({
                url : '/fotografi/photo_add',
@@ -127,8 +127,8 @@
             console.log(obj);
         });
 
-        $('#input-pom-progress').css("display","block");
-        $('#input-pom-form').css("display", "none");
+        // $('#input-photo-progress').css("display","block");
+        // $('#input-photo-form').css("display", "none");
 
         $.ajax({
                url : '/fotografi/pom_add',
