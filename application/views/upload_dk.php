@@ -150,7 +150,7 @@
 				</div>
 			</div>
 			<div class="col-md-12" style="margin:10% auto;text-align: center;vertical-align: middle;">
-			  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
+			  	<a class="btn btn-info" onclick="upload_dk.call(this)">Submit</a>
 			</div>
 		</div>
 		<div id="input-dk-progress" style="display:none; margin: auto;" class="col-md-12">
@@ -182,7 +182,7 @@
 				<input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
 			</div>
 			<div class="col-md-6" style="margin: 18% auto;text-align: center;vertical-align: middle;">
-			  	<a class="btn btn-info" onclick="upload_dk.call(this)">Submit</a>
+			  	<a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
 			</div>
 		</div>
 		<div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
