@@ -26,12 +26,16 @@ class Fotografi extends CI_Controller {
 		$photo = $this->model_pom->all();
 
 		$photos_key = ["gambar1","gambar2","gambar3"];
-		$photos = new stdClass();
+
 		foreach ($photos_key as $photo_key) {
-			$photos->{$photo_key} = $this->model_photos->findById($photo->{$photo_key});
+			$jpg = $this->model_photos->findById($photo_key);
 		}
-		$photo->photo = $photos;
-		
+		$photos[] = array(
+				'gambar1' => $jpg[0],
+				'gambar2' => $jpg[1],
+				'gambar3' => $jpg[2]
+			);
+		$data['photos'] = $photos;
 		$data['imgs'] = $photo->photo;
 
 		if ($data['islogin']) {
