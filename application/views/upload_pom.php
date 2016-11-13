@@ -4,19 +4,19 @@
         <form class="form-horizontal addphoto" role="form">
         <div id="input-photo-form row">
             <h3>Choose 3 photos to upload to photo of the month</h3>
-            <div class="col-md-4" data-id="pom-1">
+            <div class="col-md-4 pom" data-id="pom-1">
                 <input type="hidden" name="pom-1" id="input-pom-1">
                 <label for="pom-1">
                     <img id="image-pom-1" src="http://placehold.it/350?text=Upload+pom+1"/>
                 </label>
             </div>
-            <div class="col-md-4" data-id="pom-2">
+            <div class="col-md-4 pom" data-id="pom-2">
                 <input type="hidden" name="pom-2" id="input-pom-2">
                 <label for="pom-2">
                     <img id="image-pom-2" src="http://placehold.it/350?text=Upload+pom+2"/>
                 </label>
             </div>
-            <div class="col-md-4" data-id="pom-3">
+            <div class="col-md-4 pom" data-id="pom-3">
                 <input type="hidden" name="pom-3" id="input-pom-3">
                 <label for="pom-3">
                     <img id="image-pom-3" src="http://placehold.it/350?text=Upload+pom+3"/>
@@ -72,7 +72,7 @@
 </div>
 
 <script >
-    $(".col-md-4").click(function(){
+    $(".pom").click(function(){
         $('#input-photo-progress').css("display","none");
         $('#input-photo-form').css("display", "block");
         $("#addphoto").modal('show');
