@@ -75,8 +75,8 @@ class Fotografi extends CI_Controller {
 
 		if (!$this->upload->do_upload('file')) {
 
-			$response = $this->input->post();
-			//$response = array('status'=>'error', 'error' => $this->upload->display_errors());
+			// $response = $this->input->post();
+			$response = array('status'=>'error', 'error' => $this->upload->display_errors());
 
 		} else {
 
@@ -256,6 +256,36 @@ class Fotografi extends CI_Controller {
 
 	}
 
+	public function pom_add() {
+		
+		if (!$this->ion_auth->logged_in()) return show_404();
+
+		$this->load->library('UUID');
+
+		$config['upload_path'] = FCPATH . 'assets/img/users_content/';
+		$config['allowed_types'] = 'jpg|png';
+		$config['file_name'] = $this->uuid->v4();
+		
+		$this->load->library('upload', $config);
+
+		$metadata = $this->input->post();
+		$this->load->model('model_pom');
+		
+		$uploaded = $this->upload->data();
+
+		$pom = $this->model_pom->create();
+		foreach ($metadata as $key => $metadata_element) {
+			echo($key . ":" . $metadata_element);
+			$pom->{$key} = $metadata_element;
+		}
+
+		$pom->id = $pom->save();
+
+		$response = array('status'=>'ok', 'pom' => $pom);
+		
+		echo json_encode($response);
+
+	}
 
 	public function project()
 	{

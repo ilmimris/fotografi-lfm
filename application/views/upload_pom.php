@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div id="addpom">
         <form class="form-horizontal addpom" role="form">
-        <div id="input-photo-form row">
+        <div id="input-pom-form row">
             <h3>Choose 3 photos to upload to photo of the month</h3>
             <div class="col-md-4 pom" data-id="pom-1">
                 <input type="hidden" name="pom-1" id="input-pom-1">
@@ -29,10 +29,10 @@
                 <input id="pom-month" name="pom-month" class="form-control"s type="text" required="required" placeholder="Bulan">
             </div>
             <div class="col-md-3" style="margin: 3% auto;text-align: center;">
-                <a class="btn btn-primary" onclick="upload_photo.call(this)">Submit</a>
+                <a class="btn btn-primary" onclick="upload_pom.call(this)">Submit</a>
             </div>
         </div>
-        <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
+        <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
             <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
         </div>
         </form> 
@@ -44,16 +44,17 @@
   <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <form class = "form-horizontal addphoto" role="form">
-            <div id="input-photo-form">
+            <div id="input-pom-form">
                 <div class="col-md-6">
+                    <input type="hidden" name="upload-for" id="input-upload-for">
                     <label for = "photo" class = "control-label title">U&ensp;p&ensp;l&ensp;o&ensp;a&ensp;d</label>
                     <br>
-                    <input id="input-photo-image" type="file" name="photo" accept="image/*" required="required" >
+                    <input id="input-pom-image" type="file" name="photo" accept="image/*" required="required" >
                     <br>
                     <a class="btn btn-info" onclick="upload_photo.call(this)">Submit</a>
                 </div>
             </div>
-            <div id="input-photo-progress" style="display:none; margin: auto;" class="col-md-12">
+            <div id="input-pom-progress" style="display:none; margin: auto;" class="col-md-12">
                 <img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
             </div>
             </form> 
@@ -63,8 +64,8 @@
 
 <script >
     $(".pom").click(function(){
-        $('#input-photo-progress').css("display","none");
-        $('#input-photo-form').css("display", "block");
+        $('#input-pom-progress').css("display","none");
+        $('#input-pom-form').css("display", "block");
         $("#addphoto").modal('show');
 
         id = $(this).attr('data-id');
@@ -75,22 +76,22 @@
     function upload_photo(){
         var formData = new FormData();
 
-        formData.append('file', $('#input-photo-image')[0].files[0]);
-        // formData.append('contributor', $('.tagging_new_input.tt-input').val());
-        // formData.append('title', $('#input-photo-title').val());
-        // formData.append('caption', $('#input-photo-caption').val());
-        // formData.append('gear', $('#input-photo-gear').val());
-        // formData.append('location', $('#input-photo-location').val());
-        // formData.append('other', $('#input-photo-other').val());
-        // formData.append('type', 2);
+        formData.append('file', $('#input-pom-image')[0].files[0]);
+        formData.append('contributor', "-");
+        formData.append('title', "-");
+        formData.append('caption', "-");
+        formData.append('gear', "-");
+        formData.append('location', "-");
+        formData.append('other', "-");
+        formData.append('type', 2); // Type 2 -> Photo of the month
 
         console.log(formData);
 
-        $('#input-photo-progress').css("display","block");
-        $('#input-photo-form').css("display", "none");
+        $('#input-pom-progress').css("display","block");
+        $('#input-pom-form').css("display", "none");
 
         $.ajax({
-               url : '/fotografi/pom_add',
+               url : '/fotografi/photo_add',
                type : 'POST',
                data : formData,
                processData: false,  // tell jQuery not to process the data
@@ -115,5 +116,30 @@
         } else {
             alert("Something wrong, technical details: " + data.error);
         }
+    }
+    function upload_pom(){
+        var formData = new FormData();
+
+        formData.append('bulan', $('#pom-month').val());
+
+        $("#input-pom-form input[type=hidden]").each(function(i, obj) {
+            formData.append($(obj).attr('name'), $(obj).val());
+            console.log(obj);
+        });
+
+        $('#input-pom-progress').css("display","block");
+        $('#input-pom-form').css("display", "none");
+
+        $.ajax({
+               url : '/fotografi/pom_add',
+               type : 'POST',
+               data : formData,
+               processData: false,  // tell jQuery not to process the data
+               contentType: false,  // tell jQuery not to set contentType
+               success : function(data) {
+                   alert("success");
+                   console.log(data);
+               }
+        });
     }
 </script>
