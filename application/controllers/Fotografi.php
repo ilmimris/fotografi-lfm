@@ -25,7 +25,7 @@ class Fotografi extends CI_Controller {
 		$this->load->model(array('model_pom','model_photos'));
 		$pom = $this->model_pom->all();
 		$gambar1 = $this->model_photos->findById($pom[0]->gambar1
-		var_dump($gambar1["photo"]);
+		var_dump($gambar1->photo);
 		// array(
 		// 		'gambar1' => $this->model_photos->findById($pom->gambar1),
 		// 	);
