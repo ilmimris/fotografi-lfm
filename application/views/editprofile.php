@@ -48,10 +48,10 @@
 					  <label for="retype_password" class="control-label title">R&ensp;e&ensp;t&ensp;y&ensp;p&ensp;e&ensp; &ensp;P&ensp;a&ensp;s&ensp;s&ensp;w&ensp;o&ensp;r&ensp;d</label>
 					  <input type="password" class="form-control" name="retype_password" >
 
-					  <label for="instagram" class="control-label title">I&ensp;n&ensp;s&ensp;t&ensp;a&ensp;g&ensp;r&ensp;a&ensp;m<span class="red">&ensp;*</span></label>
+					  <label for="instagram" class="control-label title">I&ensp;n&ensp;s&ensp;t&ensp;a&ensp;g&ensp;r&ensp;a&ensp;m</label>
 					  <input value="<?=set_value('instagram', $user->instagram)?>" type="text" class="form-control" name="instagram" placeholder="your username instagram (e.g instalfm)">
 
-					  <label for="issuu" class="control-label title">I&ensp;s&ensp;s&ensp;u&ensp;u<span class="red">&ensp;*</span></label>
+					  <label for="issuu" class="control-label title">I&ensp;s&ensp;s&ensp;u&ensp;u</label>
 					  <input value="<?=set_value('issuu', $user->issuu)?>" type="text" class="form-control" name="issuu" placeholder="your username issuu (e.g fotografilfm)">
 				      
 					  <br>
