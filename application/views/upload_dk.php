@@ -218,7 +218,7 @@
 
 		formData.append('file', $('#input-photo-image')[0].files[0]);
 		// formData.append('contributor', $('.tagging_new_input.tt-input').val());
-		formData.append('contributor', 0;
+		formData.append('contributor', 0);
 		formData.append('title', $('#input-photo-title').val());
 		formData.append('caption', $('#input-photo-caption').val());
 		formData.append('gear', $('#input-photo-gear').val());
