@@ -166,8 +166,8 @@
 		<div id="input-photo-form">
 			<div class="col-md-6">
 				<input type="hidden" name="upload-for" id="input-upload-for">
-				<label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
-				<input id="input-photo-contributor" name="contributor" data-max-tags="1" class="form-control" placeholder="Contributor" type="text" value="" required="required" autofocus>
+<!-- 				<label for = "contributor" class = "control-label title">C&ensp;o&ensp;n&ensp;t&ensp;r&ensp;i&ensp;b&ensp;u&ensp;t&ensp;o&ensp;r</label>
+				<input id="input-photo-contributor" name="contributor" data-max-tags="1" class="form-control" placeholder="Contributor" type="text" value="" required="required" autofocus> -->
 				<label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
 				<input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
 				<label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
@@ -217,7 +217,8 @@
 		var formData = new FormData();
 
 		formData.append('file', $('#input-photo-image')[0].files[0]);
-		formData.append('contributor', $('.tagging_new_input.tt-input').val());
+		// formData.append('contributor', $('.tagging_new_input.tt-input').val());
+		formData.append('contributor', 0;
 		formData.append('title', $('#input-photo-title').val());
 		formData.append('caption', $('#input-photo-caption').val());
 		formData.append('gear', $('#input-photo-gear').val());
