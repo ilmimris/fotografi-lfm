@@ -12,7 +12,7 @@
 			<div class="col-md-4">
 				<img class="photos" src="<?= img_url()?>users_content/<?=$project->photo?>"/>
 				<span class="project-caption">
-					<h3 style="font-family: 'Daun';"><?=$project->title?></h3>
+					<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
 				</span>
 			</div>
 			</a>
