@@ -16,6 +16,7 @@
 				<a href="https://twitter.com/LFM_ITB"  target="_blank"><img class="img-center" alt="Twitter LFM" src="<?= img_url()?>logo_tw.png"/></a>
 				<a href="https://issuu.com/fotografilfm/stacks/dba0b7ba35ed438faa01be88fbc50e61"  target="_blank"><img alt="issuu" class="img-center" src="<?= img_url()?>logo_un.png"/></a>
 			</div>
+			<p>&copy; Copyright Fotografi LFM ITB 2016</p>
 		</div>
 	</div>
 </div>
