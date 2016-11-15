@@ -914,7 +914,8 @@ iPad 3
     }
     .photos {
         height: auto;
-        width: 100%;
+        width: 96%;
+        margin: 4% auto;
     }
     .profile_pic {
       max-width: 30%;
