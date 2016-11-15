@@ -171,7 +171,7 @@
 				<label for = "title" class = "control-label title">T&ensp;i&ensp;t&ensp;l&ensp;e</label>
 				<input id="input-photo-title" name="title" class="form-control" placeholder="Title" type="text" required="required" autofocus>
 				<label for = "caption" class = "control-label title">C&ensp;a&ensp;p&ensp;t&ensp;i&ensp;o&ensp;n</label>
-				<textarea id="input-photo-caption" name="caption" required="required" value="" class="form-control" placeholder="caption" required="required"></textarea>
+				<textarea id="input-photo-caption" name="caption" value="" class="form-control" placeholder="caption"></textarea>
 				<label for = "gear" class = "control-label title">G&ensp;e&ensp;a&ensp;r</label>
 				<input id="input-photo-gear" type="text" name="gear" value="" class="form-control" placeholder="Gear">
 				<label for = "location" class = "control-label title">L&ensp;o&ensp;c&ensp;a&ensp;t&ensp;i&ensp;o&ensp;n</label>
