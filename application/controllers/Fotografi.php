@@ -135,7 +135,7 @@ class Fotografi extends CI_Controller {
 		echo json_encode($response);
 
 	}
-	public function photo_add() {
+	public function photos_add() {
 		
 		if (!$this->ion_auth->logged_in()) return show_404();
 
