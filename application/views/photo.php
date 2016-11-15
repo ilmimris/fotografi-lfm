@@ -194,7 +194,7 @@ function upload_photo(){
 	$('#input-photo-form').css("display", "none");
 
 	$.ajax({
-	       url : '/fotografi/photo_add',
+	       url : '/fotografi/photos_add',
 	       type : 'POST',
 	       data : formData,
 	       processData: false,  // tell jQuery not to process the data
