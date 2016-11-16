@@ -72,6 +72,12 @@
 	var img_root = "<?=img_url()?>"+"users_profile/_thumb/";
 	var id = $(this).attr('data-id');
 	
+	$('#modal-project-title').html("");
+	$('#modal-project-description').html("");
+	$('#modal-project-link').attr("href","");
+	$("#modal-project-contributor-list").html("");
+		
+
 	$.get( "/fotografi/project_detail/" + id , function( data ) {
 		console.log( data );
 
