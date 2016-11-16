@@ -113,10 +113,14 @@
 	$("#next_photos").click(function(){
 		$("#profile_photos").css("display","none");
 		$("#profile_projects").css("display","block");
+		$("#next_photos").css("display","none");
+		$("#prev_projects").css("display","block");
 	});
 	$("#prev_projects").click(function() {
 		$("#profile_photos").css("display","block");
 		$("#profile_projects").css("display","none");
+		$("#next_photos").css("display","block");
+		$("#prev_projects").css("display","none");
 	});
 
 	$("#description").click(function(){
