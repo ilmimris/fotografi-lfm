@@ -44,21 +44,16 @@
 			<div class="profile_projects">
 				<h2>Projects</h2>
 				<div class="scroll">
+<?php foreach ($projects as $project) { ?>
 					<div class="row">
-<?php $i = 0; foreach ($projects as $project) {
-	$i++;
-?>
 						<div class="col-md-6 img-projects">
 							<img class="photos" src="<?=img_url()."users_content/".$project->photo?>" />
 						</div>
 						<div class="col-md-6 desc-projects">
 							<h1><?=$project->title?></h1>
 						</div>
-<?php
-	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";
-}
-?>
 					</div>
+<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -104,28 +99,75 @@
 (function(){
 	//Get the modal
 
-	var profile_photos = document.getElementById('profile_photos');
-	var profile_projects = document.getElementById('profile_projects');
-
-	// Get the button that opens the modal
-	var prev_projects = document.getElementById("prev_projects");
-	var next_photos = document.getElementById("next_photos");
-
-	// When the user clicks on the button, open the modal
-	next_photos.onclick = function(){
-		$('#profile_photos').css("display","none");
-		$('#profile_projects').css("display", "block");
-		$("#next_photos").modal();
-		$('#next_photos').css("display", "none");
-		$('#prev_projects').css("display", "block");
+	var modal = document.getElementById('showphoto');
+	var showdesc = document.getElementById('showdescphoto');
+	
+	if ($("#btn-addphoto").length) {
+		$("#btn-addphoto").click(function(){
+			$('#input-photo-progress').css("display","none");
+			$('#input-photo-form').css("display", "block");
+			$("#addphoto").modal('show');
+		});
 	}
-	prev_projects.onclick = function(){
-		$('#profile_photos').css("display","block");
-		$('#profile_projects').css("display", "none");
-		$("#next_photos").modal();
-		$('#next_photos').css("display", "block");
-		$('#prev_projects').css("display", "none");
+
+	$("#description").click(function(){
+		$("#showdescphoto").modal('show');
+		$("#showphoto").modal('hide');
+	});
+	$("#up-photo").click(function() {
+		$("#showdescphoto").modal('hide');
+		$("#showphoto").modal('show');
+	});
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == showdesc) {
+	    
+	        $('#showphoto').modal('hide');
+	    
+	    } else if (event.target == showdesc) {
+	    
+	        $('#showphoto').modal('hide');
+	    
+	    }
 	}
+	$('#showphoto').bind('mousewheel', function(e) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
+	        // $('#showphoto').modal('hide');
+	    } else {
+	        $("#description").click();
+	    }
+	});
+	$('#showdescphoto').bind('mousewheel', function(e) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
+	        $("#up-photo").click();
+	    } else {
+	        // $("#description").click();
+	    }
+	});
+
 }());
+
+function open_detail(){
+	var img_root = "<?=img_url()?>";
+	var id = $(this).attr('data-id');
+	
+	$.get( "/fotografi/photo_detail/" + id , function( data ) {
+		console.log( data );
+
+		photo = JSON.parse(data);
+		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
+		$('#modal-photo-title').html(photo.title);
+		$('#modal-photo-author').html(photo.author);
+		$('#modal-photo-caption').html(photo.caption);
+		$('#modal-photo-gear').html(photo.gear);
+		$('#modal-photo-other').html(photo.other);
+		$('#modal-photo-location').html(photo.location);
+
+		$('#showphoto').modal('hide');
+		$('#showphoto').modal('show');
+	});
+}
+
 
 </script>
