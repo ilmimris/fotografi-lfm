@@ -27,7 +27,7 @@ class Model_project extends ORM {
   }
 
   public function findByUserId($id) {
-    $query = "SELECT `projects`.*, `projects_groups`.`title` as `group_title` FROM `projects` WHERE `projects`.`id` IN (SELECT `project_id` FROM `projects_contributors` WHERE user_id = ?)";
+    $query = "SELECT `projects`.* FROM `projects` WHERE `projects`.`id` IN (SELECT `project_id` FROM `projects_contributors` WHERE user_id = ?)";
     $ci_query = $this->db->query($query, [$id]);
 
     return $ci_query->result();
