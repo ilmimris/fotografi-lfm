@@ -44,21 +44,16 @@
 			<div class="profile_projects">
 				<h2>Projects</h2>
 				<div class="scroll">
+<?php foreach ($projects as $project) {?>
 					<div class="row">
-<?php $i = 0; foreach ($projects as $project) {
-	$i++;
-?>
 						<div class="col-md-6 img-projects">
 							<img class="photos" src="<?=img_url()."users_content/".$project->photo?>" />
 						</div>
 						<div class="col-md-6 desc-projects">
 							<h1><?=$project->title?></h1>
 						</div>
-<?php
-	if (($i>0) && ($i%2==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\">";
-}
-?>
 					</div>
+<?php }?>
 				</div>
 			</div>
 		</div>
