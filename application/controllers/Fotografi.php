@@ -439,9 +439,9 @@ class Fotografi extends CI_Controller {
 
 			$project = $this->model_project->create();
 			foreach ($metadata as $key => $metadata_element) {
-				echo($key . ":" . $metadata_element);
 				$project->{$key} = $metadata_element;
 			}
+			
 			$project->photo = $uploaded['file_name'];
 
 			$project->id = $project->save();
@@ -449,7 +449,7 @@ class Fotografi extends CI_Controller {
 			$project_id = $project->id;
 
 			$users = explode(",", $metadata['contributor']);
-			var_dump($users);
+			
 			foreach ($users as $user) {
 				$user_id = $this->model_users->getIdByUsername($user);
 				$this->insertProjectContributor_($user_id, $project_id);
