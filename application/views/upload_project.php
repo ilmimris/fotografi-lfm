@@ -76,8 +76,20 @@
 		       processData: false,  // tell jQuery not to process the data
 		       contentType: false,  // tell jQuery not to set contentType
 		       success : function(data) {
-		           alert("success");
-		           console.log(data);
+		       	
+		       		console.log(data);
+		       		data_json = JSON.parse(data);
+
+		       		if ((typeof data_json.status !== "undefined") && data_json.status === "ok") {
+		       			
+		       			alert("success");
+
+		       		} else {
+		       			
+		       			alert("Something happen. Details: " + data);
+
+		       		}
+
 		       }
 		});
 	}
