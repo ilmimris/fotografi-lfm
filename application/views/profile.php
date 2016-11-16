@@ -110,6 +110,15 @@
 		});
 	}
 
+	$("#next_photos").click(function(){
+		$("#profile_photos").css("display","none");
+		$("#profile_projects").css("display","block");
+	});
+	$("#prev_projects").click(function() {
+		$("#profile_photos").css("display","block");
+		$("#profile_projects").css("display","none");
+	});
+
 	$("#description").click(function(){
 		$("#showdescphoto").modal('show');
 		$("#showphoto").modal('hide');
