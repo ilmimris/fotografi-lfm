@@ -5,8 +5,7 @@
 	$i++;
 ?>
 		<a id="photo1" href="<?= site_url()?>fotografi/profile/<?=$contributor->id?>">
-		<div class="box col-md-3">
-			<img class="photos photos-contributor" src="<?= img_url()."users_profile/_thumb/".$contributor->foto?>"/>
+		<div class="box col-md-3" style="background-image: url('<?= img_url()."users_profile/_thumb/".$contributor->foto?>')">
 			<span class="caption fade-caption photos-contributor">
 				<h2><?=$contributor->first_name?> <?=$contributor->last_name?></h2>
 			</span>
