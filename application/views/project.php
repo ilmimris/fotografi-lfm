@@ -10,10 +10,7 @@
 			</div>
 		</a>
 <?php
-	if (($i%3==0) ) {echo "</div>";};
-}
-?>
-		<div class="row">
+	if (($i%3==0) ) {echo "</div><div class=\"row\"";?>
 <?php $i = 0; foreach ($projects as $project) {
 	$i++;
 ?>
@@ -24,8 +21,8 @@
 				</span>
 			</div>
 		</a>
-<?php
-	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\"";
+<?php };};
+	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div></div><div class=\"row\"";
 }
 ?>
 		</div>
