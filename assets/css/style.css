@@ -301,6 +301,11 @@ img.dk-prev {
     height: auto;
     padding: 0.7rem;
 }
+#photos .box .contributor{
+    height: 250px;
+    width: 250px;
+    margin: 2% auto;
+}
 #photos .box .caption {
     display: inline-block;
     position: absolute;
