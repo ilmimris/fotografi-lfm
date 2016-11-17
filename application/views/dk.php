@@ -372,7 +372,7 @@
 	    if(e.originalEvent.wheelDelta /120 > 0) {
 	        $('.btn-dk-elite').click();
 	    }
-	}).delay( 800 );
+	}).delay( 2000 );
 	//up.onclick = function() {
 	//    modal.style.display = "block";
 	//	showdesc.style.display = "none";
