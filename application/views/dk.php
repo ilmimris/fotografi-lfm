@@ -346,21 +346,21 @@
 	});
 
 	$('#dk-showdescmodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta > 150) {
+	    if(e.originalEvent.wheelDelta > 120) {
 	        $("#dk-showdescmodal").modal('hide');
-	    } else {
+	    } else if(e.originalEvent.wheelDelta < 120){
 	        $('.btn-dk-elite').click();
 	    }
 	});
 	$('#dk-showelitemodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta > 150) {
+	    if(e.originalEvent.wheelDelta > 120) {
 	        $('.btn-dk-desc').click();
-	    } else {
+	    } else if(e.originalEvent.wheelDelta < 120){
 	        $('.btn-dk-all').click();
 	    }
 	});
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta > 150) {
+	    if(e.originalEvent.wheelDelta > 120) {
 	        $('.btn-dk-elite').click();
 	        console.log("w"+e.originalEvent.wheelDelta);
 	    }
