@@ -365,14 +365,19 @@
 	        $('.btn-dk-all').click();
 	    }
 	}).delay( 800 );
-	$('#dk-showallmodal').scrollTop(>200).bind('mousewheel', function(e) {
-        console.log("w"+e.originalEvent.wheelDelta);
-        delay = true;
-    	setTimeout(function(){delay = false},200)
-	    if(e.originalEvent.wheelDelta /120 > 0) {
+	// $('#dk-showallmodal').bind('mousewheel', function(e) {
+ //        console.log("w"+e.originalEvent.wheelDelta);
+ //        delay = true;
+ //    	setTimeout(function(){delay = false},200)
+	//     if(e.originalEvent.wheelDelta /120 > 0) {
+	//         $('.btn-dk-elite').click();
+	//     }
+	// });
+	$('#dk-showallmodal').scroll(function() {
+	    if ($(this).scrollTop() > 200){ // Set position from top to add class
 	        $('.btn-dk-elite').click();
-	    }
-	}).delay( 2000 );
+	    } 
+	});
 	//up.onclick = function() {
 	//    modal.style.display = "block";
 	//	showdesc.style.display = "none";
