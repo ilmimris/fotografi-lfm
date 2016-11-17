@@ -26,8 +26,9 @@
 			</a>
 <?php 
 		};
-		if (($i%3==0)) echo "</div></div><div class=\"row\"";}?>
+		if (($i%3==0)) echo "</div></div><div class=\"row\"";}
 	};	
+?>
 		</div>
 	</div>
 </div>
