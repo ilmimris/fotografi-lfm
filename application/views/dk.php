@@ -354,7 +354,7 @@
 	    } else {
 	        $('.btn-dk-elite').click();
 	    }
-	});
+	}).delay(800);
 	$('#dk-showelitemodal').bind('mousewheel', function(e) {
         console.log("w"+e.originalEvent.wheelDelta);
 	    delay = true;
@@ -364,7 +364,7 @@
 	    } else {
 	        $('.btn-dk-all').click();
 	    }
-	});
+	}).delay( 800 );
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
         console.log("w"+e.originalEvent.wheelDelta);
         delay = true;
@@ -372,7 +372,7 @@
 	    if(e.originalEvent.wheelDelta /120 > 0) {
 	        $('.btn-dk-elite').click();
 	    }
-	});
+	}).delay( 800 );
 	//up.onclick = function() {
 	//    modal.style.display = "block";
 	//	showdesc.style.display = "none";
