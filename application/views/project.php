@@ -1,8 +1,6 @@
 </header>
 <div class="container-fluid">
 	<div class="show-project">
-		<div class="row project" >
-		</div>
 		<div class="row" >
 <?php $i = 0; foreach ($projects as $project) {
 	$i++;
