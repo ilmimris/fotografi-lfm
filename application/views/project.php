@@ -13,18 +13,21 @@
 			</a>
 <?php 
 	if (($i%3==0)) {
-	echo "</div><div class=\"row\""; ?>
+		echo "</div><div class=\"row\""; ?>
 <?php  
-	foreach ($projects as $project) { 
+		foreach ($projects as $project) { 
 ?>
-		<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
-			<div class="col-md-4" style="width: 300px; margin: auto 3.33333%;">
-				<span class="project-caption">
-					<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
-				</span>
-			</div>
-		</a>
-<?php };};	if (($i%3==0)) echo "</div></div><div class=\"row\"";}?>
+			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
+				<div class="col-md-4" style="width: 300px; margin: auto 3.33333%;">
+					<span class="project-caption">
+						<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
+					</span>
+				</div>
+			</a>
+<?php 
+		};
+		if (($i%3==0)) echo "</div></div><div class=\"row\"";}?>
+	};	
 		</div>
 	</div>
 </div>
