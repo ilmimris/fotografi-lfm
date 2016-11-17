@@ -19,6 +19,7 @@
 					<input id="project-link" name="project-link" class="form-control"s type="text" required="required" placeholder="link of project">
 					<label for = "project-contributor" class = "control-label title">Add Contributor</label>
 					<input id="project-contributor" name="project-contributor" class="form-control tags-input" type="text" required="required"  placeholder="Enter name of contributors" value="" >
+					<span class="red title">[WARN] Ketikkan username dengan benar lalu tekan enter!</span>
 				</div>
 				<div id="upload_project" class="col-md-6" style="margin: 10% auto;text-align: center;">
 					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
