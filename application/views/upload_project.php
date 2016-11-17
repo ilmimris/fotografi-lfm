@@ -22,7 +22,7 @@
 				</div>
 				<div id="upload_project" class="col-md-6" style="margin: 10% auto;text-align: center;">
 					<a class="btn btn-info" onclick="upload_project.call(this)">Submit</a>
-					<div id="input-project-progress" style="display:none; margin: auto;">
+					<div id="input-project-progress" style="display:block; margin: auto;">
 						<img src="<?= img_url()?>ring.gif" style="width: 120px; margin: 200px auto;">
 					</div>
 				</div>
