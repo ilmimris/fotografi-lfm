@@ -10,7 +10,7 @@
 			</div>
 		</a>
 <?php
-	if (($i%3==0) ) {echo "</div>mod i =<div class=\"row\"";};
+	if (($i%3==0) ) {echo "</div>";};
 }
 ?>
 		<div class="row">
