@@ -338,10 +338,8 @@ span.caption.caption.photos-contributor {
     margin: 4rem auto;
 }
 span.caption.fade-caption.photos-contributor{
-    display: inline-block;
     font-family: 'Bebas' !important;  
     margin: 16rem auto 0rem auto !important;
-    vertical-align: middle;
 }
 span.caption.fade-caption.photos-contributor > h2 {
   font-size: 14pt;
@@ -350,6 +348,12 @@ span.caption.fade-caption.photos-contributor > h2 {
 #photos .box:hover .fade-caption {
     opacity: 1;
     z-index: 1;
+}
+.project {
+  height: 200px;
+  width: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .box-shadow-menu {
