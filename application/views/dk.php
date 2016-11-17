@@ -360,7 +360,7 @@
 	    }
 	});
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
-	    if(e.originalEvent.wheelDelta > 100) {
+	    if(e.originalEvent.wheelDelta > 200) {
 	        $('.btn-dk-elite').click();
 	        console.log("w"+e.originalEvent.wheelDelta);
 	    }
