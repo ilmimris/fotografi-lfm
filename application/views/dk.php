@@ -374,7 +374,7 @@
 	//     }
 	// });
 	$('#dk-showallmodal').scroll(function() {
-	    if ($(this).scrollTop() > 0){ // Set position from top to add class
+	    if ($(this).scrollTop() = 0){ // Set position from top to add class
 	        $('#dk-showallmodal').bind('mousewheel', function(e) {
 		        console.log("w"+e.originalEvent.wheelDelta);
 			    if(e.originalEvent.wheelDelta /120 > 0) {
