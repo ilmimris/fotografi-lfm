@@ -29,12 +29,14 @@
 <?php 
 			
 			if (($k%3==0)) { echo "</div><div class=\"row\">";}
+?>
+			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
+				<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
+				</div>
+			</a>
+<?php
 			};
 
-		} else {
-?>
-			suesuatu
-<?php
 		};
 	};	
 ?>
