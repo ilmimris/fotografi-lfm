@@ -301,7 +301,7 @@ img.dk-prev {
     height: auto;
     padding: 0.7rem;
 }
-#photos .box .contributor{
+#photos .box.contributor{
     height: 250px;
     width: 250px;
 }
