@@ -51,8 +51,6 @@
 
 
 	function upload_project(){
-		$('#input-project-progress').css("display","block");
-		$('#input-project-form').css("display", "none");
 		
 		var formData = new FormData();
 
@@ -69,6 +67,8 @@
 			console.log(obj);
 		});
 
+		$('#input-project-progress').css("display","block");
+		$('#input-project-form').css("display", "none");
 
 		$.ajax({
 		       url : '/fotografi/project_add',
