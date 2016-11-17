@@ -1,44 +1,23 @@
 </header>
 <div class="container-fluid">
 	<div class="show-project">
+		<div class="row project" >
+		</div>
 		<div class="row" >
-<?php 
-	$i = 0; 
-	foreach ($projects as $project) {
-		$i++; 
+<?php $i = 0; foreach ($projects as $project) {
+	$i++;
 ?>
 			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
-				<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
-				</div>
-			</a>
-<?php 
-		if (($i%3==0)) {
-			echo "</div><div class=\"row\">"; ?>
-<?php
-			$k=0;  
-			foreach ($projects as $project) { 
-				$k++;
-?>
-				<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
-					<div class="col-md-4" style="width: 300px; margin: auto 3.33333%;">
-						<span class="project-caption">
-							<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
-						</span>
-					</div>
-				</a>
-<?php 
-			
-			if (($k%3==0)) { echo "</div><div class=\"row\">";?>
-			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
-				<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
-				</div>
+			<div class="col-md-4 project">
+				<img class="photos" src="<?= img_url()?>users_content/<?=$project->photo?>"/>
+				<span class="project-caption">
+					<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
+				</span>
+			</div>
 			</a>
 <?php
-			}
-			};
-
-		};
-	};	
+	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\"";
+}
 ?>
 		</div>
 	</div>
