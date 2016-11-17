@@ -33,10 +33,7 @@
 
 		} else {
 ?>
-			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
-				<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
-				</div>
-			</a>
+			suesuatu
 <?php
 		};
 	};	
