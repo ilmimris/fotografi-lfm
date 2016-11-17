@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4" style="width: 300px;">
 				<span class="project-caption">
 					<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
 				</span>
