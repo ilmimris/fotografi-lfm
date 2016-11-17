@@ -83,6 +83,7 @@
 		       		if ((typeof data_json.status !== "undefined") && data_json.status === "ok") {
 		       			
 		       			alert("success");
+		       			window.location.reload(true);
 
 		       		} else {
 		       			
