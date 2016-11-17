@@ -374,7 +374,7 @@
 	//     }
 	// });
 	$('#dk-showallmodal').scroll(function() {
-	    if ($(this).scrollTop() < 200){ // Set position from top to add class
+	    if ($(this).scrollDown() > 200){ // Set position from top to add class
 	        $('.btn-dk-elite').click();
 	    } 
 	});
