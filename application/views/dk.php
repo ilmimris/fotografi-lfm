@@ -346,23 +346,27 @@
 	});
 
 	$('#dk-showdescmodal').bind('mousewheel', function(e) {
+        console.log("w"+e.originalEvent.wheelDelta);
+	    
 	    if(e.originalEvent.wheelDelta > 120) {
 	        $("#dk-showdescmodal").modal('hide');
-	    } else if(e.originalEvent.wheelDelta < 120){
+	    } else if(e.originalEvent.wheelDelta < -120){
 	        $('.btn-dk-elite').click();
 	    }
 	});
 	$('#dk-showelitemodal').bind('mousewheel', function(e) {
+        console.log("w"+e.originalEvent.wheelDelta);
+	    
 	    if(e.originalEvent.wheelDelta > 120) {
 	        $('.btn-dk-desc').click();
-	    } else if(e.originalEvent.wheelDelta < 120){
+	    } else if(e.originalEvent.wheelDelta < -120){
 	        $('.btn-dk-all').click();
 	    }
 	});
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
+        console.log("w"+e.originalEvent.wheelDelta);
 	    if(e.originalEvent.wheelDelta > 120) {
 	        $('.btn-dk-elite').click();
-	        console.log("w"+e.originalEvent.wheelDelta);
 	    }
 	});
 	//up.onclick = function() {
