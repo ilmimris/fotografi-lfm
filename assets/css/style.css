@@ -304,6 +304,9 @@ img.dk-prev {
 #photos .box.contributor{
     height: 250px;
     width: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 }
 #photos .box .caption {
     display: inline-block;
