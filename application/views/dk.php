@@ -350,7 +350,7 @@
 	    
 	    if(e.originalEvent.wheelDelta > 120) {
 	        $("#dk-showdescmodal").modal('hide');
-	    } else if(e.originalEvent.wheelDelta < -80){
+	    } else if(e.originalEvent.wheelDelta < 0){
 	        $('.btn-dk-elite').click();
 	    }
 	});
@@ -359,7 +359,7 @@
 	    
 	    if(e.originalEvent.wheelDelta > 120) {
 	        $('.btn-dk-desc').click();
-	    } else if(e.originalEvent.wheelDelta < -80){
+	    } else if(e.originalEvent.wheelDelta < 0){
 	        $('.btn-dk-all').click();
 	    }
 	});
