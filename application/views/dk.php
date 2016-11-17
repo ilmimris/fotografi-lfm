@@ -376,11 +376,11 @@
 	$('#dk-showallmodal').scroll(function() {
 	    if ($(this).scrollTop() > 10){ // Set position from top to add class
 	        $('#dk-showallmodal').bind('mousewheel', function(e) {
-	        console.log("w"+e.originalEvent.wheelDelta);
-		    if(e.originalEvent.wheelDelta /120 > 0) {
-		        $('.btn-dk-elite').click();
-		    }
-		   }
+		        console.log("w"+e.originalEvent.wheelDelta);
+			    if(e.originalEvent.wheelDelta /120 > 0) {
+			        $('.btn-dk-elite').click();
+			    }
+		   	})
 		  }
 	});
 	//up.onclick = function() {
