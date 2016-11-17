@@ -2,18 +2,13 @@
 <div class="container-fluid">
 	<div class="show-project">
 		<div class="row" >
-<?php $i = 0; foreach ($projects as $project) {
-	$i++;
-?>
-		<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
-			<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
-			</div>
-		</a>
-<?php
-	if (($i%3==0) ) {echo "</div><div class=\"row\"";?>
-<?php $i = 0; foreach ($projects as $project) {
-	$i++;
-?>
+<?php $i = 0; foreach ($projects as $project) {	$i++; ?>
+			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
+				<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
+				</div>
+			</a>
+<?php if (($i%3==0) ) {echo "</div><div class=\"row\""; ?>
+<?php $k = 0; foreach ($projects as $project) { $k++; ?>
 		<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
 			<div class="col-md-4" style="width: 300px; margin: auto 3.33333%;">
 				<span class="project-caption">
@@ -21,9 +16,7 @@
 				</span>
 			</div>
 		</a>
-<?php 	if (($i%3==0)) echo "</div>mod i</div><div class=\"row\"";
-}
-?>
+<?php };};	if (($k%3==0)) echo "</div>mod i</div><div class=\"row\"";}?>
 		</div>
 	</div>
 </div>
