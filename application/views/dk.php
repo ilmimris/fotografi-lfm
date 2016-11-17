@@ -362,6 +362,7 @@
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
 	    if(e.originalEvent.wheelDelta > 100) {
 	        $('.btn-dk-elite').click();
+	        console.log("w"+e.originalEvent.wheelDelta);
 	    }
 	});
 	//up.onclick = function() {
