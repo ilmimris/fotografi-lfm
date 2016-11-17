@@ -22,7 +22,7 @@
 			</div>
 		</a>
 <?php };};
-	if (($i%3==0)) echo "</div>mod i</div><div class=\"row\"";
+	echo "mod i=".$i%;if (($i%3==0)) echo "</div>mod i</div><div class=\"row\"";
 }
 ?>
 		</div>
