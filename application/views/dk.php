@@ -374,9 +374,14 @@
 	//     }
 	// });
 	$('#dk-showallmodal').scroll(function() {
-	    if ($(this).scrollBottom() > 200){ // Set position from top to add class
-	        $('.btn-dk-elite').click();
-	    } 
+	    if ($(this).scrollTop() > 10){ // Set position from top to add class
+	        $('#dk-showallmodal').bind('mousewheel', function(e) {
+	        console.log("w"+e.originalEvent.wheelDelta);
+		    if(e.originalEvent.wheelDelta /120 > 0) {
+		        $('.btn-dk-elite').click();
+		    }
+		   }
+		  }
 	});
 	//up.onclick = function() {
 	//    modal.style.display = "block";
