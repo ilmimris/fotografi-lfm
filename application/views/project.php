@@ -10,7 +10,7 @@
 			</div>
 		</a>
 <?php
-	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div>lalala<div class=\"row\"";
+	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo $i."</div><div class=\"row\"";
 }
 ?>
 		<div class="row">
