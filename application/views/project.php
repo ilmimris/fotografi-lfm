@@ -8,11 +8,9 @@
 			<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
 			<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
 			</div>
-			<div>
-				<span class="project-caption">
-					<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
-				</span>
-			</div>
+			<span class="project-caption">
+				<h3 style="font-family: 'Daun'; font-size: 2.3em; text-transform: uppercase;"><?=$project->title?></h3>
+			</span>
 			</a>
 <?php
 	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div><div class=\"row\"";
