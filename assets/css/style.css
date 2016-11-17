@@ -352,9 +352,9 @@ span.caption.fade-caption.photos-contributor > h2 {
 .project {
   height: 200px;
   width: 300px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-      margin: 1% 3.33333%;
+      margin: 1% 6.33333%;
 }
 
 .box-shadow-menu {
