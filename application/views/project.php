@@ -10,7 +10,13 @@
 			</div>
 		</a>
 <?php
-	if (($i%3==0) ) {echo "</div><div class=\"row\"";};?>
+	if (($i%3==0) ) {echo "</div>mod i =<div class=\"row\"";};
+}
+?>
+		<div class="row">
+<?php $i = 0; foreach ($projects as $project) {
+	$i++;
+?>
 		<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
 			<div class="col-md-4" style="width: 300px; margin: auto 3.33333%;">
 				<span class="project-caption">
