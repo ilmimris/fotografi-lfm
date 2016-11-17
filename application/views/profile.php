@@ -45,7 +45,7 @@
 				<h2>Projects</h2>
 				<div class="scroll">
 <?php foreach ($projects as $project) {?>
-					<a href="http://<?=$project->link?>">	
+					<a href="http://<?=$project->link?>" style="text-decoration: none;">	
 					<div class="row">
 						<div class="col-md-6 img-projects">
 							<img class="photos" src="<?=img_url()."users_content/".$project->photo?>" />
