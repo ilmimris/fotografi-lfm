@@ -307,6 +307,7 @@ img.dk-prev {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+    margin: .5%;
 }
 #photos .box .caption {
     display: inline-block;
