@@ -45,13 +45,13 @@
 				<h2>Projects</h2>
 				<div class="scroll">
 <?php foreach ($projects as $project) {?>
-					<a href="http://<?=$project->link?>" style="text-decoration: none;">	
+					<a href="http://<?=$project->link?>" >	
 					<div class="row">
 						<div class="col-md-6 img-projects">
 							<img class="photos" src="<?=img_url()."users_content/".$project->photo?>" />
 						</div>
 						<div class="col-md-6 desc-projects">
-							<h1><?=$project->title?></h1>
+							<h1 style="color: black;"><?=$project->title?></h1>
 						</div>
 					</div>
 					</a>
