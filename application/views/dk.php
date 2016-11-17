@@ -365,7 +365,7 @@
 	        $('.btn-dk-all').click();
 	    }
 	}).delay( 800 );
-	$('#dk-showallmodal').bind('mousewheel', function(e) {
+	$('#dk-showallmodal').scrollTop(>200).bind('mousewheel', function(e) {
         console.log("w"+e.originalEvent.wheelDelta);
         delay = true;
     	setTimeout(function(){delay = false},200)
