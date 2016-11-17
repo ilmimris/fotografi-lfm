@@ -22,7 +22,7 @@
 			</div>
 		</a>
 <?php };};
-	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</div>mod i</div><div class=\"row\"";
+	if (($i>0) && ($i%3==0)) echo "</div>mod i</div><div class=\"row\"";
 }
 ?>
 		</div>
