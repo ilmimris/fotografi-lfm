@@ -347,25 +347,29 @@
 
 	$('#dk-showdescmodal').bind('mousewheel', function(e) {
         console.log("w"+e.originalEvent.wheelDelta);
-	    
-	    if(e.originalEvent.wheelDelta > 120) {
+	    delay = true;
+    	setTimeout(function(){delay = false},200)
+	    if(e.originalEvent.wheelDelta /120 > 0) {
 	        $("#dk-showdescmodal").modal('hide');
-	    } else if(e.originalEvent.wheelDelta < 0){
+	    } else {
 	        $('.btn-dk-elite').click();
 	    }
 	});
 	$('#dk-showelitemodal').bind('mousewheel', function(e) {
         console.log("w"+e.originalEvent.wheelDelta);
-	    
-	    if(e.originalEvent.wheelDelta > 120) {
+	    delay = true;
+    	setTimeout(function(){delay = false},200)
+	    if(e.originalEvent.wheelDelta / 120 > 00) {
 	        $('.btn-dk-desc').click();
-	    } else if(e.originalEvent.wheelDelta < 0){
+	    } else {
 	        $('.btn-dk-all').click();
 	    }
 	});
 	$('#dk-showallmodal').bind('mousewheel', function(e) {
         console.log("w"+e.originalEvent.wheelDelta);
-	    if(e.originalEvent.wheelDelta > 120) {
+        delay = true;
+    	setTimeout(function(){delay = false},200)
+	    if(e.originalEvent.wheelDelta /120 > 0) {
 	        $('.btn-dk-elite').click();
 	    }
 	});
