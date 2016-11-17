@@ -7,6 +7,8 @@
 			<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
 			</div>
 		</div>
+<?php }?>
+<?php foreach ($projects as $project) {?>
 		<div class="row">
 			<div class="col-md-4" style="width: 300px;">
 				<span class="project-caption">
