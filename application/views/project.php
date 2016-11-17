@@ -27,7 +27,7 @@
 				</div>
 			</a>
 <?php 
-		if (($k%3==0)) { echo "mod k = "$k%"</div><div class=\"row\"";}
+		if (($k%3==0)) { echo "mod k = ".$k%."</div><div class=\"row\"";}
 		};
 	};
 	};	
