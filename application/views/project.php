@@ -1,9 +1,7 @@
 </header>
 <div class="container-fluid">
 	<div class="show-project">
-<?php $i = 0; foreach ($projects as $project) {
-	$i++;
-?>
+<?php foreach ($projects as $project) {?>
 		<a href="#" onclick="open_detail.call(this)" data-id="<?=$project->id?>" class="show-detail-project">
 		<div class="row" >
 			<div class="col-md-4 project" style="background-image: url('<?= img_url()?>users_content/<?=$project->photo?>');">
@@ -16,11 +14,8 @@
 				</span>
 			</div>
 		</div>
-<?php
-	if (($i>0) && ($i%3==0) && (($i+1)<count($projects))) echo "</a>";
-}
-?>
-		</div>
+		</a>
+<?php }?>
 	</div>
 </div>
 
