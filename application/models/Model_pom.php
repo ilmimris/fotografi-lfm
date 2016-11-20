@@ -15,7 +15,7 @@ class Model_pom extends ORM {
 
   protected $contract = ["id", "bulan", "gambar1", "gambar2", "gambar3"];
 
-  protected function getLatest(){
+  public function getLatest(){
   	$query = "SELECT * FROM `pom` ORDER BY `pom`.`waktu` DESC";
     $ci_query = $this->db->query($query);
 
