@@ -23,7 +23,7 @@ class Fotografi extends CI_Controller {
 		$data['islogin'] = $this->ion_auth->logged_in(); // Login Sebagai user biasa
 
 		$this->load->model(array('model_pom','model_photos'));
-		$pom = $this->model_pom->all();
+		$pom = $this->model_pom->getLatest();
 
 		$gambar1 = $this->model_photos->findById($pom[0]->gambar1);
 		$gambar2 = $this->model_photos->findById($pom[0]->gambar2);
