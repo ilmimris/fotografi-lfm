@@ -1,7 +1,7 @@
 </header>
 <div class="container-fluid">
 	<div class="row" id="photos">
-<?php print_r($contributors);$i = 0; foreach ($contributors as $contributor) {
+<?php $i = 0; foreach ($contributors as $contributor) {
 	$i++;
 ?>
 		<a id="photo1" href="<?= site_url()?>fotografi/profile/<?=$contributor->id?>">
