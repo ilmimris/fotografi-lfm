@@ -383,6 +383,20 @@
 		   	})
 		  }
 	});
+	$('#showphoto').bind('mousewheel', function(e) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
+	        // $('#showphoto').modal('hide');
+	    } else {
+	        $("#description").click();
+	    }
+	});
+	$('#showdescphoto').bind('mousewheel', function(e) {
+	    if(e.originalEvent.wheelDelta / 100 > 0) {
+	        $("#up-photo").click();
+	    } else {
+	        // $("#description").click();
+	    }
+	});
 	//up.onclick = function() {
 	//    modal.style.display = "block";
 	//	showdesc.style.display = "none";
