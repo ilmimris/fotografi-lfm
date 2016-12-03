@@ -282,10 +282,10 @@ img.dk-prev {
   max-height: 145px !important;
 }
 
-#photos .box:hover > img {
+#photos .box:hover > img,  #photos .box:hover {
    -webkit-filter: brightness(50%);
    filter: brightness(50%);
-   transform: scale(1);
+   /*transform: scale(1);*/
    -webkit-transition: transform 8s ease-out;
    -moz-transition: transform 8s ease-out;
    -o-transition: transform 8s ease-out;
@@ -296,7 +296,7 @@ img.dk-prev {
 #photos .box:hover > img.photos-contributor {
    -webkit-filter: brightness(100%);
    filter: brightness(100%);
-   transform: scale(1);
+   /*transform: scale(1);*/
 }
 
 #photos .box {
