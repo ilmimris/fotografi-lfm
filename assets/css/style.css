@@ -278,6 +278,10 @@ img.dk-prev {
    transition: all 1s ease-in-out;
 }
 
+.photo_contrib {
+  max-height: 160px !important;
+}
+
 #photos .box:hover > img {
    -webkit-filter: brightness(50%);
    filter: brightness(50%);
