@@ -282,7 +282,7 @@ img.dk-prev {
   max-height: 145px !important;
 }
 
-#photos .box:hover > img,  #photos .box:hover {
+#photos .box:hover > img, .box:hover {
    -webkit-filter: brightness(50%);
    filter: brightness(50%);
    /*transform: scale(1);*/
