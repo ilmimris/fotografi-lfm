@@ -299,11 +299,11 @@ img.dk-prev {
    /*transform: scale(1);*/
 }
 
-#photos .box {
+#photos .faded {
     background-color: transparent;
 }
 
-#photos .box:hover {
+#photos .faded:hover {
   background-color: rgba(0,0,0,0.4);
   -webkit-transition: background-color 0.8s linear;
   -moz-transition: background-color 0.8s linear;

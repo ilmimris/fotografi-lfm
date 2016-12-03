@@ -13,6 +13,7 @@
 	$i++;
 ?>
 		<a href="#" onclick="open_detail.call(this)" data-id="<?=$photo->id?>">
+		<div class="faded"></div>
 		<div class="box col-md-4">
 			<img class="photos" src="<?=img_url()."users_content/_thumb/".$photo->photo?>"/>
 			<span class="caption fade-caption">
