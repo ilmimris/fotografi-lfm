@@ -1,7 +1,7 @@
 </header>
 <div class="container-fluid">
+	<?php print_r($contributors); ?>
 	<div class="row" id="photos">
-	<?php var_dump($contributors); ?>
 <?php $i = 0; foreach ($contributors as $contributor) {
 	$i++;
 ?>
