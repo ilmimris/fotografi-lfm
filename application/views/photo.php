@@ -167,7 +167,7 @@ function open_detail(){
 
 		photo = JSON.parse(data);
 		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
-		$('#link-author').attr('href',photo.user_id);
+		$('.link-author').attr('href',photo.user_id);
 		$('#modal-photo-title').html(photo.title);
 		$('#modal-photo-author').html(photo.author);
 		$('#modal-photo-caption').html(photo.caption);
