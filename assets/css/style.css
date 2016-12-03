@@ -342,8 +342,8 @@ span.caption.caption.photos-contributor {
     margin: 4rem auto;
 }
 
-#photos .box .fade-caption > h1, #photos .box .fade-caption > h4, {
-    text-shadow: 1px 1px rgba(0,0,0,0.75);
+#photos .box .fade-caption > h1, #photos .box .fade-caption > h4 {
+    text-shadow: 1px 1px rgba(0,0,0,0.75) !important;
 }
 
 span.caption.fade-caption.photos-contributor{
