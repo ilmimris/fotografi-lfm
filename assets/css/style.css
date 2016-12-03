@@ -299,6 +299,19 @@ img.dk-prev {
    /*transform: scale(1);*/
 }
 
+.box .caption {
+    background-color: transparent;
+}
+
+.box .caption:hover {
+    background-color: rgba(0,0,0,0.8);
+  -webkit-transition: background-color 1000ms linear;
+  -moz-transition: background-color 1000ms linear;
+  -o-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
 #photos .box {
     float: left;
     overflow: hidden;
