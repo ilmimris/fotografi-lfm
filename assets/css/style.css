@@ -300,19 +300,6 @@ img.dk-prev {
 }
 
 #photos .box {
-    background-color: transparent;
-}
-
-#photos .box:hover {
-  background-color: rgba(0,0,0,0.4);
-  -webkit-transition: background-color 0.8s linear;
-  -moz-transition: background-color 0.8s linear;
-  -o-transition: background-color 0.8s linear;
-  -ms-transition: background-color 0.8s linear;
-  transition: background-color 0.8s linear;
-}
-
-#photos .box {
     float: left;
     overflow: hidden;
     height: auto;
@@ -354,6 +341,11 @@ span.caption.caption.photos-contributor {
     vertical-align: middle;
     margin: 4rem auto;
 }
+
+#photos .box .fade-caption > h1, #photos .box .fade-caption > h4, {
+    text-shadow: 1px 1px rgba(0,0,0,0.75);
+}
+
 span.caption.fade-caption.photos-contributor{
     font-family: 'Bebas' !important;  
     margin: 16rem auto 0rem auto !important;
