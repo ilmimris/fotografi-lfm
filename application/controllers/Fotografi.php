@@ -476,8 +476,9 @@ class Fotografi extends CI_Controller {
 	{
 		$this->load->model("model_profile");
 		$contributors = $this->model_profile->find(['active'=>1]);
-		
+
 		$data['contributors'] = $contributors;
+		var_dump($data['contributors']);
 
 		$data['title'] = 'Contributor | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
