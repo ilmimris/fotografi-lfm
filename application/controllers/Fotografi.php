@@ -476,7 +476,7 @@ class Fotografi extends CI_Controller {
 	{
 		$this->load->model("model_profile");
 		$contributors = $this->model_profile->find(['active'=>1]);
-
+		var_dump($contributors);
 		$data['contributors'] = $contributors;
 
 		$data['title'] = 'Contributor | Fotografi LFM';
