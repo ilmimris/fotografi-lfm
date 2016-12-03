@@ -17,7 +17,7 @@
 			<img class="photos" src="<?=img_url()."users_content/_thumb/".$photo->photo?>"/>
 			<span class="caption fade-caption">
 				<h1><?=$photo->title?></h1>
-				<a href="#nama"><h4><?=$photo->author?></h4></a>
+				<a href="#nama" style="text-decoration: none;"><h4><?=$photo->author?></h4></a>
 			</span>
 		</div>
 		</a>
