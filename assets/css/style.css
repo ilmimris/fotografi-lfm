@@ -412,7 +412,7 @@ a:focus {
 #modal-photo-author {
   color: white;
 }
-.content-desc > h2 {
+.content-desc > a > h2, .content-desc > h2  {
   text-align: left;
   margin-top: 30px;
   font-size: 4em;
