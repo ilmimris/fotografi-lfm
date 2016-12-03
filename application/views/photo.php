@@ -62,7 +62,7 @@
 		<div class="col-mod-12">
 			<div class="content-desc">
 				<h1 id="modal-photo-title"></h1>
-				<a href="" style="text-decoration: none;" class="link-author"><h2 id="modal-photo-author"></h2></a>
+				<a href="" class="link-author" style="text-decoration: none;"><h2 id="modal-photo-author"></h2></a>
 				<p  id="modal-photo-caption"></p>
 				<br>
 				<p><span id="modal-photo-other"></span>
@@ -167,6 +167,7 @@ function open_detail(){
 
 		photo = JSON.parse(data);
 		$("#modal-photo-image").attr("src",img_root + "users_content/" + photo.photo);
+		$("#link-author").attr("href",photo.user_id);
 		$('#modal-photo-title').html(photo.title);
 		$('#modal-photo-author').html(photo.author);
 		$('#modal-photo-caption').html(photo.caption);
