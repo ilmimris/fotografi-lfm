@@ -387,6 +387,7 @@ span.caption.fade-caption.photos-contributor > h2 {
     margin: 5% auto;
     display: block;
     max-width: 90%;
+    max-height: 80vh;
 }
 a:focus {
     outline: none;
