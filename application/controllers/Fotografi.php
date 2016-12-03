@@ -221,7 +221,7 @@ class Fotografi extends CI_Controller {
 	public function dk()
 	{
 		$this->load->model('model_dk');
-		$dks = $this->model_dk->all();
+		$dks = $this->model_dk->all_date();
 
 		$data['dks'] = $dks;
 
