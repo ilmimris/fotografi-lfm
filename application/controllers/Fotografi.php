@@ -224,7 +224,7 @@ class Fotografi extends CI_Controller {
 		$dks = $this->model_dk->all_date();
 
 		$data['dks'] = $dks;
-
+		var_dump($dks);
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
 
@@ -478,7 +478,6 @@ class Fotografi extends CI_Controller {
 		$contributors = $this->model_profile->find(['active'=>1]);
 
 		$data['contributors'] = $contributors;
-		print_r($data['contributors']);
 
 		$data['title'] = 'Contributor | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
