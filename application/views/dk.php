@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="dk">
-<?php $i = 0; var_dump($dk);foreach ($dks as $dk) {
+<?php $i = 0; foreach ($dks as $dk) {
 	$i++;
 ?>
 				<div class="inline img-dk" style="max-width: 231px;"><a href="#" onclick="open_detail_dk.call(this)" class="btn-dk-desc" style="text-decoration: none;" data-id="<?=$dk->id?>"><img style="height: 410px;width: 230px;" src="<?= img_url().'users_content/'.$dk->cover?>"><h4 class="dk-month"><?= $dk->month ?></h4><h4 class="dk-title"><?= $dk->title ?></h4></a></div>

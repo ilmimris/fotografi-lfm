@@ -224,6 +224,7 @@ class Fotografi extends CI_Controller {
 		$dks = $this->model_dk->all_date();
 
 		$data['dks'] = $dks;
+		var_dump($dks);
 		$data['title'] = 'Dinding Karya | Fotografi LFM';
 		$data['islogin'] = $this->ion_auth->logged_in();
 
