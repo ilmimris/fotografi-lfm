@@ -1,0 +1,36 @@
+Revision :
+1. Ga usah di zoom v
+2. Setiap ada icon chevron down bisa di scroll v
+3. Tulisan Project dihilangin v
+4. Judul project fontnya masih bukan daun dan ga perlu underline dan ga perlu miring v
+5. Visit Link Project -> Visit Full project v
+6. Photos di kontributor di kasih space antara scroll bar dengan konten v 
+7. Project di kontributor hanya cover project dan judul project v
+9. Dihalaman admin, tampilkan username juga v
+10. Group project ga usah ada v
+11. POM upload, tambahin form bulan v
+12. Photo kontributor di header di kecilin, jadi sebesar logo lfm v
+13. Add form di kontributor link instagram dan issue. v
+8. Foto DK ngelink ke kontributor, jadi ada tambahan form add photographer v
+----
+
+
+Revisi0n #2:
+1. Project masih error di contributor v
+2. Layout Project crop 3:2 v
+3. Halaman Profile error v
+6. box photo project    v
+	height: 250px;
+    padding: 1rem;
+    width: 250px;
+    margin: 0.9rem;
+7. Caption box project v
+	span.caption.fade-caption.photos-contributor {
+	    font-family: 'Bebas' !important;
+	    margin: 21rem auto 0rem auto !important;
+	}
+
+8. logo contact us high-res
+9. layout contributor ditengahin v
+10. Photo di profile pop-up v
+11. Project di profile linked v
